@@ -1,0 +1,30 @@
+:root {
+  --color-primary: #00008B;
+  --color-secondary: rgb(149, 149, 151);
+  --color-badge: #111111;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Mulish', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+}
+
+p, span {
+  font-family: 'Mulish', sans-serif;
+}
+
+

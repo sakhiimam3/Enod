@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Enod</title>
+    <link rel="icon" href="assets/images/favicon.ico" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Local stylesheet -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Slick Slider CDN -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+
+    <script src="assets/js/theme.js"></script>
+    
+    <!-- Custom Styles for Plans Slider -->
+    <style>
+      .plans-dots {
+        text-align: center;
+        margin-top: 2rem;
+      }
+      
+      .plans-dots li {
+        display: inline-block;
+        margin: 0 8px;
+      }
+      
+      .plans-dots li button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #d1d5db;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-indent: -9999px;
+      }
+      
+      .plans-dots li.slick-active button {
+        background-color: #4649FF;
+        transform: scale(1.2);
+      }
+      
+      .plans-dots li button:hover {
+        background-color: #4649FF;
+      }
+    </style>
+  </head>
+  <body class="font-body min-h-screen">
+    <!-- Hero Section with  -->
+    <section
+      class="relative overflow-hidden h-screen flex flex-col bg-cover bg-center bg-no-repeat"
+      style="background-image: url('assets/images/hero-bg.png')"
+    >
+      <!--  inside Hero -->
+        <div class="max-w-[1480px] mx-auto px-4 sm:px-6 pt-8 lg:px-8">
+          <div class="bg-white rounded-full shadow-sm px-6 py-6">
+            <div class="flex justify-between items-center">
+              <!-- Logo -->
+              <div class="flex-shrink-0">
+                <div class="flex items-center">
+                  <img
+                    src="assets/images/logo.png"
+                    alt="ENOD Logo"
+                    class="h-8 w-auto"
+                  />
+                </div>
+              </div>
+
+              <!-- Navigation Menu -->
+              <nav class="hidden md:flex space-x-6">
+                <a
+                  href="#"
+                  class="text-secondary hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                  >Home</a
+                >
+                <a
+                  href="#"
+                  class="text-secondary hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                  >Price</a
+                >
+                <a
+                  href="#"
+                  class="text-secondary hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                  >About</a
+                >
+                <a
+                  href="#"
+                  class="text-secondary hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                  >Learning</a
+                >
+                <a
+                  href="#"
+                  class="text-secondary hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                  >Services</a
+                >
+                <a
+                  href="#"
+                  class="text-secondary hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                  >Career</a
+                >
+                <a
+                  href="#"
+                  class="text-secondary hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                  >Help Center</a
+                >
+                <a
+                  href="#"
+                  class="text-secondary hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                  >Contact</a
+                >
+              </nav>
+
+              <!-- Auth Buttons -->
+              <div class="flex items-center space-x-4">
+                <button
+                  class="text-secondary underline hover:text-dc px-3 py-2 text-sm font-bold"
+                >
+                  Log In
+                </button>
+                <button
+                  class="bg-primary text-white px-6 py-2 rounded-full text-sm"
+                >
+                  Join Now
+                </button>
+              </div>
+
+              <!-- Mobile menu button -->
+              <div class="md:hidden">
+                <button class="text-gray-600 hover:text-gray-900 p-2">
+                  <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
+
+      <!-- Hero Content -->
+      <div
+        class="relative z-10 max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8 pt-1 pb-2 flex-1 flex items-center"
+      >
+        <!-- Hero Slider -->
+        <div class="hero-slider w-full">
+          <!-- Slide 1 - Original Content -->
+          <div class="slide-item">
+            <div class="grid lg:grid-cols-2 gap-12 justify-center items-center">
+              <!-- Left Content -->
+              <div class="text-white space-y-8">
+                <h1
+                  class="text-4xl md:text-5xl text-primary lg:text-6xl font-bold leading-tight"
+                >
+                  OENOD – Next-Generation Business Software
+                </h1>
+
+                <p class="text-lg md:text-xl text-secondary leading-relaxed">
+                  OENOD is a comprehensive business management solution designed
+                  to streamline operations and enhance productivity. Our
+                  all-in-one platform offers advanced automation, real-time
+                  analytics, and seamless tools for company management, payroll,
+                  time and attendance tracking, employee scheduling, video
+                  conferencing, onboarding, and learning management.
+                </p>
+
+                <div class="flex cursor-pointer flex-col sm:flex-row gap-4">
+                  <button
+                    class="bg-primary text-white cursor-pointer px-6 py-4 rounded-full font-semibold hover:bg-blue-700 transition-colors flex items-center justify-between space-x-3"
+                  >
+                    <span class="flex-1 text-center"
+                      >OENOD - Powering the Future of Business</span
+                    >
+                    <div
+                      class="w-10 h-10 bg-white rounded-full flex items-center justify-center"
+                    >
+                      <svg
+                        width="16"
+                        height="10"
+                        viewBox="0 0 16 10"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14.988 5.4119C15.2213 5.17849 15.2213 4.80006 14.988 4.56665L11.1843 0.762951C10.9508 0.529537 10.5724 0.529537 10.339 0.762951C10.1056 0.996364 10.1056 1.3748 10.339 1.60821L13.7201 4.98927L10.339 8.37034C10.1056 8.60375 10.1056 8.98218 10.339 9.21559C10.5724 9.44901 10.9508 9.44901 11.1843 9.21559L14.988 5.4119ZM0.220703 5.58697H14.5653V4.39158H0.220703V5.58697Z"
+                          fill="#07078E"
+                        />
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Right Content - About Image -->
+              <div class="">
+                <img
+                  src="assets/images/about.png"
+                  alt="About ENOD"
+                  class="w-full h-auto max-h-[500px] md:max-h-[600px] lg:max-h-[650px] object-contain rounded-2xl"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 - Same Content -->
+          <div class="slide-item">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+              <!-- Left Content -->
+              <div class="text-white space-y-8">
+                <h1
+                  class="text-4xl md:text-5xl text-primary lg:text-6xl font-bold leading-tight"
+                >
+                  OENOD – Next-Generation Business Software
+                </h1>
+
+                <p class="text-lg md:text-xl text-secondary leading-relaxed">
+                  OENOD is a comprehensive business management solution designed
+                  to streamline operations and enhance productivity. Our
+                  all-in-one platform offers advanced automation, real-time
+                  analytics, and seamless tools for company management, payroll,
+                  time and attendance tracking, employee scheduling, video
+                  conferencing, onboarding, and learning management.
+                </p>
+
+                <div class="flex cursor-pointer flex-col sm:flex-row gap-4">
+                  <button
+                    class="bg-primary text-white cursor-pointer px-6 py-4 rounded-full font-semibold hover:bg-blue-700 transition-colors flex items-center justify-between space-x-3"
+                  >
+                    <span class="flex-1 text-center"
+                      >OENOD - Powering the Future of Business</span
+                    >
+                    <div
+                      class="w-10 h-10 bg-white rounded-full flex items-center justify-center"
+                    >
+                      <svg
+                        width="16"
+                        height="10"
+                        viewBox="0 0 16 10"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14.988 5.4119C15.2213 5.17849 15.2213 4.80006 14.988 4.56665L11.1843 0.762951C10.9508 0.529537 10.5724 0.529537 10.339 0.762951C10.1056 0.996364 10.1056 1.3748 10.339 1.60821L13.7201 4.98927L10.339 8.37034C10.1056 8.60375 10.1056 8.98218 10.339 9.21559C10.5724 9.44901 10.9508 9.44901 11.1843 9.21559L14.988 5.4119ZM0.220703 5.58697H14.5653V4.39158H0.220703V5.58697Z"
+                          fill="#07078E"
+                        />
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Right Content - About Image -->
+              <div class="relative">
+                <img
+                  src="assets/images/about.png"
+                  alt="About ENOD"
+                  class="w-full h-auto max-h-[500px] md:max-h-[600px] lg:max-h-[650px] object-contain rounded-2xl"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 - Same Content -->
+          <div class="slide-item">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+              <!-- Left Content -->
+              <div class="text-white space-y-8">
+                <h1
+                  class="text-4xl md:text-5xl text-primary lg:text-6xl font-bold leading-tight"
+                >
+                  OENOD – Next-Generation Business Software
+                </h1>
+
+                <p class="text-lg md:text-xl text-secondary leading-relaxed">
+                  OENOD is a comprehensive business management solution designed
+                  to streamline operations and enhance productivity. Our
+                  all-in-one platform offers advanced automation, real-time
+                  analytics, and seamless tools for company management, payroll,
+                  time and attendance tracking, employee scheduling, video
+                  conferencing, onboarding, and learning management.
+                </p>
+
+                <div class="flex cursor-pointer flex-col sm:flex-row gap-4">
+                  <button
+                    class="bg-primary text-white cursor-pointer px-6 py-4 rounded-full font-semibold hover:bg-blue-700 transition-colors flex items-center justify-between space-x-3"
+                  >
+                    <span class="flex-1 text-center"
+                      >OENOD - Powering the Future of Business</span
+                    >
+                    <div
+                      class="w-10 h-10 bg-white rounded-full flex items-center justify-center"
+                    >
+                      <svg
+                        width="16"
+                        height="10"
+                        viewBox="0 0 16 10"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M14.988 5.4119C15.2213 5.17849 15.2213 4.80006 14.988 4.56665L11.1843 0.762951C10.9508 0.529537 10.5724 0.529537 10.339 0.762951C10.1056 0.996364 10.1056 1.3748 10.339 1.60821L13.7201 4.98927L10.339 8.37034C10.1056 8.60375 10.1056 8.98218 10.339 9.21559C10.5724 9.44901 10.9508 9.44901 11.1843 9.21559L14.988 5.4119ZM0.220703 5.58697H14.5653V4.39158H0.220703V5.58697Z"
+                          fill="#07078E"
+                        />
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Right Content - About Image -->
+              <div class="relative">
+                <img
+                  src="assets/images/about.png"
+                  alt="About ENOD"
+                  class="w-full h-auto max-h-[500px] md:max-h-[600px] lg:max-h-[650px] object-contain rounded-2xl"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Slider Dots Navigation - Centered at bottom of right image -->
+        <div
+          class="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-30 lg:bottom-16 lg:left-3/4 lg:-translate-x-1/2"
+        >
+          <div class="flex space-x-2">
+            <button
+              class="hero-dot bg-gray-300 hover:bg-primary transition-all duration-300 shadow-sm rounded-full"
+              style="width: 40px; height: 6px"
+              data-slide="0"
+            ></button>
+            <button
+              class="hero-dot bg-gray-300 hover:bg-primary transition-all duration-300 shadow-sm rounded-full"
+              style="width: 40px; height: 6px"
+              data-slide="1"
+            ></button>
+            <button
+              class="hero-dot bg-gray-300 hover:bg-primary transition-all duration-300 shadow-sm rounded-full"
+              style="width: 40px; height: 6px"
+              data-slide="2"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <main>
+      <!-- Smart Payroll Section -->
+      <section class="relative py-16 lg:py-24 overflow-hidden">
+        <!-- Absolute positioned top-left image -->
+        <div class="absolute top-0 left-10 z-10">
+          <img
+            src="assets/images/payrol-top-left.png"
+            alt="Payroll decoration"
+            class="w-32 h-32 lg:w-full lg:h-48 object-contain opacity-80"
+          />
+        </div>
+
+        <div class="relative z-20 max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- Top Grid Section with Content -->
+          <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            <!-- Left Content -->
+            <div class="space-y-6">
+              <h2
+                class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-relaxed"
+              >
+                Smart Payroll<br />
+                And HR solutions
+              </h2>
+
+              <div>
+                <a
+                  href="#"
+                  class="text-secondary text-lg font-bold text-underline font-medium hover:text-blue-700 transition-colors"
+                >
+                  Subscribe
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Content - Text Content -->
+            <div class="space-y-6">
+              <p class="text-secondary leading-relaxed">
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                quae ab illo inventore veritatis et quasi architecto beatae
+                vitae dicta sunt explicabo...
+              </p>
+
+              <div>
+                <button
+                  class="bg-primary text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors"
+                >
+                  Read More
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Image Section -->
+          <div class="w-full">
+            <img
+              src="assets/images/smart-payrol.png"
+              alt="Smart Payroll Dashboard"
+              class="w-full h-auto rounded-2xl shadow-2xl"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Trusted Partner Section -->
+      <section
+        class="relative py-16 lg:py-18 overflow-hidden"
+        style="background-color: #fbfbfe"
+      >
+        <!-- Absolute positioned bottom-right image -->
+        <div class="absolute overflow-hidden bottom-0 right-0 z-10">
+          <img
+            src="assets/images/trusted-absolute.png"
+            alt="Trusted partner decoration"
+            class="w-full  object-contain"
+          />
+        </div>
+
+        <div class="relative z-20 max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Left Content - Dashboard/Analytics -->
+            <div class="relative">
+              <!-- Trusted Image -->
+              <div class="flex justify-center">
+                <img
+                  src="assets/images/trusted.png"
+                  alt="Trusted"
+                  class="max-w-full h-auto rounded-lg shadow-lg"
+                />
+              </div>
+            </div>
+
+            <!-- Right Content -->
+            <div class="space-y-6">
+              <div>
+                <button
+                  class="border-2 uppercase font-bold border-[rgb(167, 167, 215)] text-primary px-4 py-2 rounded-full text-lg"
+                >
+                  about us
+                </button>
+              </div>
+
+              <h2
+                class="text-3xl max-w-[600px] leading-relaxed md:text-4xl lg:text-5xl font-bold text-primary leading-tight"
+              >
+                Your Trusted Partner In Payroll & HR Innovation
+              </h2>
+
+              <p class="text-lg text-secondary leading-relaxed">
+                OENOD is built on the foundation of expertise &
+                technology-driven solutions. We empower businesses with
+                cutting-edge payroll & HR services designed to streamline
+                operations, enhance compliance, & drive success.
+              </p>
+
+              <div>
+                <button
+                  class="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors flex items-center space-x-2"
+                >
+                  <span>Know More</span>
+                  <svg
+                    width="16"
+                    height="10"
+                    viewBox="0 0 16 10"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.988 5.4119C15.2213 5.17849 15.2213 4.80006 14.988 4.56665L11.1843 0.762951C10.9508 0.529537 10.5724 0.529537 10.339 0.762951C10.1056 0.996364 10.1056 1.3748 10.339 1.60821L13.7201 4.98927L10.339 8.37034C10.1056 8.60375 10.1056 8.98218 10.339 9.21559C10.5724 9.44901 10.9508 9.44901 11.1843 9.21559L14.988 5.4119ZM0.220703 5.58697H14.5653V4.39158H0.220703V5.58697Z"
+                      fill="white"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- OENOD Grid Section -->
+      <section class="relative py-16 lg:py-24 overflow-hidden">
+        <div class="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- Top Grid Section with Heading and Text -->
+          <div class="grid lg:grid-cols-2 gap-12 items-center mb-6">
+            <!-- Left Content - Heading -->
+            <div class="space-y-6">
+              <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-relaxed">
+                OENOD Is Just The<br />
+                Beginning.
+              </h2>
+            </div>
+
+            <!-- Right Content - Text -->
+            <div class="space-y-6">
+              <p class="text-secondary leading-relaxed">
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                quae ab illo inventore veritatis et quasi architecto beatae vitae
+                dicta sunt explicabo...
+              </p>
+            </div>
+          </div>
+
+          <!-- HR Line Between Top and Bottom Grid -->
+          <div class="w-full mb-16">
+            <hr class="border-t-2 border-gray-200" />
+          </div>
+
+          <!-- Bottom Grid Section with Background Image -->
+          <div 
+            class="relative rounded-2xl overflow-hidden bg-cover bg-center bg-no-repeat p-1"
+            style="background-image: url('assets/images/enode-bg.png')"
+          >
+            <!-- Grid with Two Images -->
+            <div class="flex justify-between flex flex-wrap">
+              <!-- Left Image - enode-left.png -->
+              <div >
+                <img
+                  src="assets/images/enode-left.png"
+                  alt="OENOD Left Feature"
+                  class="w-full h-[500px]  object-contain"
+                />
+              </div>
+
+              <!-- Right Image - enode-right.png -->
+              <div >
+                <img
+                  src="assets/images/enode-right.png"
+                  alt="OENOD Right Feature"
+                  class="w-full h-[500px]  object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Comprehensive HR Section -->
+      <section 
+        class="relative py-20 lg:py-24 overflow-hidden"
+        style="background: linear-gradient(135deg, #4649FF 0%, #01018B 100%);"
+      >
+        <div class="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
+        
+
+          <!-- Center Content with Border -->
+          <div class="flex justify-center mb-8">
+            <div class="w-full flex justify-between items-center">
+              <!-- Heading Section -->
+              <div class="w-[30%] ">
+                <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+                  Comprehensive HR & Payroll Solutions Tailored for You
+                </h3>
+              </div>
+
+              <!-- Border Divider -->
+              <div class="w-[10%]">
+                <hr class="border-t-2 border-white/30" />
+              </div>
+
+              <!-- Text Section -->
+              <div >
+                <p class="text-lg text-white/90 leading-relaxed max-w-3xl mx-auto">
+                  With OENOD, you gain efficiency, accuracy, and peace of mind.                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cards Grid -->
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+            <!-- Card 1 -->
+            <div class="bg-white text-start rounded-xl p-8 hover:bg-[#494bd6] hover:text-white transition-all duration-300 group cursor-pointer">
+              <div >
+                <!-- Circle with Count -->
+                <div class="w-16 h-16 bg-primary group-hover:bg-white rounded-full flex items-center justify-center  mb-6">
+                  <span class="text-2xl font-bold text-white group-hover:text-primary">01</span>
+                </div>
+                
+                <!-- Heading -->
+                <h4 class="text-xl font-bold text-primary group-hover:text-white mb-4">
+                  Employee Management
+                </h4>
+                
+                <!-- Text -->
+                <p class="text-secondary group-hover:text-white/90 mb-6 leading-relaxed">
+                  Comprehensive employee database with advanced search, filtering, and management capabilities.
+                </p>
+                
+                <!-- Link -->
+                <a href="#" class="text-primary group-hover:text-white font-semibold hover:underline">
+                  Learn More →
+                </a>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white rounded-xl p-8 hover:bg-[#494bd6] hover:text-white transition-all duration-300 group cursor-pointer">
+              <div >
+                <!-- Circle with Count -->
+                <div class="w-16 h-16 bg-primary group-hover:bg-white rounded-full flex items-center justify-center  mb-6">
+                  <span class="text-2xl font-bold text-white group-hover:text-primary">02</span>
+                </div>
+                
+                <!-- Heading -->
+                <h4 class="text-xl font-bold text-primary group-hover:text-white mb-4">
+                  Payroll Processing
+                </h4>
+                
+                <!-- Text -->
+                <p class="text-secondary group-hover:text-white/90 mb-6 leading-relaxed">
+                  Automated payroll calculations with tax compliance and direct deposit capabilities.
+                </p>
+                
+                <!-- Link -->
+                <a href="#" class="text-primary group-hover:text-white font-semibold hover:underline">
+                  Learn More →
+                </a>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white rounded-xl p-8 hover:bg-[#494bd6] hover:text-white transition-all duration-300 group cursor-pointer">
+              <div >
+                <!-- Circle with Count -->
+                <div class="w-16 h-16 bg-primary group-hover:bg-white rounded-full flex items-center justify-center  mb-6">
+                  <span class="text-2xl font-bold text-white group-hover:text-primary">03</span>
+                </div>
+                
+                <!-- Heading -->
+                <h4 class="text-xl font-bold text-primary group-hover:text-white mb-4">
+                  Performance Tracking
+                </h4>
+                
+                <!-- Text -->
+                <p class="text-secondary group-hover:text-white/90 mb-6 leading-relaxed">
+                  Real-time performance analytics and goal tracking for enhanced productivity.
+                </p>
+                
+                <!-- Link -->
+                <a href="#" class="text-primary group-hover:text-white font-semibold hover:underline">
+                  Learn More →
+                </a>
+              </div>
+            </div>
+
+       
+          </div>
+        </div>
+
+        <!-- Position Absolute Rotated Div at Bottom -->
+          <div class="absolute bottom-4 left-1/2 transform z-10 -translate-x-1/2 rotate-12">
+          <div class="bg-white/10 backdrop-blur-sm border-2 border-primary rounded-lg px-8 py-4">
+            <span class="text-primary font-bold text-lg" style="filter: drop-shadow(0 0 100px #4649FF);">
+              COMPREHENSIVE HR SOLUTIONS
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flexible Plans Section -->
+      <section
+      style="background: linear-gradient(135deg, #4649FF 0%, #01018B 100%);"
+
+       class="relative py-20 lg:py-24 overflow-hidden bg-gray-50">
+        <div class="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- Section  -->
+          <div class="grid lg:grid-cols-2 gap-12 items-center mb-12">
+            <!-- Left Content - Heading -->
+            <div class="space-y-6">
+              <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
+                Flexible Plans , <br> Scalable Solutions              </h2>
+            </div>
+
+            <!-- Right Content - Text -->
+            <div class="space-y-6 ">
+              <p class="text-white leading-relaxed text-lg">
+                No matter the size of your business, we have a pricing plan tailored to your needs. Get the features you need at a cost that makes sense, without hidden fees or complexity.              </p>
+            </div>
+          </div>
+
+          <!-- HR Divider with Spacing -->
+          <div class="w-full bg-red my-16">
+            <hr class="border-t-2 border-white" />
+          </div>
+
+          <!-- Plans Slider -->
+          <div class="plans-slider">
+            <!-- Plan Card 1 -->
+            <div class="w-60 bg-gradient-to-b from-blue-600 to-purple-700 rounded-2xl p-6 text-white shadow-2xl hover:from-blue-500 hover:to-blue-600 hover:scale-105 transition-all duration-300 ease-in-out">
+             <div class="flex items-center gap-3 mb-6">
+                 <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M33.7794 1.48242C34.2477 3.6229 34.2477 5.29515 34.1808 6.9674C34.1808 13.8571 30.5018 18.0042 25.6189 21.0812V28.1046C25.6189 29.1749 24.8831 30.4458 23.8797 30.9809L17.2576 34.2585C17.0569 34.3254 16.7894 34.3923 16.5887 34.3923C15.6523 34.3923 14.9834 33.7234 14.9165 32.7869V25.8973L13.4449 27.3688C12.5753 28.2384 11.1706 28.1046 10.4348 27.3688L7.02345 23.9575C6.15388 23.0879 6.22077 21.6832 7.02345 20.9474L8.49503 19.4089H1.60536C0.6689 19.4089 0 18.74 0 17.8036C0 17.6029 0.06689 17.3353 0.13378 17.1347L3.41139 10.5126C3.94651 9.50922 5.21742 8.77343 6.28766 8.70654H13.3111C16.388 3.89046 20.5352 0.144621 27.4249 0.144621C29.0971 0.144621 30.7694 0.144621 32.9099 0.612851C33.3112 0.746631 33.6457 1.08108 33.7794 1.48242ZM25.6857 11.3821C27.1573 11.3821 28.3613 10.245 28.3613 8.70654C28.3613 7.23496 27.1573 6.03094 25.6857 6.03094C24.1473 6.03094 23.0102 7.23496 23.0102 8.70654C23.0102 10.245 24.1473 11.3821 25.6857 11.3821Z" fill="white"/>
+                 </svg>
+                 <h2 class="text-2xl font-bold">Payroll</h2>
+             </div>
+     
+              Price 
+             <div class="mb-6">
+                 <div class="flex items-baseline gap-2">
+                     <span class="text-4xl font-bold">$50</span>
+                     <span class="text-lg text-blue-200">USD</span>
+                 </div>
+             </div>
+     
+              Monthly/Yearly Toggle 
+             <div class="flex items-center gap-4 mb-8">
+                 <div class="flex items-center gap-2">
+                     <span class="text-white font-medium">Monthly</span>
+                     <div class="w-4 h-4 rounded-full bg-white"></div>
+                 </div>
+                 <div class="flex items-center gap-2">
+                     <span class="text-blue-200">Yearly</span>
+                     <div class="w-4 h-4 rounded-full border-2 border-blue-200"></div>
+                 </div>
+             </div>
+     
+              Features List 
+             <div class="space-y-4 mb-8">
+                 <div class="flex items-center gap-3">
+                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
+                     </svg>
+                     <span class="text-white">Email template ready to use</span>
+                 </div>
+                 
+                 <div class="flex items-center gap-3">
+                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
+                     </svg>
+                     <span class="text-white">Live chat (best-calling-video)</span>
+                 </div>
+                 
+                 <div class="flex items-center gap-3">
+                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
+                     </svg>
+                     <span class="text-white">Live support</span>
+                 </div>
+                 
+                 <div class="flex items-center gap-3">
+                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
+                     </svg>
+                     <span class="text-white">150 GB Storage</span>
+                 </div>
+             </div>
+     
+              Select Employees Section 
+             <div class="mb-6">
+                 <div class="bg-blue-800/30 rounded-lg p-4 border border-blue-400/30">
+                     <p class="text-white text-center font-medium">Select No. Employees</p>
+                 </div>
+             </div>
+     
+              Pricing Details 
+             <div class="flex justify-between items-center mb-6 text-sm">
+                 <span class="text-blue-200">Final Price: $1,250</span>
+                 <span class="text-blue-200">Free Trial: 15Days</span>
+             </div>
+     
+              Buy Now Button 
+             <button class="w-full bg-white text-blue-600 font-bold py-4 rounded-lg hover:bg-blue-50 transition-colors duration-200 text-lg">
+                 BUY NOW
+             </button>
+         </div>
+
+            <!-- Plan Card 2 -->
+            <div class="w-50 bg-gradient-to-b from-blue-600 to-purple-700 rounded-2xl p-6 text-white shadow-2xl hover:from-blue-500 hover:to-blue-600 hover:scale-105 transition-all duration-300 ease-in-out">
+             <div class="flex items-center gap-3 mb-6">
+                 <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M33.7794 1.48242C34.2477 3.6229 34.2477 5.29515 34.1808 6.9674C34.1808 13.8571 30.5018 18.0042 25.6189 21.0812V28.1046C25.6189 29.1749 24.8831 30.4458 23.8797 30.9809L17.2576 34.2585C17.0569 34.3254 16.7894 34.3923 16.5887 34.3923C15.6523 34.3923 14.9834 33.7234 14.9165 32.7869V25.8973L13.4449 27.3688C12.5753 28.2384 11.1706 28.1046 10.4348 27.3688L7.02345 23.9575C6.15388 23.0879 6.22077 21.6832 7.02345 20.9474L8.49503 19.4089H1.60536C0.6689 19.4089 0 18.74 0 17.8036C0 17.6029 0.06689 17.3353 0.13378 17.1347L3.41139 10.5126C3.94651 9.50922 5.21742 8.77343 6.28766 8.70654H13.3111C16.388 3.89046 20.5352 0.144621 27.4249 0.144621C29.0971 0.144621 30.7694 0.144621 32.9099 0.612851C33.3112 0.746631 33.6457 1.08108 33.7794 1.48242ZM25.6857 11.3821C27.1573 11.3821 28.3613 10.245 28.3613 8.70654C28.3613 7.23496 27.1573 6.03094 25.6857 6.03094C24.1473 6.03094 23.0102 7.23496 23.0102 8.70654C23.0102 10.245 24.1473 11.3821 25.6857 11.3821Z" fill="white"/>
+                 </svg>
+                 <h2 class="text-2xl font-bold">Payroll</h2>
+             </div>
+     
+              Price 
+             <div class="mb-6">
+                 <div class="flex items-baseline gap-2">
+                     <span class="text-4xl font-bold">$50</span>
+                     <span class="text-lg text-blue-200">USD</span>
+                 </div>
+             </div>
+     
+              Monthly/Yearly Toggle 
+             <div class="flex items-center gap-4 mb-8">
+                 <div class="flex items-center gap-2">
+                     <span class="text-white font-medium">Monthly</span>
+                     <div class="w-4 h-4 rounded-full bg-white"></div>
+                 </div>
+                 <div class="flex items-center gap-2">
+                     <span class="text-blue-200">Yearly</span>
+                     <div class="w-4 h-4 rounded-full border-2 border-blue-200"></div>
+                 </div>
+             </div>
+     
+              Features List 
+             <div class="space-y-4 mb-8">
+                 <div class="flex items-center gap-3">
+                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
+                     </svg>
+                     <span class="text-white">Email template ready to use</span>
+                 </div>
+                 
+                 <div class="flex items-center gap-3">
+                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
+                     </svg>
+                     <span class="text-white">Live chat (best-calling-video)</span>
+                 </div>
+                 
+                 <div class="flex items-center gap-3">
+                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
+                     </svg>
+                     <span class="text-white">Live support</span>
+                 </div>
+                 
+                 <div class="flex items-center gap-3">
+                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
+                     </svg>
+                     <span class="text-white">150 GB Storage</span>
+                 </div>
+             </div>
+     
+              Select Employees Section 
+             <div class="mb-6">
+                 <div class="bg-blue-800/30 rounded-lg p-4 border border-blue-400/30">
+                     <p class="text-white text-center font-medium">Select No. Employees</p>
+                 </div>
+             </div>
+     
+              Pricing Details 
+             <div class="flex justify-between items-center mb-6 text-sm">
+                 <span class="text-blue-200">Final Price: $1,250</span>
+                 <span class="text-blue-200">Free Trial: 15Days</span>
+             </div>
+     
+              Buy Now Button 
+             <button class="w-full bg-white text-blue-600 font-bold py-4 rounded-lg hover:bg-blue-50 transition-colors duration-200 text-lg">
+                 BUY NOW
+             </button>
+         </div>
+
+            <!-- Plan Card 3 -->
+            <div class="w-60 bg-gradient-to-b from-blue-600 to-purple-700 rounded-2xl p-6 text-white shadow-2xl hover:from-blue-500 hover:to-blue-600 hover:scale-105 transition-all duration-300 ease-in-out">
+             <div class="flex items-center gap-3 mb-6">
+                 <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M33.7794 1.48242C34.2477 3.6229 34.2477 5.29515 34.1808 6.9674C34.1808 13.8571 30.5018 18.0042 25.6189 21.0812V28.1046C25.6189 29.1749 24.8831 30.4458 23.8797 30.9809L17.2576 34.2585C17.0569 34.3254 16.7894 34.3923 16.5887 34.3923C15.6523 34.3923 14.9834 33.7234 14.9165 32.7869V25.8973L13.4449 27.3688C12.5753 28.2384 11.1706 28.1046 10.4348 27.3688L7.02345 23.9575C6.15388 23.0879 6.22077 21.6832 7.02345 20.9474L8.49503 19.4089H1.60536C0.6689 19.4089 0 18.74 0 17.8036C0 17.6029 0.06689 17.3353 0.13378 17.1347L3.41139 10.5126C3.94651 9.50922 5.21742 8.77343 6.28766 8.70654H13.3111C16.388 3.89046 20.5352 0.144621 27.4249 0.144621C29.0971 0.144621 30.7694 0.144621 32.9099 0.612851C33.3112 0.746631 33.6457 1.08108 33.7794 1.48242ZM25.6857 11.3821C27.1573 11.3821 28.3613 10.245 28.3613 8.70654C28.3613 7.23496 27.1573 6.03094 25.6857 6.03094C24.1473 6.03094 23.0102 7.23496 23.0102 8.70654C23.0102 10.245 24.1473 11.3821 25.6857 11.3821Z" fill="white"/>
+                 </svg>
+                 <h2 class="text-2xl font-bold">Payroll</h2>
+             </div>
+     
+              Price 
+             <div class="mb-6">
+                 <div class="flex items-baseline gap-2">
+                     <span class="text-4xl font-bold">$50</span>
+                     <span class="text-lg text-blue-200">USD</span>
+                 </div>
+             </div>
+     
+              Monthly/Yearly Toggle 
+             <div class="flex items-center gap-4 mb-8">
+                 <div class="flex items-center gap-2">
+                     <span class="text-white font-medium">Monthly</span>
+                     <div class="w-4 h-4 rounded-full bg-white"></div>
+                 </div>
+                 <div class="flex items-center gap-2">
+                     <span class="text-blue-200">Yearly</span>
+                     <div class="w-4 h-4 rounded-full border-2 border-blue-200"></div>
+                 </div>
+             </div>
+     
+              Features List 
+             <div class="space-y-4 mb-8">
+                 <div class="flex items-center gap-3">
+                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
+                     </svg>
+                     <span class="text-white">Email template ready to use</span>
+                 </div>
+                 
+                 <div class="flex items-center gap-3">
+                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
+                     </svg>
+                     <span class="text-white">Live chat (best-calling-video)</span>
+                 </div>
+                 
+                 <div class="flex items-center gap-3">
+                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
+                     </svg>
+                     <span class="text-white">Live support</span>
+                 </div>
+                 
+                 <div class="flex items-center gap-3">
+                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
+                     </svg>
+                     <span class="text-white">150 GB Storage</span>
+                 </div>
+             </div>
+     
+              Select Employees Section 
+             <div class="mb-6">
+                 <div class="bg-blue-800/30 rounded-lg p-4 border border-blue-400/30">
+                     <p class="text-white text-center font-medium">Select No. Employees</p>
+                 </div>
+             </div>
+     
+              Pricing Details 
+             <div class="flex justify-between items-center mb-6 text-sm">
+                 <span class="text-blue-200">Final Price: $1,250</span>
+                 <span class="text-blue-200">Free Trial: 15Days</span>
+             </div>
+     
+              Buy Now Button 
+             <button class="w-full bg-white text-blue-600 font-bold py-4 rounded-lg hover:bg-blue-50 transition-colors duration-200 text-lg">
+                 BUY NOW
+             </button>
+         </div>
+
+            <!-- Plan Card 4 -->
+            <div class="w-60 bg-gradient-to-b from-blue-600 to-purple-700 rounded-2xl p-6 text-white shadow-2xl hover:from-blue-500 hover:to-blue-600 hover:scale-105 transition-all duration-300 ease-in-out">
+             <div class="flex items-center gap-3 mb-6">
+                 <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M33.7794 1.48242C34.2477 3.6229 34.2477 5.29515 34.1808 6.9674C34.1808 13.8571 30.5018 18.0042 25.6189 21.0812V28.1046C25.6189 29.1749 24.8831 30.4458 23.8797 30.9809L17.2576 34.2585C17.0569 34.3254 16.7894 34.3923 16.5887 34.3923C15.6523 34.3923 14.9834 33.7234 14.9165 32.7869V25.8973L13.4449 27.3688C12.5753 28.2384 11.1706 28.1046 10.4348 27.3688L7.02345 23.9575C6.15388 23.0879 6.22077 21.6832 7.02345 20.9474L8.49503 19.4089H1.60536C0.6689 19.4089 0 18.74 0 17.8036C0 17.6029 0.06689 17.3353 0.13378 17.1347L3.41139 10.5126C3.94651 9.50922 5.21742 8.77343 6.28766 8.70654H13.3111C16.388 3.89046 20.5352 0.144621 27.4249 0.144621C29.0971 0.144621 30.7694 0.144621 32.9099 0.612851C33.3112 0.746631 33.6457 1.08108 33.7794 1.48242ZM25.6857 11.3821C27.1573 11.3821 28.3613 10.245 28.3613 8.70654C28.3613 7.23496 27.1573 6.03094 25.6857 6.03094C24.1473 6.03094 23.0102 7.23496 23.0102 8.70654C23.0102 10.245 24.1473 11.3821 25.6857 11.3821Z" fill="white"/>
+                 </svg>
+                 <h2 class="text-2xl font-bold">Payroll</h2>
+             </div>
+     
+              Price 
+             <div class="mb-6">
+                 <div class="flex items-baseline gap-2">
+                     <span class="text-4xl font-bold">$50</span>
+                     <span class="text-lg text-blue-200">USD</span>
+                 </div>
+             </div>
+     
+              Monthly/Yearly Toggle 
+             <div class="flex items-center gap-4 mb-8">
+                 <div class="flex items-center gap-2">
+                     <span class="text-white font-medium">Monthly</span>
+                     <div class="w-4 h-4 rounded-full bg-white"></div>
+                 </div>
+                 <div class="flex items-center gap-2">
+                     <span class="text-blue-200">Yearly</span>
+                     <div class="w-4 h-4 rounded-full border-2 border-blue-200"></div>
+                 </div>
+             </div>
+     
+              Features List 
+             <div class="space-y-4 mb-8">
+                 <div class="flex items-center gap-3">
+                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
+                     </svg>
+                     <span class="text-white">Email template ready to use</span>
+                 </div>
+                 
+                 <div class="flex items-center gap-3">
+                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
+                     </svg>
+                     <span class="text-white">Live chat (best-calling-video)</span>
+                 </div>
+                 
+                 <div class="flex items-center gap-3">
+                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
+                     </svg>
+                     <span class="text-white">Live support</span>
+                 </div>
+                 
+                 <div class="flex items-center gap-3">
+                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
+                     </svg>
+                     <span class="text-white">150 GB Storage</span>
+                 </div>
+             </div>
+     
+              Select Employees Section 
+             <div class="mb-6">
+                 <div class="bg-blue-800/30 rounded-lg p-4 border border-blue-400/30">
+                     <p class="text-white text-center font-medium">Select No. Employees</p>
+                 </div>
+             </div>
+     
+              Pricing Details 
+             <div class="flex justify-between items-center mb-6 text-sm">
+                 <span class="text-blue-200">Final Price: $1,250</span>
+                 <span class="text-blue-200">Free Trial: 15Days</span>
+             </div>
+     
+              Buy Now Button 
+             <button class="w-full bg-white text-blue-600 font-bold py-4 rounded-lg hover:bg-blue-50 transition-colors duration-200 text-lg">
+                 BUY NOW
+             </button>
+         </div>
+          </div>
+        </div>
+      </section>
+     
+      
+    </main>
+
+    <!-- jQuery CDN (required for Slick) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Slick Slider JS -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- Sliders JavaScript -->
+    <script src="assets/js/sliders.js"></script>
+
+    <!-- Local script -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
