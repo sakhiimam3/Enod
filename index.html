@@ -39,343 +39,415 @@
     />
 
     <script src="assets/js/theme.js"></script>
-    
+
     <!-- Custom Styles for Plans Slider -->
-    <style>
-      .plans-dots {
-        text-align: center;
-        margin-top: 2rem;
-      }
-      
-      .plans-dots li {
-        display: inline-block;
-        margin: 0 8px;
-      }
-      
-      .plans-dots li button {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background-color: #d1d5db;
-        border: none;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-indent: -9999px;
-      }
-      
-      .plans-dots li.slick-active button {
-        background-color: #4649FF;
-        transform: scale(1.2);
-      }
-      
-      .plans-dots li button:hover {
-        background-color: #4649FF;
-      }
-    </style>
   </head>
   <body class="font-body min-h-screen">
     <!-- Hero Section with  -->
     <section
-      class="relative overflow-hidden h-screen flex flex-col bg-cover bg-center bg-no-repeat"
-      style="background-image: url('assets/images/hero-bg.png')"
+      style="
+        background-image: url('./assets/images/hero-bg.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+      "
+      class="relative overflow-hidden min-h-screen flex flex-col hero-section"
     >
-      <!--  inside Hero -->
-        <div class="max-w-[1480px] mx-auto px-4 sm:px-6 pt-8 lg:px-8">
-          <div class="bg-white rounded-full shadow-sm px-6 py-6">
-            <div class="flex justify-between items-center">
-              <!-- Logo -->
-              <div class="flex-shrink-0">
-                <div class="flex items-center">
-                  <img
-                    src="assets/images/logo.png"
-                    alt="ENOD Logo"
-                    class="h-8 w-auto"
-                  />
-                </div>
-              </div>
-
-              <!-- Navigation Menu -->
-              <nav class="hidden md:flex space-x-6">
-                <a
-                  href="#"
-                  class="text-secondary hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
-                  >Home</a
-                >
-                <a
-                  href="#"
-                  class="text-secondary hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
-                  >Price</a
-                >
-                <a
-                  href="#"
-                  class="text-secondary hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
-                  >About</a
-                >
-                <a
-                  href="#"
-                  class="text-secondary hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
-                  >Learning</a
-                >
-                <a
-                  href="#"
-                  class="text-secondary hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
-                  >Services</a
-                >
-                <a
-                  href="#"
-                  class="text-secondary hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
-                  >Career</a
-                >
-                <a
-                  href="#"
-                  class="text-secondary hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
-                  >Help Center</a
-                >
-                <a
-                  href="#"
-                  class="text-secondary hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
-                  >Contact</a
-                >
-              </nav>
-
-              <!-- Auth Buttons -->
-              <div class="flex items-center space-x-4">
-                <button
-                  class="text-secondary underline hover:text-dc px-3 py-2 text-sm font-bold"
-                >
-                  Log In
-                </button>
-                <button
-                  class="bg-primary text-white px-6 py-2 rounded-full text-sm"
-                >
-                  Join Now
-                </button>
-              </div>
-
-              <!-- Mobile menu button -->
-              <div class="md:hidden">
-                <button class="text-gray-600 hover:text-gray-900 p-2">
-                  <svg
-                    class="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M4 6h16M4 12h16M4 18h16"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </>
-
-      <!-- Hero Content -->
+      <!-- Header Navigation -->
       <div
-        class="relative z-10 max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8 pt-1 pb-2 flex-1 flex items-center"
+        class="relative z-20 max-w-[1480px] mx-auto w-full px-4 sm:px-6 lg:px-8 pt-6"
       >
-        <!-- Hero Slider -->
-        <div class="hero-slider w-full">
-          <!-- Slide 1 - Original Content -->
-          <div class="slide-item">
-            <div class="grid lg:grid-cols-2 gap-12 justify-center items-center">
-              <!-- Left Content -->
-              <div class="text-white space-y-8">
-                <h1
-                  class="text-4xl md:text-5xl text-primary lg:text-6xl font-bold leading-tight"
-                >
-                  OENOD – Next-Generation Business Software
-                </h1>
-
-                <p class="text-lg md:text-xl text-secondary leading-relaxed">
-                  OENOD is a comprehensive business management solution designed
-                  to streamline operations and enhance productivity. Our
-                  all-in-one platform offers advanced automation, real-time
-                  analytics, and seamless tools for company management, payroll,
-                  time and attendance tracking, employee scheduling, video
-                  conferencing, onboarding, and learning management.
-                </p>
-
-                <div class="flex cursor-pointer flex-col sm:flex-row gap-4">
-                  <button
-                    class="bg-primary text-white cursor-pointer px-6 py-4 rounded-full font-semibold hover:bg-blue-700 transition-colors flex items-center justify-between space-x-3"
-                  >
-                    <span class="flex-1 text-center"
-                      >OENOD - Powering the Future of Business</span
-                    >
-                    <div
-                      class="w-10 h-10 bg-white rounded-full flex items-center justify-center"
-                    >
-                      <svg
-                        width="16"
-                        height="10"
-                        viewBox="0 0 16 10"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M14.988 5.4119C15.2213 5.17849 15.2213 4.80006 14.988 4.56665L11.1843 0.762951C10.9508 0.529537 10.5724 0.529537 10.339 0.762951C10.1056 0.996364 10.1056 1.3748 10.339 1.60821L13.7201 4.98927L10.339 8.37034C10.1056 8.60375 10.1056 8.98218 10.339 9.21559C10.5724 9.44901 10.9508 9.44901 11.1843 9.21559L14.988 5.4119ZM0.220703 5.58697H14.5653V4.39158H0.220703V5.58697Z"
-                          fill="#07078E"
-                        />
-                      </svg>
-                    </div>
-                  </button>
-                </div>
-              </div>
-
-              <!-- Right Content - About Image -->
-              <div class="">
+        <div class="bg-white rounded-full shadow-sm px-6 py-4">
+          <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+              <div class="flex items-center">
                 <img
-                  src="assets/images/about.png"
-                  alt="About ENOD"
-                  class="w-full h-auto max-h-[500px] md:max-h-[600px] lg:max-h-[650px] object-contain rounded-2xl"
+                  src="assets/images/logo.png"
+                  alt="logo"
+                  class="w-auto h-8"
                 />
               </div>
             </div>
-          </div>
 
-          <!-- Slide 2 - Same Content -->
-          <div class="slide-item">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-              <!-- Left Content -->
-              <div class="text-white space-y-8">
-                <h1
-                  class="text-4xl md:text-5xl text-primary lg:text-6xl font-bold leading-tight"
-                >
-                  OENOD – Next-Generation Business Software
-                </h1>
+            <!-- Desktop Navigation Menu -->
+            <nav class="hidden lg:flex space-x-1">
+              <a
+                href="#"
+                class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                >Home</a
+              >
+              <a
+                href="#"
+                class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                >Price</a
+              >
+              <a
+                href="#"
+                class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                >About</a
+              >
+              <a
+                href="#"
+                class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                >Learning</a
+              >
+              <a
+                href="#"
+                class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                >Services</a
+              >
+              <a
+                href="#"
+                class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                >Career</a
+              >
+              <a
+                href="#"
+                class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                >Help Center</a
+              >
+              <a
+                href="#"
+                class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                >Contact</a
+              >
+            </nav>
 
-                <p class="text-lg md:text-xl text-secondary leading-relaxed">
-                  OENOD is a comprehensive business management solution designed
-                  to streamline operations and enhance productivity. Our
-                  all-in-one platform offers advanced automation, real-time
-                  analytics, and seamless tools for company management, payroll,
-                  time and attendance tracking, employee scheduling, video
-                  conferencing, onboarding, and learning management.
-                </p>
-
-                <div class="flex cursor-pointer flex-col sm:flex-row gap-4">
-                  <button
-                    class="bg-primary text-white cursor-pointer px-6 py-4 rounded-full font-semibold hover:bg-blue-700 transition-colors flex items-center justify-between space-x-3"
-                  >
-                    <span class="flex-1 text-center"
-                      >OENOD - Powering the Future of Business</span
-                    >
-                    <div
-                      class="w-10 h-10 bg-white rounded-full flex items-center justify-center"
-                    >
-                      <svg
-                        width="16"
-                        height="10"
-                        viewBox="0 0 16 10"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M14.988 5.4119C15.2213 5.17849 15.2213 4.80006 14.988 4.56665L11.1843 0.762951C10.9508 0.529537 10.5724 0.529537 10.339 0.762951C10.1056 0.996364 10.1056 1.3748 10.339 1.60821L13.7201 4.98927L10.339 8.37034C10.1056 8.60375 10.1056 8.98218 10.339 9.21559C10.5724 9.44901 10.9508 9.44901 11.1843 9.21559L14.988 5.4119ZM0.220703 5.58697H14.5653V4.39158H0.220703V5.58697Z"
-                          fill="#07078E"
-                        />
-                      </svg>
-                    </div>
-                  </button>
-                </div>
-              </div>
-
-              <!-- Right Content - About Image -->
-              <div class="relative">
-                <img
-                  src="assets/images/about.png"
-                  alt="About ENOD"
-                  class="w-full h-auto max-h-[500px] md:max-h-[600px] lg:max-h-[650px] object-contain rounded-2xl"
-                />
-              </div>
+            <!-- Desktop Auth Buttons -->
+            <div class="hidden lg:flex items-center space-x-4">
+              <button
+                class="text-badge underline hover:text-primary px-3 py-2 text-sm font-bold"
+              >
+                Log In
+              </button>
+              <button
+                class="bg-primary text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition-colors"
+              >
+                Join Now
+              </button>
             </div>
-          </div>
 
-          <!-- Slide 3 - Same Content -->
-          <div class="slide-item">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-              <!-- Left Content -->
-              <div class="text-white space-y-8">
-                <h1
-                  class="text-4xl md:text-5xl text-primary lg:text-6xl font-bold leading-tight"
+            <!-- Mobile menu button -->
+            <div class="lg:hidden">
+              <button
+                id="mobile-menu-button"
+                class="text-gray-600 hover:text-gray-900 p-2"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  OENOD – Next-Generation Business Software
-                </h1>
-
-                <p class="text-lg md:text-xl text-secondary leading-relaxed">
-                  OENOD is a comprehensive business management solution designed
-                  to streamline operations and enhance productivity. Our
-                  all-in-one platform offers advanced automation, real-time
-                  analytics, and seamless tools for company management, payroll,
-                  time and attendance tracking, employee scheduling, video
-                  conferencing, onboarding, and learning management.
-                </p>
-
-                <div class="flex cursor-pointer flex-col sm:flex-row gap-4">
-                  <button
-                    class="bg-primary text-white cursor-pointer px-6 py-4 rounded-full font-semibold hover:bg-blue-700 transition-colors flex items-center justify-between space-x-3"
-                  >
-                    <span class="flex-1 text-center"
-                      >OENOD - Powering the Future of Business</span
-                    >
-                    <div
-                      class="w-10 h-10 bg-white rounded-full flex items-center justify-center"
-                    >
-                      <svg
-                        width="16"
-                        height="10"
-                        viewBox="0 0 16 10"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M14.988 5.4119C15.2213 5.17849 15.2213 4.80006 14.988 4.56665L11.1843 0.762951C10.9508 0.529537 10.5724 0.529537 10.339 0.762951C10.1056 0.996364 10.1056 1.3748 10.339 1.60821L13.7201 4.98927L10.339 8.37034C10.1056 8.60375 10.1056 8.98218 10.339 9.21559C10.5724 9.44901 10.9508 9.44901 11.1843 9.21559L14.988 5.4119ZM0.220703 5.58697H14.5653V4.39158H0.220703V5.58697Z"
-                          fill="#07078E"
-                        />
-                      </svg>
-                    </div>
-                  </button>
-                </div>
-              </div>
-
-              <!-- Right Content - About Image -->
-              <div class="relative">
-                <img
-                  src="assets/images/about.png"
-                  alt="About ENOD"
-                  class="w-full h-auto max-h-[500px] md:max-h-[600px] lg:max-h-[650px] object-contain rounded-2xl"
-                />
-              </div>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </button>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Hero Slider Dots Navigation - Centered at bottom of right image -->
+      <!-- Mobile Sidebar -->
+      <div id="mobile-sidebar" class="fixed inset-0 z-50 lg:hidden hidden">
         <div
-          class="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-30 lg:bottom-16 lg:left-3/4 lg:-translate-x-1/2"
+          class="fixed inset-0 bg-black bg-opacity-50"
+          id="sidebar-overlay"
+        ></div>
+        <div
+          class="fixed right-0 top-0 h-full w-80 bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out"
+          id="sidebar-content"
         >
-          <div class="flex space-x-2">
-            <button
-              class="hero-dot bg-gray-300 hover:bg-primary transition-all duration-300 shadow-sm rounded-full"
-              style="width: 40px; height: 6px"
+          <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+              <div class="text-2xl font-bold text-primary">OENOD</div>
+              <button
+                id="close-sidebar"
+                class="text-gray-600 hover:text-gray-900"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <nav class="space-y-4 mb-8">
+              <a
+                href="#"
+                class="block text-badge hover:text-primary py-2 text-lg font-medium"
+                >Home</a
+              >
+              <a
+                href="#"
+                class="block text-badge hover:text-primary py-2 text-lg font-medium"
+                >Price</a
+              >
+              <a
+                href="#"
+                class="block text-badge hover:text-primary py-2 text-lg font-medium"
+                >About</a
+              >
+              <a
+                href="#"
+                class="block text-badge hover:text-primary py-2 text-lg font-medium"
+                >Learning</a
+              >
+              <a
+                href="#"
+                class="block text-badge hover:text-primary py-2 text-lg font-medium"
+                >Services</a
+              >
+              <a
+                href="#"
+                class="block text-badge hover:text-primary py-2 text-lg font-medium"
+                >Career</a
+              >
+              <a
+                href="#"
+                class="block text-badge hover:text-primary py-2 text-lg font-medium"
+                >Help Center</a
+              >
+              <a
+                href="#"
+                class="block text-badge hover:text-primary py-2 text-lg font-medium"
+                >Contact</a
+              >
+            </nav>
+
+            <div class="space-y-4">
+              <button
+                class="w-full text-left text-badge underline hover:text-primary py-2 text-lg font-bold"
+              >
+                Log In
+              </button>
+              <button
+                class="w-full bg-primary text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors"
+              >
+                Join Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Content Slider -->
+      <div
+        class="relative z-10 max-w-[1480px] mx-auto w-full px-4 sm:px-6 lg:px-8 flex-1 flex items-center py-12"
+      >
+        <div class="w-full">
+          <!-- Hero Content Slider -->
+          <div class="hero-slider">
+            <!-- Slide 1 -->
+            <div class="slide">
+              <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="text-primary space-y-8">
+                  <h1
+                    class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-primary"
+                  >
+                    OENOD – Next-Generation Business Software
+                  </h1>
+
+                  <p class="text-lg md:text-xl leading-relaxed text-secondary">
+                    OENOD is a comprehensive business management solution
+                    designed to streamline operations and enhance productivity.
+                    Our all-in-one platform offers advanced automation,
+                    real-time analytics, and seamless tools for company
+                    management, payroll, time and attendance tracking, employee
+                    scheduling, video conferencing, onboarding, and learning
+                    management.
+                  </p>
+
+                  <div class="flex flex-col sm:flex-row gap-4">
+                    <button
+                      class="bg-primary text-white px-6 py-4 rounded-full font-semibold hover:bg-blue-700 transition-colors flex items-center justify-between space-x-3 group"
+                    >
+                      <span class="flex-1 text-center"
+                        >OENOD - Powering the Future of Business</span
+                      >
+                      <div
+                        class="w-10 h-10 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
+                      >
+                        <svg
+                          width="16"
+                          height="10"
+                          viewBox="0 0 16 10"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M14.988 5.4119C15.2213 5.17849 15.2213 4.80006 14.988 4.56665L11.1843 0.762951C10.9508 0.529537 10.5724 0.529537 10.339 0.762951C10.1056 0.996364 10.1056 1.3748 10.339 1.60821L13.7201 4.98927L10.339 8.37034C10.1056 8.60375 10.1056 8.98218 10.339 9.21559C10.5724 9.44901 10.9508 9.44901 11.1843 9.21559L14.988 5.4119ZM0.220703 5.58697H14.5653V4.39158H0.220703V5.58697Z"
+                            fill="#07078E"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Right Content - Business Image -->
+                <div class="relative">
+                  <div class="h-[600px] w-auto">
+                    <img
+                      src="assets/images/about.png"
+                      alt="OENOD Business Software"
+                      class="w-full h-full object-contain rounded-2xl"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="text-primary space-y-8">
+                  <h1
+                    class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-primary"
+                  >
+                    OENOD – Next-Generation Business Software
+                  </h1>
+
+                  <p class="text-lg md:text-xl leading-relaxed text-secondary">
+                    OENOD is a comprehensive business management solution
+                    designed to streamline operations and enhance productivity.
+                    Our all-in-one platform offers advanced automation,
+                    real-time analytics, and seamless tools for company
+                    management, payroll, time and attendance tracking, employee
+                    scheduling, video conferencing, onboarding, and learning
+                    management.
+                  </p>
+
+                  <div class="flex flex-col sm:flex-row gap-4">
+                    <button
+                      class="bg-primary text-white px-6 py-4 rounded-full font-semibold hover:bg-blue-700 transition-colors flex items-center justify-between space-x-3 group"
+                    >
+                      <span class="flex-1 text-center"
+                        >OENOD - Powering the Future of Business</span
+                      >
+                      <div
+                        class="w-10 h-10 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
+                      >
+                        <svg
+                          width="16"
+                          height="10"
+                          viewBox="0 0 16 10"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M14.988 5.4119C15.2213 5.17849 15.2213 4.80006 14.988 4.56665L11.1843 0.762951C10.9508 0.529537 10.5724 0.529537 10.339 0.762951C10.1056 0.996364 10.1056 1.3748 10.339 1.60821L13.7201 4.98927L10.339 8.37034C10.1056 8.60375 10.1056 8.98218 10.339 9.21559C10.5724 9.44901 10.9508 9.44901 11.1843 9.21559L14.988 5.4119ZM0.220703 5.58697H14.5653V4.39158H0.220703V5.58697Z"
+                            fill="#07078E"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Right Content - Business Image -->
+                <div class="relative">
+                  <div class="h-[600px] w-auto">
+                    <img
+                      src="assets/images/about.png"
+                      alt="OENOD Business Software"
+                      class="w-full h-full object-contain rounded-2xl"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="text-primary space-y-8">
+                  <h1
+                    class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-primary"
+                  >
+                    OENOD – Next-Generation Business Software
+                  </h1>
+
+                  <p class="text-lg md:text-xl leading-relaxed text-secondary">
+                    OENOD is a comprehensive business management solution
+                    designed to streamline operations and enhance productivity.
+                    Our all-in-one platform offers advanced automation,
+                    real-time analytics, and seamless tools for company
+                    management, payroll, time and attendance tracking, employee
+                    scheduling, video conferencing, onboarding, and learning
+                    management.
+                  </p>
+
+                  <div class="flex flex-col sm:flex-row gap-4">
+                    <button
+                      class="bg-primary text-white px-6 py-4 rounded-full font-semibold hover:bg-blue-700 transition-colors flex items-center justify-between space-x-3 group"
+                    >
+                      <span class="flex-1 text-center"
+                        >OENOD - Powering the Future of Business</span
+                      >
+                      <div
+                        class="w-10 h-10 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
+                      >
+                        <svg
+                          width="16"
+                          height="10"
+                          viewBox="0 0 16 10"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M14.988 5.4119C15.2213 5.17849 15.2213 4.80006 14.988 4.56665L11.1843 0.762951C10.9508 0.529537 10.5724 0.529537 10.339 0.762951C10.1056 0.996364 10.1056 1.3748 10.339 1.60821L13.7201 4.98927L10.339 8.37034C10.1056 8.60375 10.1056 8.98218 10.339 9.21559C10.5724 9.44901 10.9508 9.44901 11.1843 9.21559L14.988 5.4119ZM0.220703 5.58697H14.5653V4.39158H0.220703V5.58697Z"
+                            fill="#07078E"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Right Content - Business Image -->
+                <div class="relative">
+                  <div class="h-[600px] w-auto">
+                    <img
+                      src="assets/images/about.png"
+                      alt="OENOD Business Software"
+                      class="w-full h-full object-contain rounded-2xl"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Navigation Dots -->
+          <div class="flex justify-end px-60 mt-8 space-x-2">
+            <div
+              class="hero-dot w-10 h-1 bg-gray-400 rounded-full cursor-pointer transition-colors duration-300"
               data-slide="0"
-            ></button>
-            <button
-              class="hero-dot bg-gray-300 hover:bg-primary transition-all duration-300 shadow-sm rounded-full"
-              style="width: 40px; height: 6px"
+              style="width: 50px"
+            ></div>
+            <div
+              class="hero-dot w-10 h-1 bg-gray-400 rounded-full cursor-pointer transition-colors duration-300"
               data-slide="1"
-            ></button>
-            <button
-              class="hero-dot bg-gray-300 hover:bg-primary transition-all duration-300 shadow-sm rounded-full"
-              style="width: 40px; height: 6px"
+              style="width: 50px"
+            ></div>
+            <div
+              class="hero-dot w-10 h-1 bg-gray-400 rounded-full cursor-pointer transition-colors duration-300"
               data-slide="2"
-            ></button>
+              style="width: 50px"
+            ></div>
           </div>
         </div>
       </div>
@@ -454,7 +526,7 @@
           <img
             src="assets/images/trusted-absolute.png"
             alt="Trusted partner decoration"
-            class="w-full  object-contain"
+            class="w-full object-contain"
           />
         </div>
 
@@ -526,7 +598,9 @@
           <div class="grid lg:grid-cols-2 gap-12 items-center mb-6">
             <!-- Left Content - Heading -->
             <div class="space-y-6">
-              <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-relaxed">
+              <h2
+                class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-relaxed"
+              >
                 OENOD Is Just The<br />
                 Beginning.
               </h2>
@@ -537,8 +611,8 @@
               <p class="text-secondary leading-relaxed">
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                 accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore veritatis et quasi architecto beatae vitae
-                dicta sunt explicabo...
+                quae ab illo inventore veritatis et quasi architecto beatae
+                vitae dicta sunt explicabo...
               </p>
             </div>
           </div>
@@ -549,27 +623,27 @@
           </div>
 
           <!-- Bottom Grid Section with Background Image -->
-          <div 
+          <div
             class="relative rounded-2xl overflow-hidden bg-cover bg-center bg-no-repeat p-1"
             style="background-image: url('assets/images/enode-bg.png')"
           >
             <!-- Grid with Two Images -->
             <div class="flex justify-between flex flex-wrap">
               <!-- Left Image - enode-left.png -->
-              <div >
+              <div>
                 <img
                   src="assets/images/enode-left.png"
                   alt="OENOD Left Feature"
-                  class="w-full h-[500px]  object-contain"
+                  class="w-full h-[500px] object-contain"
                 />
               </div>
 
               <!-- Right Image - enode-right.png -->
-              <div >
+              <div>
                 <img
                   src="assets/images/enode-right.png"
                   alt="OENOD Right Feature"
-                  class="w-full h-[500px]  object-contain"
+                  class="w-full h-[500px] object-contain"
                 />
               </div>
             </div>
@@ -578,32 +652,33 @@
       </section>
 
       <!-- Comprehensive HR Section -->
-      <section 
-        class="relative py-20 lg:py-24 overflow-hidden"
-        style="background: linear-gradient(135deg, #4649FF 0%, #01018B 100%);"
+      <section
+        class="relative py-20 lg:py-24 overflow-hidden z-10"
+        style="background: linear-gradient(135deg, #4649ff 0%, #01018b 100%)"
       >
         <div class="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
-        
-
           <!-- Center Content with Border -->
           <div class="flex justify-center mb-8">
-            <div class="w-full flex justify-between items-center">
+            <div class="w-full flex flex-col gap-4 lg:gap-0 lg:flex-row justify-between items-center">
               <!-- Heading Section -->
-              <div class="w-[30%] ">
-                <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              <div class=" w-full lg:w-[30%]">
+                <h3 class="text-3xl md:text-3xl font-bold text-white mb-4">
                   Comprehensive HR & Payroll Solutions Tailored for You
                 </h3>
               </div>
 
               <!-- Border Divider -->
-              <div class="w-[10%]">
+              <div class="hidden lg:block w-[10%]">
                 <hr class="border-t-2 border-white/30" />
               </div>
 
               <!-- Text Section -->
-              <div >
-                <p class="text-lg text-white/90 leading-relaxed max-w-3xl mx-auto">
-                  With OENOD, you gain efficiency, accuracy, and peace of mind.                </p>
+              <div>
+                <p
+                  class="text-lg text-white/90 leading-relaxed max-w-3xl mx-auto"
+                >
+                  With OENOD, you gain efficiency, accuracy, and peace of mind.
+                </p>
               </div>
             </div>
           </div>
@@ -611,443 +686,1025 @@
           <!-- Cards Grid -->
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
             <!-- Card 1 -->
-            <div class="bg-white text-start rounded-xl p-8 hover:bg-[#494bd6] hover:text-white transition-all duration-300 group cursor-pointer">
-              <div >
+            <div
+              class="bg-white text-start rounded-xl p-8 hover:bg-[#494bd6] hover:text-white transition-all duration-300 group cursor-pointer"
+            >
+              <div>
                 <!-- Circle with Count -->
-                <div class="w-16 h-16 bg-primary group-hover:bg-white rounded-full flex items-center justify-center  mb-6">
-                  <span class="text-2xl font-bold text-white group-hover:text-primary">01</span>
+                <div
+                  class="w-16 h-16 bg-primary group-hover:bg-white rounded-full flex items-center justify-center mb-6"
+                >
+                  <span
+                    class="text-2xl font-bold text-white group-hover:text-primary"
+                    >01</span
+                  >
                 </div>
-                
+
                 <!-- Heading -->
-                <h4 class="text-xl font-bold text-primary group-hover:text-white mb-4">
+                <h4
+                  class="text-xl font-bold text-primary group-hover:text-white mb-4"
+                >
                   Employee Management
                 </h4>
-                
+
                 <!-- Text -->
-                <p class="text-secondary group-hover:text-white/90 mb-6 leading-relaxed">
-                  Comprehensive employee database with advanced search, filtering, and management capabilities.
+                <p
+                  class="text-secondary group-hover:text-white/90 mb-6 leading-relaxed"
+                >
+                  Comprehensive employee database with advanced search,
+                  filtering, and management capabilities.
                 </p>
-                
+
                 <!-- Link -->
-                <a href="#" class="text-primary group-hover:text-white font-semibold hover:underline">
+                <a
+                  href="#"
+                  class="text-primary group-hover:text-white font-semibold hover:underline"
+                >
                   Learn More →
                 </a>
               </div>
             </div>
 
             <!-- Card 2 -->
-            <div class="bg-white rounded-xl p-8 hover:bg-[#494bd6] hover:text-white transition-all duration-300 group cursor-pointer">
-              <div >
+            <div
+              class="bg-white rounded-xl p-8 hover:bg-[#494bd6] hover:text-white transition-all duration-300 group cursor-pointer"
+            >
+              <div>
                 <!-- Circle with Count -->
-                <div class="w-16 h-16 bg-primary group-hover:bg-white rounded-full flex items-center justify-center  mb-6">
-                  <span class="text-2xl font-bold text-white group-hover:text-primary">02</span>
+                <div
+                  class="w-16 h-16 bg-primary group-hover:bg-white rounded-full flex items-center justify-center mb-6"
+                >
+                  <span
+                    class="text-2xl font-bold text-white group-hover:text-primary"
+                    >02</span
+                  >
                 </div>
-                
+
                 <!-- Heading -->
-                <h4 class="text-xl font-bold text-primary group-hover:text-white mb-4">
+                <h4
+                  class="text-xl font-bold text-primary group-hover:text-white mb-4"
+                >
                   Payroll Processing
                 </h4>
-                
+
                 <!-- Text -->
-                <p class="text-secondary group-hover:text-white/90 mb-6 leading-relaxed">
-                  Automated payroll calculations with tax compliance and direct deposit capabilities.
+                <p
+                  class="text-secondary group-hover:text-white/90 mb-6 leading-relaxed"
+                >
+                  Automated payroll calculations with tax compliance and direct
+                  deposit capabilities.
                 </p>
-                
+
                 <!-- Link -->
-                <a href="#" class="text-primary group-hover:text-white font-semibold hover:underline">
+                <a
+                  href="#"
+                  class="text-primary group-hover:text-white font-semibold hover:underline"
+                >
                   Learn More →
                 </a>
               </div>
             </div>
 
             <!-- Card 3 -->
-            <div class="bg-white rounded-xl p-8 hover:bg-[#494bd6] hover:text-white transition-all duration-300 group cursor-pointer">
-              <div >
+            <div
+              class="bg-white rounded-xl p-8 hover:bg-[#494bd6] hover:text-white transition-all duration-300 group cursor-pointer"
+            >
+              <div>
                 <!-- Circle with Count -->
-                <div class="w-16 h-16 bg-primary group-hover:bg-white rounded-full flex items-center justify-center  mb-6">
-                  <span class="text-2xl font-bold text-white group-hover:text-primary">03</span>
+                <div
+                  class="w-16 h-16 bg-primary group-hover:bg-white rounded-full flex items-center justify-center mb-6"
+                >
+                  <span
+                    class="text-2xl font-bold text-white group-hover:text-primary"
+                    >03</span
+                  >
                 </div>
-                
+
                 <!-- Heading -->
-                <h4 class="text-xl font-bold text-primary group-hover:text-white mb-4">
+                <h4
+                  class="text-xl font-bold text-primary group-hover:text-white mb-4"
+                >
                   Performance Tracking
                 </h4>
-                
+
                 <!-- Text -->
-                <p class="text-secondary group-hover:text-white/90 mb-6 leading-relaxed">
-                  Real-time performance analytics and goal tracking for enhanced productivity.
+                <p
+                  class="text-secondary group-hover:text-white/90 mb-6 leading-relaxed"
+                >
+                  Real-time performance analytics and goal tracking for enhanced
+                  productivity.
                 </p>
-                
+
                 <!-- Link -->
-                <a href="#" class="text-primary group-hover:text-white font-semibold hover:underline">
+                <a
+                  href="#"
+                  class="text-primary group-hover:text-white font-semibold hover:underline"
+                >
                   Learn More →
                 </a>
               </div>
             </div>
+          </div>
+        </div>
 
+        <!-- Ribbon Banner -->
+        <div class="py-16">
+          <div class="w-full transform -rotate-6 mx-auto">
+            <div
+              class="bg-white w-full border-2 border-white rounded-lg px-8 py-4 relative overflow-hidden"
+              style="box-shadow: 0 10px 30px rgba(70, 73, 255, 0.3)"
+            >
+              <ul
+                class="text-primary flex gap-6 items-center justify-center font-bold text-xs sm:text-sm lg:text-base"
+              >
+                <li class="flex items-center gap-2">
+                  <img src="assets/images/start.png" alt="" class="w-4 h-4" />
+                  Payroll Management
+                </li>
+                <li class="flex items-center gap-2">
+                  <img src="assets/images/start.png" alt="" class="w-4 h-4" />
+                  Employee Records
+                </li>
+                <li class="flex items-center gap-2">
+                  <img src="assets/images/start.png" alt="" class="w-4 h-4" />
+                  Time Tracking
+                </li>
+                <li class="hidden lg:flex items-center gap-2">
+                  <img src="assets/images/start.png" alt="" class="w-4 h-4" />
+                  Performance Reviews
+                </li>
+                <li class="hidden lg:flex items-center gap-2">
+                  <img src="assets/images/start.png" alt="" class="w-4 h-4" />
+                  Benefits Administration
+                </li>
+                <li class="hidden lg:flex items-center gap-2">
+                  <img src="assets/images/start.png" alt="" class="w-4 h-4" />
+                  130GB Storage
+                </li>
+                <li class="hidden lg:flex items-center gap-2">
+                  <img src="assets/images/start.png" alt="" class="w-4 h-4" />
+                  Unlimited Users
+                </li>
+                <li class="hidden lg:flex items-center gap-2">
+                  <img src="assets/images/start.png" alt="" class="w-4 h-4" />
+                  Unlimited Projects
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plans Section -->
+        <div class="py-20 lg:py-24">
+          <div class="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section  -->
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-12">
+              <!-- Left Content - Heading -->
+              <div class="space-y-6">
+                <h2
+                  class="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
+                >
+                  Flexible Plans , <br />
+                  Scalable Solutions
+                </h2>
+              </div>
+
+              <!-- Right Content - Text -->
+              <div class="space-y-6">
+                <p class="text-white leading-relaxed text-lg">
+                  No matter the size of your business, we have a pricing plan
+                  tailored to your needs. Get the features you need at a cost
+                  that makes sense, without hidden fees or complexity.
+                </p>
+              </div>
+            </div>
+
+            <!-- HR Divider with Spacing -->
+            <div class="w-full bg-red my-16">
+              <hr class="border-t-2 border-white" />
+            </div>
+
+            <!-- Plans Slider -->
+            <div class="plans-slider">
+              <!-- Plan Card 1 -->
+              <div
+                class="bg-[#2a2c8f] p-8 text-white shadow-xl hover:bg-blue-500 duration-300 h-[750px] flex flex-col w-[300px]"
+              >
+                <div class="flex-grow">
+                  <div class="flex items-center gap-3 mb-[100px]">
+                    <svg
+                      width="35"
+                      height="35"
+                      viewBox="0 0 35 35"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M33.7794 1.48242C34.2477 3.6229 34.2477 5.29515 34.1808 6.9674C34.1808 13.8571 30.5018 18.0042 25.6189 21.0812V28.1046C25.6189 29.1749 24.8831 30.4458 23.8797 30.9809L17.2576 34.2585C17.0569 34.3254 16.7894 34.3923 16.5887 34.3923C15.6523 34.3923 14.9834 33.7234 14.9165 32.7869V25.8973L13.4449 27.3688C12.5753 28.2384 11.1706 28.1046 10.4348 27.3688L7.02345 23.9575C6.15388 23.0879 6.22077 21.6832 7.02345 20.9474L8.49503 19.4089H1.60536C0.6689 19.4089 0 18.74 0 17.8036C0 17.6029 0.06689 17.3353 0.13378 17.1347L3.41139 10.5126C3.94651 9.50922 5.21742 8.77343 6.28766 8.70654H13.3111C16.388 3.89046 20.5352 0.144621 27.4249 0.144621C29.0971 0.144621 30.7694 0.144621 32.9099 0.612851C33.3112 0.746631 33.6457 1.08108 33.7794 1.48242ZM25.6857 11.3821C27.1573 11.3821 28.3613 10.245 28.3613 8.70654C28.3613 7.23496 27.1573 6.03094 25.6857 6.03094C24.1473 6.03094 23.0102 7.23496 23.0102 8.70654C23.0102 10.245 24.1473 11.3821 25.6857 11.3821Z"
+                        fill="white"
+                      />
+                    </svg>
+                    <h2 class="text-2xl font-bold">Payroll</h2>
+                  </div>
+
+                  <hr class="border-t-1 my-2 border-white" />
+                  <div class="flex items-center justify-between gap-4 my-6">
+                    <div class="flex items-center gap-2">
+                      <span class="text-white font-medium">Monthly</span>
+                      <input
+                        type="radio"
+                        class="w-4 h-4 rounded-full bg-white"
+                        name="plan"
+                        id="monthly"
+                      />
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="text-blue-200">Yearly</span>
+                      <input
+                        type="radio"
+                        class="w-4 h-4 rounded-full bg-white"
+                        name="plan"
+                        id="yearly"
+                      />
+                    </div>
+                  </div>
+                  <hr class="border-b-1 mt-1 border-white" />
+
+                  <div class="space-y-6 my-12 max-h-[150px] overflow-y-auto">
+                    <div class="flex items-center gap-3">
+                      <svg
+                        width="23"
+                        height="23"
+                        viewBox="0 0 23 23"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z"
+                          fill="white"
+                        />
+                      </svg>
+                      <span class="text-white"
+                        >Email template ready to use</span
+                      >
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <svg
+                        width="23"
+                        height="23"
+                        viewBox="0 0 23 23"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z"
+                          fill="white"
+                        />
+                      </svg>
+                      <span class="text-white">
+                        Live chat (text-calling-video)</span
+                      >
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <svg
+                        width="23"
+                        height="23"
+                        viewBox="0 0 23 23"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z"
+                          fill="white"
+                        />
+                      </svg>
+                      <span class="text-white"> Live support</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <svg
+                        width="23"
+                        height="23"
+                        viewBox="0 0 23 23"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z"
+                          fill="white"
+                        />
+                      </svg>
+                      <span class="text-white"> 150 GB Storage</span>
+                    </div>
+                  </div>
+                  <form action="">
+                    <label for=""> Select No. Employees</label>
+                    <div class="my-4">
+                      <div
+                        class="bg-blue-800/30 rounded-lg p-4 border border-blue-400/30"
+                      >
+                        <input
+                          type="text"
+                          class="w-full bg-transparent border-none outline-none"
+                          placeholder="Enter No. Employees"
+                        />
+                      </div>
+                    </div>
+                  </form>
+
+                  <div class="flex justify-between items-center mb-6 text-sm">
+                    <span class="text-white">Final Price: $1,250</span>
+                    <span class="text-white">Free Trial: 15Days</span>
+                  </div>
+                </div>
+                <hr class="border-b-1 my-4 border-white" />
+                <button
+                  class="w-full bg-white text-primary font-bold py-4 rounded-lg hover:bg-blue-50 transition-colors duration-200 text-lg mt-auto"
+                >
+                  BUY NOW
+                </button>
+              </div>
+              <div
+                class="bg-[#4244F8] relative p-8 text-white shadow-xl hover:bg-blue-500 duration-300 overflow-hidden h-[750px] flex flex-col w-[300px]"
+              >
+                <!-- Popular Ribbon -->
+                <div class="popular-ribbon">POPULAR</div>
+                <div class="flex-grow">
+                  <div class="flex items-center gap-3 mb-12">
+                    <svg
+                      width="35"
+                      height="35"
+                      viewBox="0 0 35 35"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M33.7794 1.48242C34.2477 3.6229 34.2477 5.29515 34.1808 6.9674C34.1808 13.8571 30.5018 18.0042 25.6189 21.0812V28.1046C25.6189 29.1749 24.8831 30.4458 23.8797 30.9809L17.2576 34.2585C17.0569 34.3254 16.7894 34.3923 16.5887 34.3923C15.6523 34.3923 14.9834 33.7234 14.9165 32.7869V25.8973L13.4449 27.3688C12.5753 28.2384 11.1706 28.1046 10.4348 27.3688L7.02345 23.9575C6.15388 23.0879 6.22077 21.6832 7.02345 20.9474L8.49503 19.4089H1.60536C0.6689 19.4089 0 18.74 0 17.8036C0 17.6029 0.06689 17.3353 0.13378 17.1347L3.41139 10.5126C3.94651 9.50922 5.21742 8.77343 6.28766 8.70654H13.3111C16.388 3.89046 20.5352 0.144621 27.4249 0.144621C29.0971 0.144621 30.7694 0.144621 32.9099 0.612851C33.3112 0.746631 33.6457 1.08108 33.7794 1.48242ZM25.6857 11.3821C27.1573 11.3821 28.3613 10.245 28.3613 8.70654C28.3613 7.23496 27.1573 6.03094 25.6857 6.03094C24.1473 6.03094 23.0102 7.23496 23.0102 8.70654C23.0102 10.245 24.1473 11.3821 25.6857 11.3821Z"
+                        fill="white"
+                      />
+                    </svg>
+                    <h2 class="text-2xl font-bold capitalize">basic plan</h2>
+                  </div>
+                  <div class="flex items-center gap-3 mb-2">
+                    <div class="flex items-baseline gap-2">
+                      <span class="text-white text-4xl font-bold">$10</span>
+                      <span
+                        class="text-white text-lg font-medium line-through opacity-75"
+                        >$20</span
+                      >
+                    </div>
+                  </div>
+
+                  <hr class="border-t-1 my-2 border-white" />
+                  <div class="flex items-center justify-between p-4 mb-2">
+                    <div class="flex items-center gap-2">
+                      <span class="text-white">Monthly</span>
+                      <input
+                        type="radio"
+                        class="w-4 h-4 rounded-full bg-white"
+                        name="plan"
+                        id="monthly"
+                      />
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="text-white">Yearly</span>
+                      <input
+                        type="radio"
+                        class="w-4 h-4 rounded-full bg-white"
+                        name="plan"
+                        id="yearly"
+                      />
+                    </div>
+                  </div>
+                  <hr class="border-b-1 mt-1 border-white" />
+
+                  <div class="space-y-6 my-12 max-h-[150px] overflow-y-auto">
+                    <div class="flex items-center gap-3">
+                      <svg
+                        width="23"
+                        height="23"
+                        viewBox="0 0 23 23"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z"
+                          fill="white"
+                        />
+                      </svg>
+                      <span class="text-white"
+                        >Email template ready to use</span
+                      >
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <svg
+                        width="23"
+                        height="23"
+                        viewBox="0 0 23 23"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z"
+                          fill="white"
+                        />
+                      </svg>
+                      <span class="text-white">
+                        Live chat (text-calling-video)</span
+                      >
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <svg
+                        width="23"
+                        height="23"
+                        viewBox="0 0 23 23"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z"
+                          fill="white"
+                        />
+                      </svg>
+                      <span class="text-white"> Live support</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <svg
+                        width="23"
+                        height="23"
+                        viewBox="0 0 23 23"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z"
+                          fill="white"
+                        />
+                      </svg>
+                      <span class="text-white"> 150 GB Storage</span>
+                    </div>
+                  </div>
+                  <form action="">
+                    <label for=""> Select No. Employees</label>
+                    <div class="my-4">
+                      <div
+                        class="bg-blue-800/30 rounded-lg p-4 border border-blue-400/30"
+                      >
+                        <input
+                          type="text"
+                          class="w-full bg-transparent border-none outline-none"
+                          placeholder="Enter No. Employees"
+                        />
+                      </div>
+                    </div>
+                  </form>
+
+                  <div class="flex justify-between items-center mb-6 text-sm">
+                    <span class="text-white">Final Price: $1,250</span>
+                    <span class="text-white">Free Trial: 15Days</span>
+                  </div>
+                  <hr class="border-b-1 my-4 border-white" />
+                </div>
+                <button
+                  class="w-full bg-white text-primary font-bold py-4 rounded-lg hover:bg-blue-50 transition-colors duration-200 text-lg mt-auto"
+                >
+                  BUY NOW
+                </button>
+              </div>
+              <div
+                class="bg-[#2a2c8f] p-8 text-white shadow-xl hover:bg-blue-500 duration-300 h-[750px] flex flex-col w-[300px]"
+              >
+                <div class="flex-grow">
+                  <div class="flex items-center gap-3 mb-12">
+                    <svg
+                      width="35"
+                      height="35"
+                      viewBox="0 0 35 35"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M33.7794 1.48242C34.2477 3.6229 34.2477 5.29515 34.1808 6.9674C34.1808 13.8571 30.5018 18.0042 25.6189 21.0812V28.1046C25.6189 29.1749 24.8831 30.4458 23.8797 30.9809L17.2576 34.2585C17.0569 34.3254 16.7894 34.3923 16.5887 34.3923C15.6523 34.3923 14.9834 33.7234 14.9165 32.7869V25.8973L13.4449 27.3688C12.5753 28.2384 11.1706 28.1046 10.4348 27.3688L7.02345 23.9575C6.15388 23.0879 6.22077 21.6832 7.02345 20.9474L8.49503 19.4089H1.60536C0.6689 19.4089 0 18.74 0 17.8036C0 17.6029 0.06689 17.3353 0.13378 17.1347L3.41139 10.5126C3.94651 9.50922 5.21742 8.77343 6.28766 8.70654H13.3111C16.388 3.89046 20.5352 0.144621 27.4249 0.144621C29.0971 0.144621 30.7694 0.144621 32.9099 0.612851C33.3112 0.746631 33.6457 1.08108 33.7794 1.48242ZM25.6857 11.3821C27.1573 11.3821 28.3613 10.245 28.3613 8.70654C28.3613 7.23496 27.1573 6.03094 25.6857 6.03094C24.1473 6.03094 23.0102 7.23496 23.0102 8.70654C23.0102 10.245 24.1473 11.3821 25.6857 11.3821Z"
+                        fill="white"
+                      />
+                    </svg>
+                    <h2 class="text-2xl font-bold capitalize">Standard Plan</h2>
+                  </div>
+                  <div class="flex items-center gap-3 mb-2">
+                    <div class="flex items-baseline gap-2">
+                      <span class="text-white text-4xl font-bold">$30</span>
+                      <span
+                        class="text-white text-lg font-medium line-through opacity-75"
+                        >$40</span
+                      >
+                    </div>
+                  </div>
+
+                  <hr class="border-t-1 my-2 border-white" />
+                  <div class="flex items-center justify-between p-4 mb-2">
+                    <div class="flex items-center gap-2">
+                      <span class="text-white">Monthly</span>
+                      <input
+                        type="radio"
+                        class="w-4 h-4 rounded-full bg-white"
+                        name="plan"
+                        id="monthly"
+                      />
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="text-white">Yearly</span>
+                      <input
+                        type="radio"
+                        class="w-4 h-4 rounded-full bg-white"
+                        name="plan"
+                        id="yearly"
+                      />
+                    </div>
+                  </div>
+                  <hr class="border-b-1 mt-1 border-white" />
+
+                  <div class="space-y-6 my-12 max-h-[150px] overflow-y-auto">
+                    <div class="flex items-center gap-3">
+                      <svg
+                        width="23"
+                        height="23"
+                        viewBox="0 0 23 23"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z"
+                          fill="white"
+                        />
+                      </svg>
+                      <span class="text-white"
+                        >Email template ready to use</span
+                      >
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <svg
+                        width="23"
+                        height="23"
+                        viewBox="0 0 23 23"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z"
+                          fill="white"
+                        />
+                      </svg>
+                      <span class="text-white">
+                        Live chat (text-calling-video)</span
+                      >
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <svg
+                        width="23"
+                        height="23"
+                        viewBox="0 0 23 23"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z"
+                          fill="white"
+                        />
+                      </svg>
+                      <span class="text-white"> Live support</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <svg
+                        width="23"
+                        height="23"
+                        viewBox="0 0 23 23"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z"
+                          fill="white"
+                        />
+                      </svg>
+                      <span class="text-white"> 150 GB Storage</span>
+                    </div>
+                  </div>
+                  <form action="">
+                    <label for=""> Select No. Employees</label>
+                    <div class="my-4">
+                      <div
+                        class="bg-blue-800/30 rounded-lg p-4 border border-blue-400/30"
+                      >
+                        <input
+                          type="text"
+                          class="w-full bg-transparent border-none outline-none"
+                          placeholder="Enter No. Employees"
+                        />
+                      </div>
+                    </div>
+                  </form>
+
+                  <div class="flex justify-between items-center mb-6 text-sm">
+                    <span class="text-white">Final Price: $1,250</span>
+                    <span class="text-white">Free Trial: 15Days</span>
+                  </div>
+                  <hr class="border-b-1 my-4 border-white" />
+                </div>
+                <button
+                  class="w-full bg-white text-primary font-bold py-4 rounded-lg hover:bg-blue-50 transition-colors duration-200 text-lg mt-auto"
+                >
+                  BUY NOW
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>      
+      <!-- Testimonials Section -->
+      <section class="relative py-16 lg:py-24 overflow-hidden" style="background-color: #fbfbfe">
+        <div class="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- Center Badge -->
+          <div class="flex justify-center mb-8">
+            <div>
+              <button class="border-2 uppercase font-bold border-[rgb(167, 167, 215)] text-primary px-4 py-2 rounded-full text-sm">
+                testimonials
+              </button>
+            </div>
+          </div>
+
+          <!-- Heading Section -->
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight">
+              What Our Clients Say
+            </h2>
+          </div>
+
+          <!-- Testimonial Background with Client Photos -->
+          <div class="relative flex justify-center mb-16">
+            <div class="relative">
+              <!-- Main Background Image -->
+              <img 
+                src="assets/images/testimonial.png" 
+                alt="Testimonial background" 
+                class="w-full  h-auto object-contain opacity-90"
+              />
+              
+              <!-- Client Photos Positioned Around the Circle -->
+              <!-- Top Left -->
+              <div class="absolute top-[15%] left-[15%] w-16 h-16 rounded-full border-4 border-white shadow-lg overflow-hidden bg-gray-200 client-photo-circle">
+                <div class="w-full h-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-bold text-sm">MJ</div>
+              </div>
+              
+              <!-- Top Center -->
+              <div class="absolute top-[8%] left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full border-4 border-white shadow-lg overflow-hidden bg-gray-200 client-photo-circle" style="animation-delay: 0.5s;">
+                <div class="w-full h-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-white font-bold text-sm">JD</div>
+              </div>
+              
+              <!-- Top Right -->
+              <div class="absolute top-[15%] right-[15%] w-16 h-16 rounded-full border-4 border-white shadow-lg overflow-hidden bg-gray-200 client-photo-circle" style="animation-delay: 1s;">
+                <div class="w-full h-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-white font-bold text-sm">SW</div>
+              </div>
+              
+              <!-- Bottom Left -->
+              <div class="absolute bottom-[15%] left-[20%] w-16 h-16 rounded-full border-4 border-white shadow-lg overflow-hidden bg-gray-200 client-photo-circle" style="animation-delay: 1.5s;">
+                <div class="w-full h-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white font-bold text-sm">AB</div>
+              </div>
+              
+              <!-- Bottom Right -->
+              <div class="absolute bottom-[15%] right-[20%] w-16 h-16 rounded-full border-4 border-white shadow-lg overflow-hidden bg-gray-200 client-photo-circle" style="animation-delay: 2s;">
+                <div class="w-full h-full bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center text-white font-bold text-sm">CD</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial Slider Container -->
+          <div class="relative max-w-4xl mx-auto">
+            <!-- Testimonial Slider -->
+            <div class="testimonial-slider">
+              <!-- Testimonial Slide 1 -->
+              <div class="testimonial-slide">
+                <div class="text-center max-w-2xl mx-auto">
+                  <!-- Quote Icon -->
+                  <div class="flex justify-center mb-6">
+                    <img src="assets/images/coma.png" alt="Quote" class="w-20 h-20 object-contain" />
+                  </div>
+                  
+                  <!-- Testimonial Text -->
+                  <p class="text-lg md:text-xl text-secondary leading-relaxed mb-8">
+                    "Whether you enjoy city breaks or extended holidays to the sun, you can always improve your travel experience by choosing a small, charming hotel, where the atmosphere is welcoming and friendly too."
+                  </p>
+                  
+                  <!-- Star Rating -->
+                  <div class="flex justify-center items-center gap-1 mb-6">
+                    <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M8.9376 1.36603C9.35112 0.539 10.5227 0.57346 10.9018 1.36603L13.1761 5.94914L18.2072 6.67278C19.1031 6.81062 19.4477 7.91332 18.793 8.56805L15.1748 12.1174L16.0363 17.114C16.1741 18.0099 15.2092 18.6991 14.4167 18.2856L9.93693 15.9079L5.42274 18.2856C4.63017 18.6991 3.66531 18.0099 3.80314 17.114L4.66463 12.1174L1.04639 8.56805C0.391657 7.91332 0.736251 6.81062 1.6322 6.67278L6.69774 5.94914L8.9376 1.36603Z" fill="#E8BE52"/>
+  </svg>
+  
+                        
+                        <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M8.9376 1.36603C9.35112 0.539 10.5227 0.57346 10.9018 1.36603L13.1761 5.94914L18.2072 6.67278C19.1031 6.81062 19.4477 7.91332 18.793 8.56805L15.1748 12.1174L16.0363 17.114C16.1741 18.0099 15.2092 18.6991 14.4167 18.2856L9.93693 15.9079L5.42274 18.2856C4.63017 18.6991 3.66531 18.0099 3.80314 17.114L4.66463 12.1174L1.04639 8.56805C0.391657 7.91332 0.736251 6.81062 1.6322 6.67278L6.69774 5.94914L8.9376 1.36603Z" fill="#E8BE52"/>
+                          </svg>
+                          
+  
+                          <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.9376 1.36603C9.35112 0.539 10.5227 0.57346 10.9018 1.36603L13.1761 5.94914L18.2072 6.67278C19.1031 6.81062 19.4477 7.91332 18.793 8.56805L15.1748 12.1174L16.0363 17.114C16.1741 18.0099 15.2092 18.6991 14.4167 18.2856L9.93693 15.9079L5.42274 18.2856C4.63017 18.6991 3.66531 18.0099 3.80314 17.114L4.66463 12.1174L1.04639 8.56805C0.391657 7.91332 0.736251 6.81062 1.6322 6.67278L6.69774 5.94914L8.9376 1.36603Z" fill="#E8BE52"/>
+                            </svg>
+                            
+  
+                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M8.9376 1.36603C9.35112 0.539 10.5227 0.57346 10.9018 1.36603L13.1761 5.94914L18.2072 6.67278C19.1031 6.81062 19.4477 7.91332 18.793 8.56805L15.1748 12.1174L16.0363 17.114C16.1741 18.0099 15.2092 18.6991 14.4167 18.2856L9.93693 15.9079L5.42274 18.2856C4.63017 18.6991 3.66531 18.0099 3.80314 17.114L4.66463 12.1174L1.04639 8.56805C0.391657 7.91332 0.736251 6.81062 1.6322 6.67278L6.69774 5.94914L8.9376 1.36603Z" fill="#E8BE52"/>
+                              </svg>
+                              
+                              
+                        
+                    </div>
+                  
+                  <!-- Client Name with Navigation Buttons -->
+                  <div class="flex items-center justify-center gap-8">
+                    <!-- Previous Button - Hidden on sm/md -->
+                    <button class="testimonial-prev hidden lg:flex bg-primary hover:bg-blue-700 text-white rounded-full w-12 h-12 items-center justify-center shadow-lg transition-all duration-300 hover:scale-110">
+                      <i class="fas fa-chevron-left text-lg"></i>
+                    </button>
+                    
+                    <!-- Client Name -->
+                    <div class="text-center">
+                      <h4 class="text-xl font-bold text-primary mb-1">MAGGIE JENNINGS</h4>
+                      <p class="text-secondary text-sm">Happy Client</p>
+                    </div>
+                    
+                    <!-- Next Button - Hidden on sm/md -->
+                    <button class="testimonial-next hidden lg:flex bg-primary hover:bg-blue-700 text-white rounded-full w-12 h-12 items-center justify-center shadow-lg transition-all duration-300 hover:scale-110">
+                      <i class="fas fa-chevron-right text-lg"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Testimonial Slide 2 -->
+              <div class="testimonial-slide">
+                <div class="text-center max-w-2xl mx-auto">
+                  <!-- Quote Icon -->
+                  <div class="flex justify-center mb-6">
+                    <img src="assets/images/coma.png" alt="Quote" class="w-20 h-20 object-contain" />
+                  </div>
+                  
+                  <!-- Testimonial Text -->
+                  <p class="text-lg md:text-xl text-secondary leading-relaxed mb-8">
+                    "OENOD has completely transformed our HR processes. The payroll system is incredibly efficient and the customer support is outstanding. Highly recommend to any business looking to streamline operations."
+                  </p>
+                  
+                  <!-- Star Rating -->
+                  <div class="flex justify-center items-center gap-1 mb-6">
+                    <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M8.9376 1.36603C9.35112 0.539 10.5227 0.57346 10.9018 1.36603L13.1761 5.94914L18.2072 6.67278C19.1031 6.81062 19.4477 7.91332 18.793 8.56805L15.1748 12.1174L16.0363 17.114C16.1741 18.0099 15.2092 18.6991 14.4167 18.2856L9.93693 15.9079L5.42274 18.2856C4.63017 18.6991 3.66531 18.0099 3.80314 17.114L4.66463 12.1174L1.04639 8.56805C0.391657 7.91332 0.736251 6.81062 1.6322 6.67278L6.69774 5.94914L8.9376 1.36603Z" fill="#E8BE52"/>
+  </svg>
+  
+                        
+                        <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M8.9376 1.36603C9.35112 0.539 10.5227 0.57346 10.9018 1.36603L13.1761 5.94914L18.2072 6.67278C19.1031 6.81062 19.4477 7.91332 18.793 8.56805L15.1748 12.1174L16.0363 17.114C16.1741 18.0099 15.2092 18.6991 14.4167 18.2856L9.93693 15.9079L5.42274 18.2856C4.63017 18.6991 3.66531 18.0099 3.80314 17.114L4.66463 12.1174L1.04639 8.56805C0.391657 7.91332 0.736251 6.81062 1.6322 6.67278L6.69774 5.94914L8.9376 1.36603Z" fill="#E8BE52"/>
+                          </svg>
+                          
+  
+                          <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.9376 1.36603C9.35112 0.539 10.5227 0.57346 10.9018 1.36603L13.1761 5.94914L18.2072 6.67278C19.1031 6.81062 19.4477 7.91332 18.793 8.56805L15.1748 12.1174L16.0363 17.114C16.1741 18.0099 15.2092 18.6991 14.4167 18.2856L9.93693 15.9079L5.42274 18.2856C4.63017 18.6991 3.66531 18.0099 3.80314 17.114L4.66463 12.1174L1.04639 8.56805C0.391657 7.91332 0.736251 6.81062 1.6322 6.67278L6.69774 5.94914L8.9376 1.36603Z" fill="#E8BE52"/>
+                            </svg>
+                            
+  
+                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M8.9376 1.36603C9.35112 0.539 10.5227 0.57346 10.9018 1.36603L13.1761 5.94914L18.2072 6.67278C19.1031 6.81062 19.4477 7.91332 18.793 8.56805L15.1748 12.1174L16.0363 17.114C16.1741 18.0099 15.2092 18.6991 14.4167 18.2856L9.93693 15.9079L5.42274 18.2856C4.63017 18.6991 3.66531 18.0099 3.80314 17.114L4.66463 12.1174L1.04639 8.56805C0.391657 7.91332 0.736251 6.81062 1.6322 6.67278L6.69774 5.94914L8.9376 1.36603Z" fill="#E8BE52"/>
+                              </svg>
+                              
+                              
+                        
+                    </div>
+                  
+                  <!-- Client Name with Navigation Buttons -->
+                  <div class="flex items-center justify-center gap-8">
+                    <!-- Previous Button - Hidden on sm/md -->
+                    <button class="testimonial-prev hidden lg:flex bg-primary hover:bg-blue-700 text-white rounded-full w-12 h-12 items-center justify-center shadow-lg transition-all duration-300 hover:scale-110">
+                      <i class="fas fa-chevron-left text-lg"></i>
+                    </button>
+                    
+                    <!-- Client Name -->
+                    <div class="text-center">
+                      <h4 class="text-xl font-bold text-primary mb-1">JOHN DAVIS</h4>
+                      <p class="text-secondary text-sm">CEO, TechCorp</p>
+                    </div>
+                    
+                    <!-- Next Button - Hidden on sm/md -->
+                    <button class="testimonial-next hidden lg:flex bg-primary hover:bg-blue-700 text-white rounded-full w-12 h-12 items-center justify-center shadow-lg transition-all duration-300 hover:scale-110">
+                      <i class="fas fa-chevron-right text-lg"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Testimonial Slide 3 -->
+              <div class="testimonial-slide">
+                <div class="text-center max-w-2xl mx-auto">
+                  <!-- Quote Icon -->
+                  <div class="flex justify-center mb-6">
+                    <img src="assets/images/coma.png" alt="Quote" class="w-20 h-20 object-contain" />
+                  </div>
+                  
+                  <!-- Testimonial Text -->
+                  <p class="text-lg md:text-xl text-secondary leading-relaxed mb-8">
+                    "The user interface is intuitive and our employees adapted quickly. The time tracking and performance management features have made our HR department much more efficient."
+                  </p>
+                  
+                  <!-- Star Rating -->
+                  <div class="flex justify-center items-center gap-1 mb-6">
+                  <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.9376 1.36603C9.35112 0.539 10.5227 0.57346 10.9018 1.36603L13.1761 5.94914L18.2072 6.67278C19.1031 6.81062 19.4477 7.91332 18.793 8.56805L15.1748 12.1174L16.0363 17.114C16.1741 18.0099 15.2092 18.6991 14.4167 18.2856L9.93693 15.9079L5.42274 18.2856C4.63017 18.6991 3.66531 18.0099 3.80314 17.114L4.66463 12.1174L1.04639 8.56805C0.391657 7.91332 0.736251 6.81062 1.6322 6.67278L6.69774 5.94914L8.9376 1.36603Z" fill="#E8BE52"/>
+</svg>
+
+                      
+                      <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.9376 1.36603C9.35112 0.539 10.5227 0.57346 10.9018 1.36603L13.1761 5.94914L18.2072 6.67278C19.1031 6.81062 19.4477 7.91332 18.793 8.56805L15.1748 12.1174L16.0363 17.114C16.1741 18.0099 15.2092 18.6991 14.4167 18.2856L9.93693 15.9079L5.42274 18.2856C4.63017 18.6991 3.66531 18.0099 3.80314 17.114L4.66463 12.1174L1.04639 8.56805C0.391657 7.91332 0.736251 6.81062 1.6322 6.67278L6.69774 5.94914L8.9376 1.36603Z" fill="#E8BE52"/>
+                        </svg>
+                        
+
+                        <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M8.9376 1.36603C9.35112 0.539 10.5227 0.57346 10.9018 1.36603L13.1761 5.94914L18.2072 6.67278C19.1031 6.81062 19.4477 7.91332 18.793 8.56805L15.1748 12.1174L16.0363 17.114C16.1741 18.0099 15.2092 18.6991 14.4167 18.2856L9.93693 15.9079L5.42274 18.2856C4.63017 18.6991 3.66531 18.0099 3.80314 17.114L4.66463 12.1174L1.04639 8.56805C0.391657 7.91332 0.736251 6.81062 1.6322 6.67278L6.69774 5.94914L8.9376 1.36603Z" fill="#E8BE52"/>
+                          </svg>
+                          
+
+                          <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.9376 1.36603C9.35112 0.539 10.5227 0.57346 10.9018 1.36603L13.1761 5.94914L18.2072 6.67278C19.1031 6.81062 19.4477 7.91332 18.793 8.56805L15.1748 12.1174L16.0363 17.114C16.1741 18.0099 15.2092 18.6991 14.4167 18.2856L9.93693 15.9079L5.42274 18.2856C4.63017 18.6991 3.66531 18.0099 3.80314 17.114L4.66463 12.1174L1.04639 8.56805C0.391657 7.91332 0.736251 6.81062 1.6322 6.67278L6.69774 5.94914L8.9376 1.36603Z" fill="#E8BE52"/>
+                            </svg>
+                            
+                            
+                      
+                  </div>
+                  
+                  <!-- Client Name with Navigation Buttons -->
+                  <div class="flex items-center justify-center gap-8">
+                    <!-- Previous Button - Hidden on sm/md -->
+                    <button class="testimonial-prev hidden lg:flex bg-primary hover:bg-blue-700 text-white rounded-full w-12 h-12 items-center justify-center shadow-lg transition-all duration-300 hover:scale-110">
+                      <i class="fas fa-chevron-left text-lg"></i>
+                    </button>
+                    
+                    <!-- Client Name -->
+                    <div class="text-center">
+                      <h4 class="text-xl font-bold text-primary mb-1">SARAH WILSON</h4>
+                      <p class="text-secondary text-sm">HR Director</p>
+                    </div>
+                    
+                    <!-- Next Button - Hidden on sm/md -->
+                    <button class="testimonial-next hidden lg:flex bg-primary hover:bg-blue-700 text-white rounded-full w-12 h-12 items-center justify-center shadow-lg transition-all duration-300 hover:scale-110">
+                      <i class="fas fa-chevron-right text-lg"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mobile App Download Section -->
+      <section class="relative py-16 lg:py-20 overflow-hidden bg-white">
+        <div class="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Left Content -->
+            <div class="space-y-8">
+              <!-- Badge -->
+              <div>
+                <button class="border-2 uppercase font-bold border-[rgb(167, 167, 215)] text-primary px-4 py-2 rounded-full text-sm">
+                  applications
+                </button>
+              </div>
+
+              <!-- Heading -->
+              <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight">
+                Join The Revolution.<br/>
+                Download The App Today!
+              </h2>
+
+              <!-- Download Buttons -->
+              <div class="flex cursor-pointer flex-col sm:flex-row gap-4">
+              <img src="assets/images/social.png" alt="Google Play" class="w-full h-full object-contain">
+              </div>
+            </div>
+
+            <!-- Right Content - App Preview -->
+            <div class="relative overflow-hidden">
+              <!-- Background Image -->
+              <img src="assets/images/play-right.png" alt="App Preview Background" class="w-full h-full object-contain">
+              
+              <!-- Centered Category Image -->
+              <div class="absolute inset-0 flex items-center justify-center p-8">
+                <img src="assets/images/category.png" alt="Category" class="max-w-full max-h-full object-contain">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative pt-24 lg:pt-40 bg-primary">
+              <!-- Curved Top Border -->
+        <div class="absolute top-0 left-0 w-full overflow-hidden" style="line-height: 0;">
+          <svg class="relative block w-full  h-[10rem] lg:h-[17rem]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V60C200,20,400,20,600,60C800,100,1000,100,1200,60V0Z" fill="#FFFFFF"></path>
+          </svg>
+        </div>
+      
+      <div class="max-w-[1480px] pt-24 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid lg:grid-cols-4 gap-8 mb-12">
+          <!-- Logo Column -->
+          <div class="lg:col-span-1">
+            <div class="flex items-center mb-6">
+              <img src="assets/images/logo.png" alt="OENOD Logo" class="h-8 w-auto filter brightness-0 invert" />
+            </div>
+            <div class="space-y-4">
+              <div>
+                <h4 class="text-white font-semibold mb-2">Phone</h4>
+                <p class="text-white">+1 45452 55</p>
+              </div>
+          
+            </div>
+          </div>
+
+          <!-- What We Offer Column -->
+          <div>
+            <div>
+              <h4 class="text-white font-semibold mb-2">Address</h4>
+              <p class="text-white">A108 Dummy Street New York, NY</p>
+              <p class="text-white">00221 United States</p>
+            </div>
        
           </div>
-        </div>
 
-        <!-- Position Absolute Rotated Div at Bottom -->
-          <div class="absolute bottom-4 left-1/2 transform z-10 -translate-x-1/2 rotate-12">
-          <div class="bg-white/10 backdrop-blur-sm border-2 border-primary rounded-lg px-8 py-4">
-            <span class="text-primary font-bold text-lg" style="filter: drop-shadow(0 0 100px #4649FF);">
-              COMPREHENSIVE HR SOLUTIONS
-            </span>
+          <!-- Links Column 1 -->
+          <div>
+            <h4 class="text-white font-semibold mb-6">What We Offer</h4>
+            <ul class="space-y-3">
+              <li><a href="#" class="text-white">Payroll</a></li>
+              <li><a href="#" class="text-white">Time & Attendance</a></li>
+              <li><a href="#" class="text-white">Talent</a></li>
+              <li><a href="#" class="text-white">HR Services</a></li>
+              <li><a href="#" class="text-white">App Marketplace</a></li>
+            </ul>
+           
+          </div>
+
+          <!-- Social Media Column -->
+          <div>
+            <h4 class="text-white font-semibold mb-6">Home</h4>
+            <ul class="space-y-3">
+              <li><a href="#" class="text-white">Price</a></li>
+              <li><a href="#" class="text-white">About</a></li>
+              <li><a href="#" class="text-white">Learning</a></li>
+              <li><a href="#" class="text-white">Services</a></li>
+              <li><a href="#" class="text-white">Career</a></li>
+              <li><a href="#" class="text-white">Help Center</a></li>
+            </ul>
           </div>
         </div>
-      </section>
 
-      <!-- Flexible Plans Section -->
-      <section
-      style="background: linear-gradient(135deg, #4649FF 0%, #01018B 100%);"
-
-       class="relative py-20 lg:py-24 overflow-hidden bg-gray-50">
-        <div class="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
-          <!-- Section  -->
-          <div class="grid lg:grid-cols-2 gap-12 items-center mb-12">
-            <!-- Left Content - Heading -->
-            <div class="space-y-6">
-              <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-                Flexible Plans , <br> Scalable Solutions              </h2>
+        <!-- Footer Bottom -->
+       
+      </div>
+      <div class="border-t bg-[#3D40F0] border-white/20 py-4">
+        <div class="max-w-[1480px]  mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="flex md:flex-row   justify-center lg:justify-between items-center">
+            <p class="text-white hidden lg:block text-sm mb-4 md:mb-0">
+              ©2025 GENOD, All Rights Reserved
+            </p>
+            <div class="flex items-center space-x-6">
+              <span class="text-white text-sm">FOLLOW US</span>
+              <div class="flex space-x-3">
+                <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center">
+                  <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.72649 2.71251C6.37537 2.71251 6.09252 2.77103 5.87794 2.88807C5.68287 3.00511 5.55608 3.15142 5.49756 3.32698C5.43904 3.50254 5.40978 3.72687 5.40978 3.99996V5.84336H7.8969L7.54578 8.50604H5.40978V15.2066H2.65931V8.50604H0.406274V5.84336H2.65931V3.73662C2.65931 2.62473 2.97142 1.76643 3.59564 1.16172C4.21986 0.537499 5.0489 0.22539 6.08276 0.22539C6.92156 0.22539 7.6043 0.264404 8.13098 0.342431V2.71251H6.72649Z" fill="white"/>
+                    </svg>
+                    
+                </a>
+                <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center">
+                  <svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.6724 3.67295C13.6919 3.75098 13.7016 3.87777 13.7016 4.05333C13.7016 5.08719 13.5066 6.12106 13.1164 7.15492C12.7263 8.16927 12.1704 9.1056 11.4486 9.9639C10.7464 10.8027 9.82954 11.4854 8.69814 12.0121C7.56675 12.5388 6.31831 12.8021 4.95283 12.8021C3.23623 12.8021 1.66593 12.3437 0.241929 11.4269C0.456504 11.4464 0.700339 11.4562 0.973435 11.4562C2.39743 11.4562 3.67513 11.0173 4.80653 10.1395C4.12379 10.1395 3.51908 9.9444 2.99239 9.55426C2.48521 9.14462 2.13409 8.63744 1.93902 8.03273C2.13409 8.05223 2.31941 8.06199 2.49497 8.06199C2.76806 8.06199 3.04116 8.03273 3.31426 7.97421C2.84609 7.87667 2.42669 7.6816 2.05606 7.389C1.68543 7.0964 1.39283 6.74528 1.17826 6.33563C0.963682 5.90648 0.856394 5.44807 0.856394 4.9604V4.90188C1.28554 5.15547 1.74396 5.29202 2.23163 5.31152C1.3148 4.6873 0.856394 3.829 0.856394 2.73662C0.856394 2.19043 1.0027 1.6735 1.2953 1.18583C2.05606 2.14166 2.98264 2.90243 4.07502 3.46813C5.18691 4.03383 6.36708 4.34593 7.61551 4.40446C7.5765 4.17037 7.55699 3.93629 7.55699 3.70221C7.55699 2.86342 7.84959 2.14166 8.4348 1.53695C9.03951 0.932238 9.76126 0.629882 10.6001 0.629882C11.4974 0.629882 12.2484 0.951745 12.8531 1.59547C13.5553 1.45892 14.2088 1.21509 14.8135 0.863964C14.5795 1.58572 14.1308 2.15142 13.4676 2.56106C14.0528 2.48303 14.638 2.31722 15.2232 2.06363C14.794 2.68785 14.2771 3.22429 13.6724 3.67295Z" fill="white"/>
+                    </svg>
+                    
+                </a>
+                <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.82855 5.34593C6.49178 4.6827 7.29156 4.35109 8.22789 4.35109C9.16422 4.35109 9.95424 4.6827 10.598 5.34593C11.2612 5.98966 11.5928 6.77969 11.5928 7.71602C11.5928 8.65234 11.2612 9.45212 10.598 10.1154C9.95424 10.7591 9.16422 11.0809 8.22789 11.0809C7.29156 11.0809 6.49178 10.7591 5.82855 10.1154C5.18482 9.45212 4.86296 8.65234 4.86296 7.71602C4.86296 6.77969 5.18482 5.98966 5.82855 5.34593ZM6.67709 9.26681C7.10624 9.69596 7.62318 9.91053 8.22789 9.91053C8.8326 9.91053 9.34953 9.69596 9.77868 9.26681C10.2078 8.83766 10.4224 8.32073 10.4224 7.71602C10.4224 7.1113 10.2078 6.59437 9.77868 6.16522C9.34953 5.73607 8.8326 5.5215 8.22789 5.5215C7.62318 5.5215 7.10624 5.73607 6.67709 6.16522C6.24794 6.59437 6.03337 7.1113 6.03337 7.71602C6.03337 8.32073 6.24794 8.83766 6.67709 9.26681ZM12.2658 3.6781C12.4219 3.81465 12.4999 3.99021 12.4999 4.20478C12.4999 4.41936 12.4219 4.60467 12.2658 4.76073C12.1293 4.91678 11.9537 4.99481 11.7391 4.99481C11.5245 4.99481 11.3392 4.91678 11.1832 4.76073C11.0271 4.60467 10.9491 4.41936 10.9491 4.20478C10.9491 3.99021 11.0271 3.81465 11.1832 3.6781C11.3392 3.52205 11.5245 3.44402 11.7391 3.44402C11.9537 3.44402 12.1293 3.52205 12.2658 3.6781ZM14.7529 5.02407C14.7724 5.55076 14.7822 6.44807 14.7822 7.71602C14.7822 8.98396 14.7724 9.88127 14.7529 10.408C14.6944 11.5979 14.3335 12.5245 13.6703 13.1877C13.0266 13.8314 12.1097 14.1728 10.9198 14.2118C10.3931 14.2508 9.49583 14.2703 8.22789 14.2703C6.95994 14.2703 6.06263 14.2508 5.53594 14.2118C4.34603 14.1533 3.42921 13.8021 2.78548 13.1584C2.53189 12.9243 2.32707 12.6512 2.17101 12.3391C2.01496 12.027 1.89792 11.7247 1.81989 11.4321C1.76137 11.1395 1.73211 10.7981 1.73211 10.408C1.6931 9.88127 1.67359 8.98396 1.67359 7.71602C1.67359 6.44807 1.6931 5.541 1.73211 4.99481C1.79063 3.8244 2.14175 2.91733 2.78548 2.27361C3.42921 1.61038 4.34603 1.2495 5.53594 1.19098C6.06263 1.17147 6.95994 1.16172 8.22789 1.16172C9.49583 1.16172 10.3931 1.17147 10.9198 1.19098C12.1097 1.2495 13.0266 1.61038 13.6703 2.27361C14.3335 2.91733 14.6944 3.83415 14.7529 5.02407ZM13.3484 11.5784C13.407 11.4223 13.4557 11.2272 13.4947 10.9932C13.5337 10.7396 13.563 10.447 13.5825 10.1154C13.602 9.76423 13.6118 9.48138 13.6118 9.26681C13.6118 9.05223 13.6118 8.74988 13.6118 8.35974C13.6118 7.9696 13.6118 7.75503 13.6118 7.71602C13.6118 7.65749 13.6118 7.44292 13.6118 7.07229C13.6118 6.68215 13.6118 6.3798 13.6118 6.16522C13.6118 5.95065 13.602 5.67755 13.5825 5.34593C13.563 4.99481 13.5337 4.70221 13.4947 4.46813C13.4557 4.21454 13.407 4.00972 13.3484 3.85366C13.1144 3.24895 12.695 2.82955 12.0902 2.59547C11.9342 2.53695 11.7294 2.48818 11.4758 2.44917C11.2417 2.41016 10.9491 2.3809 10.598 2.36139C10.2664 2.34188 9.99326 2.33213 9.77868 2.33213C9.58361 2.33213 9.28126 2.33213 8.87161 2.33213C8.48148 2.33213 8.2669 2.33213 8.22789 2.33213C8.18887 2.33213 7.9743 2.33213 7.58416 2.33213C7.19403 2.33213 6.89167 2.33213 6.67709 2.33213C6.46252 2.33213 6.17967 2.34188 5.82855 2.36139C5.49693 2.3809 5.20433 2.41016 4.95074 2.44917C4.71666 2.48818 4.52159 2.53695 4.36553 2.59547C3.76082 2.82955 3.34142 3.24895 3.10734 3.85366C3.04882 4.00972 3.00006 4.21454 2.96104 4.46813C2.92203 4.70221 2.89277 4.99481 2.87326 5.34593C2.85375 5.67755 2.844 5.95065 2.844 6.16522C2.844 6.36029 2.844 6.66265 2.844 7.07229C2.844 7.46243 2.844 7.677 2.844 7.71602C2.844 7.79404 2.844 7.97936 2.844 8.27196C2.844 8.54506 2.844 8.77914 2.844 8.97421C2.844 9.14977 2.844 9.38385 2.844 9.67645C2.86351 9.96906 2.88301 10.2226 2.90252 10.4372C2.92203 10.6323 2.95129 10.8371 2.9903 11.0517C3.02932 11.2663 3.06833 11.4418 3.10734 11.5784C3.36093 12.1831 3.78033 12.6025 4.36553 12.8366C4.52159 12.8951 4.71666 12.9438 4.95074 12.9829C5.20433 13.0219 5.49693 13.0511 5.82855 13.0706C6.17967 13.0901 6.45277 13.0999 6.64783 13.0999C6.86241 13.0999 7.16476 13.0999 7.5549 13.0999C7.96455 13.0999 8.18887 13.0999 8.22789 13.0999C8.28641 13.0999 8.50098 13.0999 8.87161 13.0999C9.26175 13.0999 9.56411 13.0999 9.77868 13.0999C9.99326 13.0999 10.2664 13.0901 10.598 13.0706C10.9491 13.0511 11.2417 13.0219 11.4758 12.9829C11.7294 12.9438 11.9342 12.8951 12.0902 12.8366C12.695 12.583 13.1144 12.1636 13.3484 11.5784Z" fill="white"/>
+                    </svg>
+                    
+                </a>
+                <a href="#" class="w-8 h-8 rounded-full flex items-center justify-center">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.219-.359-1.219c0-1.142.662-1.995 1.482-1.995.699 0 1.037.219 1.037 1.142 0 .696-.442 1.737-.662 2.698-.188.795.399 1.444 1.183 1.444 1.421 0 2.514-1.5 2.514-3.664 0-1.915-1.377-3.254-3.342-3.254-2.276 0-3.61 1.71-3.61 3.471 0 .688.263 1.425.592 1.825.065.078.074.147.055.227-.061.257-.196.792-.222.903-.034.147-.114.178-.263.107-1.001-.465-1.624-1.926-1.624-3.1 0-2.523 1.834-4.84 5.287-4.84 2.781 0 4.943 1.982 4.943 4.628 0 2.757-1.739 4.976-4.151 4.976-.81 0-1.573-.421-1.834-.921l-.498 1.902c-.181.695-.669 1.566-.995 2.097A12.013 12.013 0 0 0 12.017 24c6.624 0 11.99-5.367 11.99-11.987C24.007 5.367 18.641.001 12.017.001z"/>
+                  </svg>
+                </a>
+              </div>
             </div>
-
-            <!-- Right Content - Text -->
-            <div class="space-y-6 ">
-              <p class="text-white leading-relaxed text-lg">
-                No matter the size of your business, we have a pricing plan tailored to your needs. Get the features you need at a cost that makes sense, without hidden fees or complexity.              </p>
-            </div>
-          </div>
-
-          <!-- HR Divider with Spacing -->
-          <div class="w-full bg-red my-16">
-            <hr class="border-t-2 border-white" />
-          </div>
-
-          <!-- Plans Slider -->
-          <div class="plans-slider">
-            <!-- Plan Card 1 -->
-            <div class="w-60 bg-gradient-to-b from-blue-600 to-purple-700 rounded-2xl p-6 text-white shadow-2xl hover:from-blue-500 hover:to-blue-600 hover:scale-105 transition-all duration-300 ease-in-out">
-             <div class="flex items-center gap-3 mb-6">
-                 <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                     <path d="M33.7794 1.48242C34.2477 3.6229 34.2477 5.29515 34.1808 6.9674C34.1808 13.8571 30.5018 18.0042 25.6189 21.0812V28.1046C25.6189 29.1749 24.8831 30.4458 23.8797 30.9809L17.2576 34.2585C17.0569 34.3254 16.7894 34.3923 16.5887 34.3923C15.6523 34.3923 14.9834 33.7234 14.9165 32.7869V25.8973L13.4449 27.3688C12.5753 28.2384 11.1706 28.1046 10.4348 27.3688L7.02345 23.9575C6.15388 23.0879 6.22077 21.6832 7.02345 20.9474L8.49503 19.4089H1.60536C0.6689 19.4089 0 18.74 0 17.8036C0 17.6029 0.06689 17.3353 0.13378 17.1347L3.41139 10.5126C3.94651 9.50922 5.21742 8.77343 6.28766 8.70654H13.3111C16.388 3.89046 20.5352 0.144621 27.4249 0.144621C29.0971 0.144621 30.7694 0.144621 32.9099 0.612851C33.3112 0.746631 33.6457 1.08108 33.7794 1.48242ZM25.6857 11.3821C27.1573 11.3821 28.3613 10.245 28.3613 8.70654C28.3613 7.23496 27.1573 6.03094 25.6857 6.03094C24.1473 6.03094 23.0102 7.23496 23.0102 8.70654C23.0102 10.245 24.1473 11.3821 25.6857 11.3821Z" fill="white"/>
-                 </svg>
-                 <h2 class="text-2xl font-bold">Payroll</h2>
-             </div>
-     
-              Price 
-             <div class="mb-6">
-                 <div class="flex items-baseline gap-2">
-                     <span class="text-4xl font-bold">$50</span>
-                     <span class="text-lg text-blue-200">USD</span>
-                 </div>
-             </div>
-     
-              Monthly/Yearly Toggle 
-             <div class="flex items-center gap-4 mb-8">
-                 <div class="flex items-center gap-2">
-                     <span class="text-white font-medium">Monthly</span>
-                     <div class="w-4 h-4 rounded-full bg-white"></div>
-                 </div>
-                 <div class="flex items-center gap-2">
-                     <span class="text-blue-200">Yearly</span>
-                     <div class="w-4 h-4 rounded-full border-2 border-blue-200"></div>
-                 </div>
-             </div>
-     
-              Features List 
-             <div class="space-y-4 mb-8">
-                 <div class="flex items-center gap-3">
-                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
-                     </svg>
-                     <span class="text-white">Email template ready to use</span>
-                 </div>
-                 
-                 <div class="flex items-center gap-3">
-                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
-                     </svg>
-                     <span class="text-white">Live chat (best-calling-video)</span>
-                 </div>
-                 
-                 <div class="flex items-center gap-3">
-                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
-                     </svg>
-                     <span class="text-white">Live support</span>
-                 </div>
-                 
-                 <div class="flex items-center gap-3">
-                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
-                     </svg>
-                     <span class="text-white">150 GB Storage</span>
-                 </div>
-             </div>
-     
-              Select Employees Section 
-             <div class="mb-6">
-                 <div class="bg-blue-800/30 rounded-lg p-4 border border-blue-400/30">
-                     <p class="text-white text-center font-medium">Select No. Employees</p>
-                 </div>
-             </div>
-     
-              Pricing Details 
-             <div class="flex justify-between items-center mb-6 text-sm">
-                 <span class="text-blue-200">Final Price: $1,250</span>
-                 <span class="text-blue-200">Free Trial: 15Days</span>
-             </div>
-     
-              Buy Now Button 
-             <button class="w-full bg-white text-blue-600 font-bold py-4 rounded-lg hover:bg-blue-50 transition-colors duration-200 text-lg">
-                 BUY NOW
-             </button>
-         </div>
-
-            <!-- Plan Card 2 -->
-            <div class="w-50 bg-gradient-to-b from-blue-600 to-purple-700 rounded-2xl p-6 text-white shadow-2xl hover:from-blue-500 hover:to-blue-600 hover:scale-105 transition-all duration-300 ease-in-out">
-             <div class="flex items-center gap-3 mb-6">
-                 <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                     <path d="M33.7794 1.48242C34.2477 3.6229 34.2477 5.29515 34.1808 6.9674C34.1808 13.8571 30.5018 18.0042 25.6189 21.0812V28.1046C25.6189 29.1749 24.8831 30.4458 23.8797 30.9809L17.2576 34.2585C17.0569 34.3254 16.7894 34.3923 16.5887 34.3923C15.6523 34.3923 14.9834 33.7234 14.9165 32.7869V25.8973L13.4449 27.3688C12.5753 28.2384 11.1706 28.1046 10.4348 27.3688L7.02345 23.9575C6.15388 23.0879 6.22077 21.6832 7.02345 20.9474L8.49503 19.4089H1.60536C0.6689 19.4089 0 18.74 0 17.8036C0 17.6029 0.06689 17.3353 0.13378 17.1347L3.41139 10.5126C3.94651 9.50922 5.21742 8.77343 6.28766 8.70654H13.3111C16.388 3.89046 20.5352 0.144621 27.4249 0.144621C29.0971 0.144621 30.7694 0.144621 32.9099 0.612851C33.3112 0.746631 33.6457 1.08108 33.7794 1.48242ZM25.6857 11.3821C27.1573 11.3821 28.3613 10.245 28.3613 8.70654C28.3613 7.23496 27.1573 6.03094 25.6857 6.03094C24.1473 6.03094 23.0102 7.23496 23.0102 8.70654C23.0102 10.245 24.1473 11.3821 25.6857 11.3821Z" fill="white"/>
-                 </svg>
-                 <h2 class="text-2xl font-bold">Payroll</h2>
-             </div>
-     
-              Price 
-             <div class="mb-6">
-                 <div class="flex items-baseline gap-2">
-                     <span class="text-4xl font-bold">$50</span>
-                     <span class="text-lg text-blue-200">USD</span>
-                 </div>
-             </div>
-     
-              Monthly/Yearly Toggle 
-             <div class="flex items-center gap-4 mb-8">
-                 <div class="flex items-center gap-2">
-                     <span class="text-white font-medium">Monthly</span>
-                     <div class="w-4 h-4 rounded-full bg-white"></div>
-                 </div>
-                 <div class="flex items-center gap-2">
-                     <span class="text-blue-200">Yearly</span>
-                     <div class="w-4 h-4 rounded-full border-2 border-blue-200"></div>
-                 </div>
-             </div>
-     
-              Features List 
-             <div class="space-y-4 mb-8">
-                 <div class="flex items-center gap-3">
-                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
-                     </svg>
-                     <span class="text-white">Email template ready to use</span>
-                 </div>
-                 
-                 <div class="flex items-center gap-3">
-                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
-                     </svg>
-                     <span class="text-white">Live chat (best-calling-video)</span>
-                 </div>
-                 
-                 <div class="flex items-center gap-3">
-                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
-                     </svg>
-                     <span class="text-white">Live support</span>
-                 </div>
-                 
-                 <div class="flex items-center gap-3">
-                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
-                     </svg>
-                     <span class="text-white">150 GB Storage</span>
-                 </div>
-             </div>
-     
-              Select Employees Section 
-             <div class="mb-6">
-                 <div class="bg-blue-800/30 rounded-lg p-4 border border-blue-400/30">
-                     <p class="text-white text-center font-medium">Select No. Employees</p>
-                 </div>
-             </div>
-     
-              Pricing Details 
-             <div class="flex justify-between items-center mb-6 text-sm">
-                 <span class="text-blue-200">Final Price: $1,250</span>
-                 <span class="text-blue-200">Free Trial: 15Days</span>
-             </div>
-     
-              Buy Now Button 
-             <button class="w-full bg-white text-blue-600 font-bold py-4 rounded-lg hover:bg-blue-50 transition-colors duration-200 text-lg">
-                 BUY NOW
-             </button>
-         </div>
-
-            <!-- Plan Card 3 -->
-            <div class="w-60 bg-gradient-to-b from-blue-600 to-purple-700 rounded-2xl p-6 text-white shadow-2xl hover:from-blue-500 hover:to-blue-600 hover:scale-105 transition-all duration-300 ease-in-out">
-             <div class="flex items-center gap-3 mb-6">
-                 <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                     <path d="M33.7794 1.48242C34.2477 3.6229 34.2477 5.29515 34.1808 6.9674C34.1808 13.8571 30.5018 18.0042 25.6189 21.0812V28.1046C25.6189 29.1749 24.8831 30.4458 23.8797 30.9809L17.2576 34.2585C17.0569 34.3254 16.7894 34.3923 16.5887 34.3923C15.6523 34.3923 14.9834 33.7234 14.9165 32.7869V25.8973L13.4449 27.3688C12.5753 28.2384 11.1706 28.1046 10.4348 27.3688L7.02345 23.9575C6.15388 23.0879 6.22077 21.6832 7.02345 20.9474L8.49503 19.4089H1.60536C0.6689 19.4089 0 18.74 0 17.8036C0 17.6029 0.06689 17.3353 0.13378 17.1347L3.41139 10.5126C3.94651 9.50922 5.21742 8.77343 6.28766 8.70654H13.3111C16.388 3.89046 20.5352 0.144621 27.4249 0.144621C29.0971 0.144621 30.7694 0.144621 32.9099 0.612851C33.3112 0.746631 33.6457 1.08108 33.7794 1.48242ZM25.6857 11.3821C27.1573 11.3821 28.3613 10.245 28.3613 8.70654C28.3613 7.23496 27.1573 6.03094 25.6857 6.03094C24.1473 6.03094 23.0102 7.23496 23.0102 8.70654C23.0102 10.245 24.1473 11.3821 25.6857 11.3821Z" fill="white"/>
-                 </svg>
-                 <h2 class="text-2xl font-bold">Payroll</h2>
-             </div>
-     
-              Price 
-             <div class="mb-6">
-                 <div class="flex items-baseline gap-2">
-                     <span class="text-4xl font-bold">$50</span>
-                     <span class="text-lg text-blue-200">USD</span>
-                 </div>
-             </div>
-     
-              Monthly/Yearly Toggle 
-             <div class="flex items-center gap-4 mb-8">
-                 <div class="flex items-center gap-2">
-                     <span class="text-white font-medium">Monthly</span>
-                     <div class="w-4 h-4 rounded-full bg-white"></div>
-                 </div>
-                 <div class="flex items-center gap-2">
-                     <span class="text-blue-200">Yearly</span>
-                     <div class="w-4 h-4 rounded-full border-2 border-blue-200"></div>
-                 </div>
-             </div>
-     
-              Features List 
-             <div class="space-y-4 mb-8">
-                 <div class="flex items-center gap-3">
-                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
-                     </svg>
-                     <span class="text-white">Email template ready to use</span>
-                 </div>
-                 
-                 <div class="flex items-center gap-3">
-                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
-                     </svg>
-                     <span class="text-white">Live chat (best-calling-video)</span>
-                 </div>
-                 
-                 <div class="flex items-center gap-3">
-                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
-                     </svg>
-                     <span class="text-white">Live support</span>
-                 </div>
-                 
-                 <div class="flex items-center gap-3">
-                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
-                     </svg>
-                     <span class="text-white">150 GB Storage</span>
-                 </div>
-             </div>
-     
-              Select Employees Section 
-             <div class="mb-6">
-                 <div class="bg-blue-800/30 rounded-lg p-4 border border-blue-400/30">
-                     <p class="text-white text-center font-medium">Select No. Employees</p>
-                 </div>
-             </div>
-     
-              Pricing Details 
-             <div class="flex justify-between items-center mb-6 text-sm">
-                 <span class="text-blue-200">Final Price: $1,250</span>
-                 <span class="text-blue-200">Free Trial: 15Days</span>
-             </div>
-     
-              Buy Now Button 
-             <button class="w-full bg-white text-blue-600 font-bold py-4 rounded-lg hover:bg-blue-50 transition-colors duration-200 text-lg">
-                 BUY NOW
-             </button>
-         </div>
-
-            <!-- Plan Card 4 -->
-            <div class="w-60 bg-gradient-to-b from-blue-600 to-purple-700 rounded-2xl p-6 text-white shadow-2xl hover:from-blue-500 hover:to-blue-600 hover:scale-105 transition-all duration-300 ease-in-out">
-             <div class="flex items-center gap-3 mb-6">
-                 <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                     <path d="M33.7794 1.48242C34.2477 3.6229 34.2477 5.29515 34.1808 6.9674C34.1808 13.8571 30.5018 18.0042 25.6189 21.0812V28.1046C25.6189 29.1749 24.8831 30.4458 23.8797 30.9809L17.2576 34.2585C17.0569 34.3254 16.7894 34.3923 16.5887 34.3923C15.6523 34.3923 14.9834 33.7234 14.9165 32.7869V25.8973L13.4449 27.3688C12.5753 28.2384 11.1706 28.1046 10.4348 27.3688L7.02345 23.9575C6.15388 23.0879 6.22077 21.6832 7.02345 20.9474L8.49503 19.4089H1.60536C0.6689 19.4089 0 18.74 0 17.8036C0 17.6029 0.06689 17.3353 0.13378 17.1347L3.41139 10.5126C3.94651 9.50922 5.21742 8.77343 6.28766 8.70654H13.3111C16.388 3.89046 20.5352 0.144621 27.4249 0.144621C29.0971 0.144621 30.7694 0.144621 32.9099 0.612851C33.3112 0.746631 33.6457 1.08108 33.7794 1.48242ZM25.6857 11.3821C27.1573 11.3821 28.3613 10.245 28.3613 8.70654C28.3613 7.23496 27.1573 6.03094 25.6857 6.03094C24.1473 6.03094 23.0102 7.23496 23.0102 8.70654C23.0102 10.245 24.1473 11.3821 25.6857 11.3821Z" fill="white"/>
-                 </svg>
-                 <h2 class="text-2xl font-bold">Payroll</h2>
-             </div>
-     
-              Price 
-             <div class="mb-6">
-                 <div class="flex items-baseline gap-2">
-                     <span class="text-4xl font-bold">$50</span>
-                     <span class="text-lg text-blue-200">USD</span>
-                 </div>
-             </div>
-     
-              Monthly/Yearly Toggle 
-             <div class="flex items-center gap-4 mb-8">
-                 <div class="flex items-center gap-2">
-                     <span class="text-white font-medium">Monthly</span>
-                     <div class="w-4 h-4 rounded-full bg-white"></div>
-                 </div>
-                 <div class="flex items-center gap-2">
-                     <span class="text-blue-200">Yearly</span>
-                     <div class="w-4 h-4 rounded-full border-2 border-blue-200"></div>
-                 </div>
-             </div>
-     
-              Features List 
-             <div class="space-y-4 mb-8">
-                 <div class="flex items-center gap-3">
-                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
-                     </svg>
-                     <span class="text-white">Email template ready to use</span>
-                 </div>
-                 
-                 <div class="flex items-center gap-3">
-                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
-                     </svg>
-                     <span class="text-white">Live chat (best-calling-video)</span>
-                 </div>
-                 
-                 <div class="flex items-center gap-3">
-                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
-                     </svg>
-                     <span class="text-white">Live support</span>
-                 </div>
-                 
-                 <div class="flex items-center gap-3">
-                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                         <path d="M11.2447 2.74597C6.3609 2.74597 2.44509 6.70579 2.44509 11.5456C2.44509 16.4293 6.3609 20.3451 11.2447 20.3451C16.0844 20.3451 20.0443 16.4293 20.0443 11.5456C20.0443 6.70579 16.0844 2.74597 11.2447 2.74597ZM11.2447 0.634071C17.2284 0.634071 22.1562 5.56184 22.1562 11.5456C22.1562 17.5733 17.2284 22.457 11.2447 22.457C5.21696 22.457 0.333185 17.5733 0.333185 11.5456C0.333185 5.56184 5.21696 0.634071 11.2447 0.634071ZM11.2447 8.02572C13.1806 8.02572 14.7645 9.60965 14.7645 11.5456C14.7645 13.5255 13.1806 15.0654 11.2447 15.0654C9.26477 15.0654 7.72484 13.5255 7.72484 11.5456C7.72484 9.60965 9.26477 8.02572 11.2447 8.02572Z" fill="white"/>
-                     </svg>
-                     <span class="text-white">150 GB Storage</span>
-                 </div>
-             </div>
-     
-              Select Employees Section 
-             <div class="mb-6">
-                 <div class="bg-blue-800/30 rounded-lg p-4 border border-blue-400/30">
-                     <p class="text-white text-center font-medium">Select No. Employees</p>
-                 </div>
-             </div>
-     
-              Pricing Details 
-             <div class="flex justify-between items-center mb-6 text-sm">
-                 <span class="text-blue-200">Final Price: $1,250</span>
-                 <span class="text-blue-200">Free Trial: 15Days</span>
-             </div>
-     
-              Buy Now Button 
-             <button class="w-full bg-white text-blue-600 font-bold py-4 rounded-lg hover:bg-blue-50 transition-colors duration-200 text-lg">
-                 BUY NOW
-             </button>
-         </div>
           </div>
         </div>
-      </section>
      
-      
-    </main>
+      </div>
+    </footer>
 
     <!-- jQuery CDN (required for Slick) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -1060,5 +1717,31 @@
 
     <!-- Local script -->
     <script src="assets/js/main.js"></script>
+    <script>
+      // Mobile sidebar functionality
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileSidebar = document.getElementById("mobile-sidebar");
+      const sidebarContent = document.getElementById("sidebar-content");
+      const closeSidebar = document.getElementById("close-sidebar");
+      const sidebarOverlay = document.getElementById("sidebar-overlay");
+
+      function openSidebar() {
+        mobileSidebar.classList.remove("hidden");
+        setTimeout(() => {
+          sidebarContent.classList.remove("translate-x-full");
+        }, 10);
+      }
+
+      function closeSidebarFunc() {
+        sidebarContent.classList.add("translate-x-full");
+        setTimeout(() => {
+          mobileSidebar.classList.add("hidden");
+        }, 300);
+      }
+
+      mobileMenuButton.addEventListener("click", openSidebar);
+      closeSidebar.addEventListener("click", closeSidebarFunc);
+      sidebarOverlay.addEventListener("click", closeSidebarFunc);
+    </script>
   </body>
 </html>

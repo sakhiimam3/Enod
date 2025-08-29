@@ -1,30 +1,404 @@
 :root {
-  --color-primary: #00008B;
+  --color-primary: #00008b;
   --color-secondary: rgb(149, 149, 151);
   --color-badge: #111111;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Mulish', sans-serif;
+  font-family: "Mulish", sans-serif;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Outfit', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Outfit", sans-serif;
   font-weight: 600;
   line-height: 1.2;
   margin: 0 0 1rem 0;
 }
 
-p, span {
-  font-family: 'Mulish', sans-serif;
+p,
+span {
+  font-family: "Mulish", sans-serif;
+}
+
+/* Plans Dots Styles */
+.plans-dots {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.plans-dots li {
+  display: inline-block;
+  margin: 0 8px;
+}
+
+.plans-dots li button {
+  width: 30px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #d1d5db;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-indent: -9999px;
+}
+
+.plans-dots li.slick-active button {
+  background-color: #4649ff;
+  transform: scale(1.2);
+}
+
+.plans-dots li button:hover {
+  background-color: #4649ff;
+}
+
+.plans-dots {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 5rem;
+}
+
+.plans-dots li {
+  list-style: none;
+  margin: 0;
+}
+
+.plans-dots li button {
+  width: 40px !important;
+  height: 2px !important;
+  border-radius: 2px !important;
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0;
+  padding: 0;
+}
+
+.plans-dots li.slick-active button {
+  background-color: #e5e2ea !important;
+  /* padding: 2px; */
+}
+
+.plans-dots li button:hover {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Plans Slider Spacing */
+.plans-slider {
+  margin: 10 -12px; /* Negative margin to offset card margins */
+}
+
+.plans-slider .slick-slide {
+  margin: 0 12px; /* Add horizontal spacing between cards */
+}
+
+.plans-slider .slick-list {
+  margin: 0 -12px; /* Ensure proper alignment */
+}
+
+/* Responsive spacing adjustments */
+@media (max-width: 1024px) {
+  .plans-slider {
+    margin: 0 -8px;
+  }
+
+  .plans-slider .slick-slide {
+    margin: 0 8px;
+  }
+
+  .plans-slider .slick-list {
+    margin: 0 -8px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .plans-slider {
+    margin: 0 -4px;
+  }
+
+  .plans-slider .slick-slide {
+    margin: 0 4px;
+  }
+
+  .plans-slider .slick-list {
+    margin: 0 -4px;
+  }
+}
+
+/* Custom Scrollbar Styling */
+.space-y-6.my-12.max-h-\[150px\].overflow-y-auto::-webkit-scrollbar {
+  width: 4px; /* Thin scrollbar width */
+}
+
+.space-y-6.my-12.max-h-\[150px\].overflow-y-auto::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent track */
+  border-radius: 2px;
+}
+
+.space-y-6.my-12.max-h-\[150px\].overflow-y-auto::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.6); /* White thumb with opacity */
+  border-radius: 2px;
+  transition: background 0.3s ease;
+}
+
+.space-y-6.my-12.max-h-\[150px\].overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.8); /* Brighter on hover */
+}
+
+/* General scrollbar styling for all scrollable areas in pricing cards */
+.plans-slider .overflow-y-auto::-webkit-scrollbar {
+  width: 4px;
+}
+
+.plans-slider .overflow-y-auto::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+.plans-slider .overflow-y-auto::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 2px;
+  transition: background 0.3s ease;
+}
+
+.plans-slider .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* Popular Ribbon Styling */
+.popular-ribbon {
+  position: absolute;
+  top: 15px;
+  right: -35px;
+  background: linear-gradient(135deg, #f3f2f2, #f8f8f8);
+  color: #111111;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 4px 40px;
+  transform: rotate(45deg);
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Testimonial Slider Styles */
+.testimonial-slider {
+  position: relative;
+}
+
+.testimonial-slider .slick-slide {
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.testimonial-slider .slick-slide.slick-current {
+  opacity: 1;
+}
+
+/* Testimonial Navigation Buttons */
+.testimonial-prev,
+.testimonial-next {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 139, 0.3);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.testimonial-prev:hover,
+.testimonial-next:hover {
+  background: #000070;
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(0, 0, 139, 0.4);
+}
+
+.testimonial-prev:active,
+.testimonial-next:active {
+  transform: scale(0.95);
+}
+
+/* Client Photo Circles */
+.client-photo-circle {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
 }
 
 
+
+
+
+/* Testimonial Dots Styling */
+.testimonial-dots {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2rem;
+  list-style: none;
+  padding: 0;
+}
+
+.testimonial-dots li {
+  margin: 0;
+  display: none !important; 
+}
+
+.testimonial-dots li button {
+  width: 30px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #d1d5db;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0;
+  padding: 0;
+  display: none;
+}
+
+.testimonial-dots li.slick-active button {
+ display: none;
+}
+
+/* Responsive adjustments for testimonial navigation */
+@media (max-width: 1024px) {
+  .testimonial-prev,
+  .testimonial-next {
+    display: none !important;
+  }
+  
+  .testimonial-dots {
+    margin-top: 1.5rem;
+    display: flex !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-prev,
+  .testimonial-next {
+    display: none !important;
+  }
+  
+  .testimonial-dots {
+    margin-top: 1.5rem;
+    display: flex !important;
+  }
+  
+  .testimonial-dots li button {
+    width: 25px;
+    height: 3px;
+  }
+  
+  .testimonial-dots li.slick-active button {
+    width: 35px;
+    background-color: #00008b;
+  }
+}
+
+/* Mobile responsive for testimonial layout */
+@media (max-width: 768px) {
+  .testimonial-slider {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Client photos responsive sizing */
+  .client-photo-circle {
+    width: 48px !important;
+    height: 48px !important;
+  }
+  
+  /* Responsive navigation layout */
+  .flex.items-center.justify-center.gap-8 {
+    gap: 1rem !important;
+    flex-direction: column;
+  }
+  
+  .flex.items-center.justify-center.gap-8 > .testimonial-prev,
+  .flex.items-center.justify-center.gap-8 > .testimonial-next {
+    display: none !important;
+  }
+  
+  .flex.items-center.justify-center.gap-8 > div {
+    order: 1;
+  }
+}
+
+/* Hero Section Background */
+.hero-section {
+  background-position: center;
+}
+
+/* Hero Dots Styling */
+.hero-dot {
+  width: 50px !important;
+  height: 4px !important;
+  border-radius: 9999px !important;
+  background-color: #d1d5db !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-dot.active {
+  background-color: var(--color-primary) !important;
+}
+
+/* Responsive background sizing and position for hero section */
+@media (max-width: 1024px) {
+  .hero-section {
+    background-size: contain !important;
+    background-position: top !important;
+  }
+  
+  /* Hero dots responsive for medium devices */
+  .hero-dot {
+    width: 40px !important;
+    height: 3px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    background-size: contain !important;
+    background-position: top !important;
+  }
+  
+  /* Hero dots responsive for small devices */
+  .hero-dot {
+    width: 30px !important;
+    height: 3px !important;
+  }
+  
+  /* Make sure hero dots container is visible on small devices */
+  .flex.justify-end.px-60.mt-8.space-x-2 {
+    display: flex !important;
+    justify-content: center !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    margin-top: 2rem !important;
+  }
+}

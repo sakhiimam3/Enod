@@ -69,8 +69,7 @@ $(document).ready(function () {
     autoplay: true,
     autoplaySpeed: 4000,
     pauseOnHover: true,
-    centerMode: true,
-    centerPadding: '80px',
+    centerMode: false,
     arrows: false,
     dotsClass: 'slick-dots plans-dots',
     responsive: [
@@ -78,14 +77,14 @@ $(document).ready(function () {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
-          centerPadding: '60px',
+          centerMode: false,
         },
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
-          centerPadding: '40px',
+          centerMode: false,
         },
       },
     ],
@@ -101,8 +100,57 @@ $(document).ready(function () {
   // Custom styling for plans slider dots
   setTimeout(function() {
     $(".plans-dots li button").each(function() {
-      $(this).removeClass().addClass("w-3 h-3 rounded-full bg-gray-300 transition-colors duration-300");
+      $(this).removeClass().addClass("w-8 h-[5px] rounded-full mt-7 bg-whitw transition-colors duration-300");
     });
     $(".plans-dots li").first().find("button").removeClass("bg-gray-300").addClass("bg-primary");
   }, 100);
+
+  // Initialize Testimonial Slider
+  $(".testimonial-slider").slick({
+    dots: true,
+    infinite: true,
+    speed: 700,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    pauseOnHover: true,
+    fade: true,
+    cssEase: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+    arrows: true,
+    prevArrow: '.testimonial-prev',
+    nextArrow: '.testimonial-next',
+    dotsClass: 'slick-dots testimonial-dots',
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          fade: true,
+          adaptiveHeight: true,
+          arrows: false,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          fade: false,
+          adaptiveHeight: true,
+          arrows: false,
+          dots: true,
+        },
+      },
+    ],
+  });
+
+  // Custom navigation button functionality for testimonials
+  $('.testimonial-prev').click(function() {
+    $('.testimonial-slider').slick('slickPrev');
+  });
+
+  $('.testimonial-next').click(function() {
+    $('.testimonial-slider').slick('slickNext');
+  });
+
+
 });
