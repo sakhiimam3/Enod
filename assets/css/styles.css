@@ -94,7 +94,7 @@ span {
 
 .plans-dots li.slick-active button {
   background-color: #e5e2ea !important;
-  /* padding: 2px; */
+  padding: 2px;
 }
 
 .plans-dots li button:hover {
@@ -130,7 +130,6 @@ span {
 }
 
 @media (max-width: 768px) {
-
   .plans-slider {
     margin: 0 -4px;
   }
@@ -243,13 +242,14 @@ span {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-5px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
-
-
-
-
 
 /* Testimonial Dots Styling */
 .testimonial-dots {
@@ -264,7 +264,7 @@ span {
 
 .testimonial-dots li {
   margin: 0;
-  display: none !important; 
+  display: none !important;
 }
 
 .testimonial-dots li button {
@@ -281,7 +281,7 @@ span {
 }
 
 .testimonial-dots li.slick-active button {
- display: none;
+  display: none;
 }
 
 /* Responsive adjustments for testimonial navigation */
@@ -290,7 +290,7 @@ span {
   .testimonial-next {
     display: none !important;
   }
-  
+
   .testimonial-dots {
     margin-top: 1.5rem;
     display: flex !important;
@@ -302,17 +302,17 @@ span {
   .testimonial-next {
     display: none !important;
   }
-  
+
   .testimonial-dots {
     margin-top: 1.5rem;
     display: flex !important;
   }
-  
+
   .testimonial-dots li button {
     width: 25px;
     height: 3px;
   }
-  
+
   .testimonial-dots li.slick-active button {
     width: 35px;
     background-color: #00008b;
@@ -325,24 +325,24 @@ span {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  
+
   /* Client photos responsive sizing */
   .client-photo-circle {
     width: 48px !important;
     height: 48px !important;
   }
-  
+
   /* Responsive navigation layout */
   .flex.items-center.justify-center.gap-8 {
     gap: 1rem !important;
     flex-direction: column;
   }
-  
+
   .flex.items-center.justify-center.gap-8 > .testimonial-prev,
   .flex.items-center.justify-center.gap-8 > .testimonial-next {
     display: none !important;
   }
-  
+
   .flex.items-center.justify-center.gap-8 > div {
     order: 1;
   }
@@ -373,7 +373,7 @@ span {
     background-size: contain !important;
     background-position: top !important;
   }
-  
+
   /* Hero dots responsive for medium devices */
   .hero-dot {
     width: 40px !important;
@@ -386,13 +386,13 @@ span {
     background-size: contain !important;
     background-position: top !important;
   }
-  
+
   /* Hero dots responsive for small devices */
   .hero-dot {
     width: 30px !important;
     height: 3px !important;
   }
-  
+
   /* Make sure hero dots container is visible on small devices */
   .flex.justify-end.px-60.mt-8.space-x-2 {
     display: flex !important;
@@ -401,4 +401,18 @@ span {
     padding-right: 1rem !important;
     margin-top: 2rem !important;
   }
+}
+
+/* Pricing Section Background */
+.pricing-section-bg {
+  background-image: url("../images/plain-bg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  position: relative;
+}
+
+.pricing-section-bg .max-w-\[1480px\] {
+  position: relative;
+  z-index: 10;
 }
