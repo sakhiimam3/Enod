@@ -6,6 +6,7 @@ tailwind.config = {
         primary: "var(--color-primary)",
         secondary: "var(--color-secondary)",
         badge: "var(--color-badge)",
+      
       },
       fontFamily: {
         'heading': ['Outfit', 'sans-serif'],
