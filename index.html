@@ -858,7 +858,16 @@
 
         <!-- Plans Section -->
         <div class="py-20 lg:py-24 pricing-section-bg">
-          <div class="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- Absolute Background Image Layer -->
+          <div class="absolute inset-0 z-0 pointer-events-none">
+            <img 
+              src="assets/images/plain-bg.png" 
+              alt="Background decoration" 
+              class="absolute -bottom-5 -right-20 transform translate-y-[55%] w-auto h-auto opacity-30"
+            />
+          </div>
+          
+          <div class="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <!-- Section  -->
             <div class="grid lg:grid-cols-2 gap-12 items-center mb-12">
               <!-- Left Content - Heading -->

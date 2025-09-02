@@ -36,8 +36,6 @@ span {
   font-family: "Mulish", sans-serif;
 }
 
-
-
 /* Custom Scrollbar Styling */
 .space-y-6.my-12.max-h-\[150px\].overflow-y-auto::-webkit-scrollbar {
   width: 4px; /* Thin scrollbar width */
@@ -57,13 +55,6 @@ span {
 .space-y-6.my-12.max-h-\[150px\].overflow-y-auto::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.8); /* Brighter on hover */
 }
-
-
-
-
-
-
-
 
 /* Popular Ribbon Styling */
 .popular-ribbon {
@@ -232,7 +223,7 @@ span {
 
 /* Hero Section Background */
 .hero-section {
-  background-image: url('../images/hero-bg.png');
+  background-image: url("../images/hero-bg.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -290,10 +281,6 @@ span {
 
 /* Pricing Section Background */
 .pricing-section-bg {
-  background-image: url("../images/plain-bg.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: bottom right;
   position: relative;
 }
 
@@ -301,11 +288,10 @@ span {
   position: relative;
   z-index: 10;
 }
-.footer{
-    background-image: url("../images/footer.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-   
+.footer {
+  background-image: url("../images/footer.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* FAQ Accordion Styles */
@@ -318,7 +304,7 @@ span {
 }
 
 .faq-toggle.faq-gradient:hover {
-  background: linear-gradient(135deg, #4649FF 0%, #01018B 100%);
+  background: linear-gradient(135deg, #4649ff 0%, #01018b 100%);
   opacity: 0.9;
 }
 
@@ -344,7 +330,7 @@ span {
 }
 
 .faq-gradient {
-  background: linear-gradient(135deg, #4649FF 0%, #01018B 100%);
+  background: linear-gradient(135deg, #4649ff 0%, #01018b 100%);
 }
 
 /* FAQ Section Background */
@@ -354,16 +340,15 @@ span {
 
 /* Mobile responsiveness for FAQ */
 @media (max-width: 768px) {
-
   .faq-toggle {
     padding: 1rem 1.25rem;
   }
-  
+
   .faq-toggle span {
     font-size: 0.875rem;
     line-height: 1.4;
   }
-  
+
   /* .faq-content {
     padding: 0 1.25rem 1rem;
   } */
@@ -373,32 +358,29 @@ span {
   .faq-toggle {
     padding: 0.875rem 1rem;
   }
-  
+
   .faq-toggle span {
     font-size: 0.8125rem;
     line-height: 1.3;
     padding-right: 0.75rem;
   }
-  
+
   .faq-icon {
     width: 1.125rem;
     height: 1.125rem;
   }
 }
 
-
 /* mobile responsive for hero section */
 @media (max-width: 768px) {
   .hero-section {
-    background-image: url('../images/banner.png');
-
+    background-image: url("../images/banner.png");
   }
 }
- 
 
 /* Responsive Slider - Service Cards */
 .responsive .slick-slide {
-  margin: 0 15px;  /* left-right spacing */
+  margin: 0 15px; /* left-right spacing */
   outline: none;
 }
 
@@ -429,7 +411,7 @@ span {
   .responsive:not(.slick-initialized) {
     display: grid !important;
   }
-  
+
   .responsive:not(.slick-initialized) > div {
     width: 100% !important;
     margin: 0 !important;
@@ -441,7 +423,7 @@ span {
   .responsive.slick-initialized {
     display: block !important;
   }
-  
+
   .responsive.slick-initialized .grid {
     display: block !important;
   }
