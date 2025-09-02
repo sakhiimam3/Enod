@@ -45,11 +45,7 @@
   <body class="font-body min-h-screen">
     <!-- Hero Section with  -->
     <section
-      style="
-        background-image: url('./assets/images/hero-bg.png');
-        background-size: cover;
-        background-repeat: no-repeat;
-      "
+     
       class="relative overflow-hidden min-h-screen flex flex-col hero-section"
     >
       <!-- Header Navigation -->
@@ -72,7 +68,7 @@
             <!-- Desktop Navigation Menu -->
             <nav class="hidden lg:flex space-x-1">
               <a
-                href="#"
+                  href="career.html"
                 class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
                 >Home</a
               >
@@ -101,11 +97,11 @@
                 class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
                 >Career</a
               >
-              <a
+              <!-- <a
                 href="help-center.html"
                 class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
                 >Help Center</a
-              >
+              > -->
               <a
                 href="contact.html"
                 class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
@@ -164,7 +160,11 @@
         >
           <div class="p-6">
             <div class="flex justify-between items-center mb-8">
-              <div class="text-2xl font-bold text-primary">OENOD</div>
+              <div class="text-2xl font-bold text-primary">
+                <a href="./index.html">
+                  <img src="assets/images/logo.png" alt="logo" class="w-auto h-8">
+                </a>
+              </div>
               <button
                 id="close-sidebar"
                 class="text-gray-600 hover:text-gray-900"
@@ -187,42 +187,42 @@
 
             <nav class="space-y-4 mb-8">
               <a
-                href="#"
+                href="./index.html"
                 class="block text-badge hover:text-primary py-2 text-lg font-medium"
                 >Home</a
               >
               <a
-                href="price.html"
+                href="./price.html"
                 class="block text-badge hover:text-primary py-2 text-lg font-medium"
                 >Price</a
               >
               <a
-                href="#"
+                href="./about.html"
                 class="block text-badge hover:text-primary py-2 text-lg font-medium"
                 >About</a
               >
               <a
-                href="#"
+                href="./learning.html"
                 class="block text-badge hover:text-primary py-2 text-lg font-medium"
                 >Learning</a
               >
               <a
-                href="#"
+                href="./services.html"
                 class="block text-badge hover:text-primary py-2 text-lg font-medium"
                 >Services</a
               >
               <a
-                href="#"
+                href="./career.html"
                 class="block text-badge hover:text-primary py-2 text-lg font-medium"
                 >Career</a
               >
-              <a
-                href="#"
+              <!-- <a
+                href="help-center.html"
                 class="block text-badge hover:text-primary py-2 text-lg font-medium"
                 >Help Center</a
-              >
+              > -->
               <a
-                href="#"
+                href="./contact.html"
                 class="block text-badge hover:text-primary py-2 text-lg font-medium"
                 >Contact</a
               >
@@ -450,7 +450,7 @@
             ></div>
           </div>
         </div>
-      </div> 
+      </div>
     </section>
     <main>
       <!-- Smart Payroll Section -->
@@ -887,10 +887,10 @@
             </div>
 
             <!-- Plans Slider -->
-            <div class="plans-slider">
+            <div class="grid justify-center lg:grid-cols-3 gap-6">
               <!-- Plan Card 1 -->
               <div
-                class="bg-[#2a2c8f] p-8 text-white shadow-xl hover:bg-blue-500 duration-300 h-[750px] flex flex-col w-[300px]"
+                class="bg-[#2a2c8f] p-8 text-white shadow-xl hover:bg-blue-500 duration-300 h-[750px] flex flex-col w-[400px]"
               >
                 <div class="flex-grow">
                   <div class="flex items-center gap-3 mb-[100px]">
@@ -1026,7 +1026,7 @@
                 </button>
               </div>
               <div
-                class="bg-[#4244F8] relative p-8 text-white shadow-xl hover:bg-blue-500 duration-300 overflow-hidden h-[750px] flex flex-col w-[300px]"
+                class="bg-[#4244F8] relative p-8 text-white shadow-xl hover:bg-blue-500 duration-300 overflow-hidden h-[750px] flex flex-col w-[400px]"
               >
                 <!-- Popular Ribbon -->
                 <div class="popular-ribbon">POPULAR</div>
@@ -1173,7 +1173,7 @@
                 </button>
               </div>
               <div
-                class="bg-[#2a2c8f] p-8 text-white shadow-xl hover:bg-blue-500 duration-300 h-[750px] flex flex-col w-[300px]"
+                class="bg-[#2a2c8f] p-8 text-white shadow-xl hover:bg-blue-500 duration-300 h-[750px] flex flex-col w-[400px]"
               >
                 <div class="flex-grow">
                   <div class="flex items-center gap-3 mb-12">
@@ -1317,6 +1317,11 @@
                   BUY NOW
                 </button>
               </div>
+              
+            </div>
+            <div class="flex w-full my-10 justify-center items-center">
+              <div class="h-[3px] md:w-[5%] w-[10%] mx-auto  bg-white"></div>
+
             </div>
           </div>
         </div>
@@ -1849,16 +1854,16 @@
                   >Price</a
                 >
               </li>
-              <li><a href="#" class="text-white hover:underline">About</a></li>
+              <li><a href="about.html" class="text-white hover:underline">About</a></li>
               <li>
-                <a href="#" class="text-white hover:underline">Learning</a>
+                <a href="learning.html" class="text-white hover:underline">Learning</a>
               </li>
               <li>
-                <a href="#" class="text-white hover:underline">Services</a>
+                  <a href="services.html" class="text-white hover:underline">Services</a>
               </li>
-              <li><a href="#" class="text-white hover:underline">Career</a></li>
+              <li><a href="career.html" class="text-white hover:underline">Career</a></li>
               <li>
-                <a href="#" class="text-white hover:underline">Help Center</a>
+                <a href="help-center.html" class="text-white hover:underline">Help Center</a>
               </li>
             </ul>
           </div>

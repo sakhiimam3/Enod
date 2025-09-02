@@ -59,51 +59,7 @@ $(document).ready(function () {
     }
   );
 
-  // Initialize Plans Slider
-  $(".plans-slider").slick({
-    dots: true,
-    infinite: true,
-    speed: 600,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    pauseOnHover: true,
-    centerMode: false,
-    arrows: false,
-    dotsClass: 'slick-dots plans-dots',
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          centerMode: false,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          centerMode: false,
-        },
-      },
-    ],
-  });
-
-  // Style plans slider dots like hero section
-  $(".plans-slider").on("init reInit afterChange", function(event, slick, currentSlide) {
-    const current = currentSlide || 0;
-    $(".plans-dots li button").removeClass("bg-primary").addClass("bg-gray-300");
-    $(".plans-dots li").eq(current).find("button").removeClass("bg-gray-300").addClass("bg-primary");
-  });
-
-  // Custom styling for plans slider dots
-  setTimeout(function() {
-    $(".plans-dots li button").each(function() {
-      $(this).removeClass().addClass("w-8 h-[5px] rounded-full mt-7 bg-whitw transition-colors duration-300");
-    });
-    $(".plans-dots li").first().find("button").removeClass("bg-gray-300").addClass("bg-primary");
-  }, 100);
+ 
 
   // Initialize Testimonial Slider
   $(".testimonial-slider").slick({
@@ -187,6 +143,47 @@ $(document).ready(function () {
         }
       }
     ]
+  });
+
+  // Initialize Responsive Services Slider (only on large screens)
+  function initResponsiveSlider() {
+    if ($(window).width() >= 1024) {
+      if (!$('.responsive').hasClass('slick-initialized')) {
+        $('.responsive').slick({
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          infinite: true,
+          arrows: false,
+          dots: false,
+          pauseOnHover: true,
+          speed: 800,
+          cssEase: 'ease-in-out',
+          responsive: [
+            {
+              breakpoint: 1400,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+              }
+            }
+          ]
+        });
+      }
+    } else {
+      if ($('.responsive').hasClass('slick-initialized')) {
+        $('.responsive').slick('unslick');
+      }
+    }
+  }
+
+  // Initialize on page load
+  initResponsiveSlider();
+
+  // Re-initialize on window resize
+  $(window).resize(function() {
+    initResponsiveSlider();
   });
 
 });

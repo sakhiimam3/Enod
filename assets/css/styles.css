@@ -36,112 +36,7 @@ span {
   font-family: "Mulish", sans-serif;
 }
 
-/* Plans Dots Styles */
-.plans-dots {
-  text-align: center;
-  margin-top: 2rem;
-}
 
-.plans-dots li {
-  display: inline-block;
-  margin: 0 8px;
-}
-
-.plans-dots li button {
-  width: 30px;
-  height: 5px;
-  border-radius: 50%;
-  background-color: #d1d5db;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-indent: -9999px;
-}
-
-.plans-dots li.slick-active button {
-  background-color: #4649ff;
-  transform: scale(1.2);
-}
-
-.plans-dots li button:hover {
-  background-color: #4649ff;
-}
-
-.plans-dots {
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  margin-top: 5rem;
-}
-
-.plans-dots li {
-  list-style: none;
-  margin: 0;
-}
-
-.plans-dots li button {
-  width: 40px !important;
-  height: 2px !important;
-  border-radius: 2px !important;
-  background-color: rgba(255, 255, 255, 0.3) !important;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 0;
-  padding: 0;
-}
-
-.plans-dots li.slick-active button {
-  background-color: #e5e2ea !important;
-  padding: 2px;
-}
-
-.plans-dots li button:hover {
-  background-color: rgba(255, 255, 255, 0.6) !important;
-}
-
-/* Plans Slider Spacing */
-.plans-slider {
-  margin: 10 -12px; /* Negative margin to offset card margins */
-}
-
-.plans-slider .slick-slide {
-  margin: 0 12px; /* Add horizontal spacing between cards */
-}
-
-.plans-slider .slick-list {
-  margin: 0 -12px; /* Ensure proper alignment */
-}
-
-/* Responsive spacing adjustments */
-@media (max-width: 1024px) {
-  .plans-slider {
-    margin: 0 -8px;
-  }
-
-  .plans-slider .slick-slide {
-    margin: 0 8px;
-  }
-
-  .plans-slider .slick-list {
-    margin: 0 -8px;
-  }
-}
-
-@media (max-width: 768px) {
-  .plans-slider {
-    margin: 0 -4px;
-  }
-
-  .plans-slider .slick-slide {
-    margin: 0 4px;
-  }
-
-  .plans-slider .slick-list {
-    margin: 0 -4px;
-  }
-}
 
 /* Custom Scrollbar Styling */
 .space-y-6.my-12.max-h-\[150px\].overflow-y-auto::-webkit-scrollbar {
@@ -163,25 +58,12 @@ span {
   background: rgba(255, 255, 255, 0.8); /* Brighter on hover */
 }
 
-/* General scrollbar styling for all scrollable areas in pricing cards */
-.plans-slider .overflow-y-auto::-webkit-scrollbar {
-  width: 4px;
-}
 
-.plans-slider .overflow-y-auto::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 2px;
-}
 
-.plans-slider .overflow-y-auto::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 2px;
-  transition: background 0.3s ease;
-}
 
-.plans-slider .overflow-y-auto::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.8);
-}
+
+
+
 
 /* Popular Ribbon Styling */
 .popular-ribbon {
@@ -350,6 +232,9 @@ span {
 
 /* Hero Section Background */
 .hero-section {
+  background-image: url('../images/hero-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
 }
 
@@ -469,6 +354,7 @@ span {
 
 /* Mobile responsiveness for FAQ */
 @media (max-width: 768px) {
+
   .faq-toggle {
     padding: 1rem 1.25rem;
   }
@@ -478,9 +364,9 @@ span {
     line-height: 1.4;
   }
   
-  .faq-content {
+  /* .faq-content {
     padding: 0 1.25rem 1rem;
-  }
+  } */
 }
 
 @media (max-width: 480px) {
@@ -497,6 +383,15 @@ span {
   .faq-icon {
     width: 1.125rem;
     height: 1.125rem;
+  }
+}
+
+
+/* mobile responsive for hero section */
+@media (max-width: 768px) {
+  .hero-section {
+    background-image: url('../images/banner.png');
+
   }
 }
  
@@ -527,6 +422,29 @@ span {
 
 .responsive .slick-slide:focus {
   outline: none;
+}
+
+/* Mobile/Tablet Grid Layout - Override slider styles */
+@media (max-width: 1023px) {
+  .responsive:not(.slick-initialized) {
+    display: grid !important;
+  }
+  
+  .responsive:not(.slick-initialized) > div {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+}
+
+/* Desktop Slider Layout */
+@media (min-width: 1024px) {
+  .responsive.slick-initialized {
+    display: block !important;
+  }
+  
+  .responsive.slick-initialized .grid {
+    display: block !important;
+  }
 }
 
 /* Career Tab Styles */

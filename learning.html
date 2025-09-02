@@ -44,12 +44,12 @@
     <!-- Hero Section with Price Heading -->
     <section
       style="
-        background-image: url('./assets/images/hero-bg.png');
+        background-image: url('./assets/images/banner.png');
         background-size: cover;
         background-position: bottom;
         background-repeat: no-repeat;
       "
-      class="relative overflow-hidden h-[70vh] flex flex-col hero-section"
+      class="relative overflow-hidden h-[50vh] lg:h-[70vh] flex flex-col hero-section"
     >
       <!-- Header Navigation (Same as index.html) -->
       <div
@@ -60,53 +60,55 @@
             <!-- Logo -->
             <div class="flex-shrink-0">
               <div class="flex items-center">
+                <a href="./index.html">
                 <img
                   src="assets/images/logo.png"
                   alt="logo"
                   class="w-auto h-8"
                 />
+                </a>
               </div>
             </div>
 
             <!-- Desktop Navigation Menu -->
             <nav class="hidden lg:flex space-x-1">
               <a
-                href="/index.html"
+                href="./index.html"
                 class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
                 >Home</a
               >
               <a
-                href="price.html"
+                href="./price.html"
                 class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
                 >Price</a
               >
               <a
-                href="about.html"
+                href="./about.html"
                 class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
                 >About</a
               >
               <a
-                href="learning.html"
+                href="./learning.html"
                 class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
                 >Learning</a
               >
               <a
-                href="services.html"
+                href="./services.html"
                 class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
                 >Services</a
               >
               <a
-                href="career.html"
+                href="./career.html"
                 class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
                 >Career</a
               >
-              <a
-                href="help-center.html"
+              <!-- <a
+                href="./help-center.html"
                 class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
                 >Help Center</a
-              >
+              > -->
               <a
-                href="contact.html"
+                href="./contact.html"
                 class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
                 >Contact</a
               >
@@ -163,7 +165,11 @@
         >
           <div class="p-6">
             <div class="flex justify-between items-center mb-8">
-              <div class="text-2xl font-bold text-primary">OENOD</div>
+              <div class="text-2xl font-bold text-primary">
+                <a href="./index.html">   
+                  <img src="assets/images/logo.png" alt="logo" class="w-auto h-8">
+                </a>
+              </div>
               <button
                 id="close-sidebar"
                 class="text-gray-600 hover:text-gray-900"
@@ -186,42 +192,42 @@
 
             <nav class="space-y-4 mb-8">
               <a
-                href="index.html"
+                href="./index.html"
                 class="block text-badge hover:text-primary py-2 text-lg font-medium"
                 >Home</a
               >
               <a
-                href="price.html"
+                href="./price.html"
                 class="block text-primary py-2 text-lg font-medium"
                 >Price</a
               >
               <a
-                href="#"
+                href="./about.html"
                 class="block text-badge hover:text-primary py-2 text-lg font-medium"
                 >About</a
               >
               <a
-                href="#"
+                href="./learning.html"
                 class="block text-badge hover:text-primary py-2 text-lg font-medium"
                 >Learning</a
               >
               <a
-                href="#"
+                href="./services.html"
                 class="block text-badge hover:text-primary py-2 text-lg font-medium"
                 >Services</a
               >
               <a
-                href="#"
+                href="./career.html"
                 class="block text-badge hover:text-primary py-2 text-lg font-medium"
                 >Career</a
               >
-              <a
-                href="#"
+              <!-- <a
+                href="./help-center.html"
                 class="block text-badge hover:text-primary py-2 text-lg font-medium"
                 >Help Center</a
-              >
+              > -->
               <a
-                href="#"
+                href="./contact.html"
                 class="block text-badge hover:text-primary py-2 text-lg font-medium"
                 >Contact</a
               >
@@ -268,19 +274,25 @@
             class="absolute top-0 left-0 w-auto h-auto opacity-50"
           />
         </div>
-        
+
         <div class="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <!-- Flexbox Heading Section -->
-          <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 lg:mb-16">
+          <div
+            class="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 lg:mb-16"
+          >
             <div class="lg:max-w-[60%] mb-8 lg:mb-0">
-              <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight">
+              <h2
+                class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight"
+              >
                 Stay Ahead With Industry-<br />
                 Leading Learning
               </h2>
             </div>
             <div class="lg:max-w-[40%]">
               <p class="text-md text-[#595959] leading-relaxed">
-                Develop your professional skills with our expert-led training sessions designed to help HR and payroll professionals stay up-to-date with industry best practices.
+                Develop your professional skills with our expert-led training
+                sessions designed to help HR and payroll professionals stay
+                up-to-date with industry best practices.
               </p>
             </div>
           </div>
@@ -300,13 +312,18 @@
                 </div>
                 <!-- Card Content -->
                 <div class="p-6 lg:p-8">
-                  <h3 class="text-xl max-w-[350px] lg:text-2xl font-bold text-primary mb-4">
-                    Lorem ipsum dolor sit amet, consectetur elit.                  </h3>
-                  <div class="flex flex-col gap-2  text-sm mb-4">
+                  <h3
+                    class="text-xl max-w-[350px] lg:text-2xl font-bold text-primary mb-4"
+                  >
+                    Lorem ipsum dolor sit amet, consectetur elit.
+                  </h3>
+                  <div class="flex flex-col gap-2 text-sm mb-4">
                     <span class="font-bold">Company: OENOD</span>
                     <span class="text-[#7095b4]">March 18, 2024</span>
                   </div>
-                  <button class="bg-primary text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-blue-700 transition-colors">
+                  <button
+                    class="bg-primary text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-blue-700 transition-colors"
+                  >
                     Subscribe Now
                   </button>
                 </div>
@@ -326,14 +343,19 @@
                 </div>
                 <!-- Card Content -->
                 <div class="p-6 lg:p-8">
-                    <h3 class="text-xl max-w-[350px] lg:text-2xl font-bold text-primary mb-4">
-                        Lorem ipsum dolor sit amet  consectetur elit.                  </h3>
-                  <div class="flex flex-col gap-2  text-sm  mb-4">
+                  <h3
+                    class="text-xl max-w-[350px] lg:text-2xl font-bold text-primary mb-4"
+                  >
+                    Lorem ipsum dolor sit amet consectetur elit.
+                  </h3>
+                  <div class="flex flex-col gap-2 text-sm mb-4">
                     <span class="font-bold">Company: OENOD</span>
-               
+
                     <span class="text-[#7095b4]">March 18, 2024</span>
                   </div>
-                  <button class="bg-primary text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-blue-700 transition-colors">
+                  <button
+                    class="bg-primary text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-blue-700 transition-colors"
+                  >
                     Subscribe Now
                   </button>
                 </div>
@@ -399,7 +421,6 @@
           </div>
         </div>
       </section>
-    
     </main>
 
     <!-- Footer (Same as index.html) -->
