@@ -53,10 +53,7 @@ const faqData = [
     question: "Do I need a visa if I'm just transiting through a country?",
     answer: "Transit visa requirements vary by country and your nationality. Some countries require transit visas even for short layovers, while others allow visa-free transit."
   },
-  {
-    question: "Do I need a visa if I'm just transiting through a country?",
-    answer: "Transit visa requirements vary by country and your nationality. Some countries require transit visas even for short layovers, while others allow visa-free transit."
-  }
+
 
 ];
 
