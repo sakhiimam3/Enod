@@ -57,21 +57,25 @@ span {
 }
 
 /* Popular Ribbon Styling */
-.popular-ribbon {
-  position: absolute;
-  top: 15px;
-  right: -35px;
-  background: linear-gradient(135deg, #f3f2f2, #f8f8f8);
-  color: #111111;
-  font-size: 11px;
-  font-weight: bold;
-  padding: 4px 40px;
-  transform: rotate(45deg);
-  z-index: 10;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
+  .popular-ribbon {
+    position: absolute;
+    top: 50px;
+    right: -130px;
+    background: white;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 8px 25px;
+    transform: rotate(45deg);
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 2px;
+    min-width: 80px;
+  }
 
 /* Testimonial Slider Styles */
 .testimonial-slider {
@@ -466,4 +470,58 @@ span {
     opacity: 1;
     transform: translateY(0);
   }
+}
+/* ============================= */
+/* Plans Slider Dots Styling     */
+/* ============================= */
+.plans-slider .slick-dots {
+  bottom: -50px;
+  text-align: center;
+}
+
+.plans-slider .slick-dots li {
+  display: inline-block;
+  margin: 0 8px;
+}
+
+.plans-slider .slick-dots li button {
+  width: 30px;
+  height: 3px;
+  border: none;
+  background: grey;        /* inactive color */
+  font-size: 0;            /* hide default text */
+  line-height: 0;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s ease; /* smooth color change */
+}
+
+/* Active state */
+.plans-slider .slick-dots li.slick-active button {
+  background: white;       /* active color */
+}
+
+/* ============================= */
+/* Plans Slider Card Spacing     */
+/* ============================= */
+
+/* Add equal spacing between slides */
+.plans-slider .slick-slide {
+  margin: 0 15px; /* gap between cards */
+}
+
+/* Compensate so slider stays aligned */
+.plans-slider .slick-list {
+  margin: 0 -15px;
+}
+
+/* Make cards full-width inside slide */
+.plans-slider .slick-slide > div {
+  width: 100%;
+  max-width: none; /* remove 400px restriction */
+  margin: 0;
+  box-sizing: border-box;
+}
+.slick-dots li button:before {
+  display: none !important;
 }
