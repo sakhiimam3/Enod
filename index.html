@@ -16,6 +16,142 @@
 
     <!-- Local stylesheet -->
     <link rel="stylesheet" href="assets/css/styles.css" />
+    
+    <!-- Animate.css CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    
+    <!-- Custom Animation Styles -->
+    <style>
+      /* Enhanced smooth animations */
+      .smooth-transition {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .smooth-hover {
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      
+      .smooth-hover:hover {
+        /* No transform effects - keep same height */
+      }
+      
+      /* Staggered animation delays */
+      .stagger-1 { animation-delay: 0.1s; }
+      .stagger-2 { animation-delay: 0.2s; }
+      .stagger-3 { animation-delay: 0.3s; }
+      .stagger-4 { animation-delay: 0.4s; }
+      
+      /* Keep cards at same height - no transform effects */
+      .card-hover {
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      
+      .card-hover:hover {
+        /* Only color changes, no transform or height changes */
+      }
+      
+      /* Smooth image transitions */
+      .image-transition {
+        transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+                    transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      /* Parallax effect for background elements */
+      .parallax-bg {
+        transform: translateZ(0);
+        will-change: transform;
+      }
+      
+      /* Enhanced button animations */
+      .btn-animate {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .btn-animate::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        transition: left 0.5s;
+      }
+      
+      .btn-animate:hover::before {
+        left: 100%;
+      }
+      
+      /* Smooth scroll behavior */
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      /* Enhanced intersection observer animations */
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .animate-on-scroll.animated {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Blue border animation for cards */
+      .border-animation {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .border-animation::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #4244F8, #6366f1);
+        border-radius: 0 0 12px 12px;
+        animation: borderSlide 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        animation-delay: 0s;
+        animation-fill-mode: both;
+      }
+
+      /* Sequential animation delays */
+      .stagger-1::after {
+        animation-delay: 1s;
+      }
+
+      .stagger-2::after {
+        animation-delay: 2s;
+      }
+
+      .stagger-3::after {
+        animation-delay: 3s;
+      }
+
+      /* Keyframe animation for border */
+      @keyframes borderSlide {
+        0% {
+          width: 0;
+        }
+        100% {
+          width: 100%;
+        }
+      }
+
+      /* Keep cards at same height - no hover effects */
+      .border-animation:hover {
+        /* No transform or height changes - only border animation */
+      }
+    </style>
 
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -46,7 +182,8 @@
     <!-- Hero Section with  -->
     <section
      
-      class="relative overflow-hidden min-h-screen flex flex-col hero-section"
+      class="relative overflow-hidden min-h-screen flex flex-col hero-section animate__animated"
+      data-animation="animate__fadeIn"
     >
       <!-- Header Navigation -->
       <div
@@ -117,7 +254,7 @@
                 Log In
               </button>
               <button
-                class="bg-primary text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition-colors"
+                class="bg-primary text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 smooth-transition btn-animate hover:scale-105"
               >
                 Join Now
               </button>
@@ -255,7 +392,7 @@
             <div class="slide">
               <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <!-- Left Content -->
-                <div class="text-primary space-y-8">
+                <div class="text-primary space-y-8 animate__animated" data-animation="animate__fadeInLeft">
                   <h1
                     class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-primary"
                   >
@@ -454,7 +591,7 @@
     </section>
     <main>
       <!-- Smart Payroll Section -->
-      <section class="relative py-16 lg:py-24 overflow-hidden">
+      <section class="relative py-16 lg:py-24 overflow-hidden animate__animated" data-animation="animate__fadeInUp">
         <!-- Absolute positioned top-left image -->
         <div class="absolute top-0 left-10 z-10">
           <img
@@ -569,7 +706,7 @@
 
               <div>
                 <button
-                  class="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors flex items-center space-x-2"
+                  class="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 smooth-transition btn-animate hover:scale-105 flex items-center space-x-2"
                 >
                   <span>Know More</span>
                   <svg
@@ -592,7 +729,7 @@
       </section>
 
       <!-- OENOD Grid Section -->
-      <section class="relative py-16 lg:py-24 overflow-hidden">
+      <section class="relative py-20 lg:py-32 overflow-hidden">
         <div class="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
           <!-- Top Grid Section with Heading and Text -->
           <div class="grid lg:grid-cols-2 gap-12 items-center mb-6">
@@ -627,19 +764,64 @@
             class="relative rounded-2xl overflow-hidden bg-cover bg-center bg-no-repeat p-1"
             style="background-image: url('assets/images/enode-bg.png')"
           >
-            <!-- Grid with Two Images -->
-            <div class="flex justify-between flex flex-wrap">
-              <!-- Left Image - enode-left.png -->
-              <div>
-                <img
-                  src="assets/images/enode-left.png"
-                  alt="OENOD Left Feature"
-                  class="w-full h-[500px] object-contain"
-                />
+            <!-- Grid with Left Cards and Right Image -->
+            <div class="flex justify-between flex flex-wrap gap-8">
+              <!-- Left Side - Three Interactive Cards -->
+              <div class="flex flex-col gap-8 animate__animated" data-animation="animate__fadeInLeft">
+                <!-- Payroll Card -->
+                <div class="bg-white py-4 border border-gray-200 rounded-xl p-6 cursor-pointer card-hover smooth-hover hover:bg-[#4244F8] hover:text-white group stagger-1 border-animation-solid">
+                  <div class="flex items-start justify-between">
+                    <div>
+                      <h3 class="text-xl font-bold text-[#4244F8] group-hover:text-white mb-2">Payroll</h3>
+                      <p class="text-gray-500 group-hover:text-white/90 text-sm leading-relaxed">
+                        Set up key event to track onboarding are maintains here.
+                      </p>
+                    </div>
+                    <div class="w-8 h-8 bg-gray-200 group-hover:bg-white rounded-lg flex items-center justify-center">
+                      <svg class="w-4 h-4 text-gray-500 group-hover:text-[#4244F8]" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Time & Attendance Card -->
+                <div class="bg-[#4244F8] text-white rounded-xl p-6 cursor-pointer card-hover smooth-hover hover:bg-white hover:text-[#4244F8] group border-2 border-[#4244F8] hover:border-gray-200 stagger-2 border-animation-solid">
+                  <div class="flex items-start justify-between">
+                    <div>
+                      <h3 class="text-xl font-bold text-white group-hover:text-[#4244F8] mb-2">Time & Attendance</h3>
+                      <p class="text-white/90 group-hover:text-gray-500 text-sm leading-relaxed">
+                        Set up key event to track onboarding are maintains here.
+                      </p>
+                    </div>
+                    <div class="w-8 h-8 bg-white/20 group-hover:bg-[#4244F8] rounded-lg flex items-center justify-center">
+                      <svg class="w-4 h-4 text-white group-hover:text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Talent Card -->
+                <div class="bg-white border border-gray-200 rounded-xl p-6 cursor-pointer card-hover smooth-hover hover:bg-[#4244F8] hover:text-white group stagger-3 border-animation-solid">
+                  <div class="flex items-start justify-between">
+                    <div>
+                      <h3 class="text-xl font-bold text-[#4244F8] group-hover:text-white mb-2">Talent</h3>
+                      <p class="text-gray-500 group-hover:text-white/90 text-sm leading-relaxed">
+                        Set up key event to track onboarding are maintains here.
+                      </p>
+                    </div>
+                    <div class="w-8 h-8 bg-gray-200 group-hover:bg-white rounded-lg flex items-center justify-center">
+                      <svg class="w-4 h-4 text-gray-500 group-hover:text-[#4244F8]" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <!-- Right Image - enode-right.png -->
-              <div>
+              <!-- Right Image - Static -->
+              <div class="animate__animated" data-animation="animate__fadeInRight">
                 <img
                   src="assets/images/enode-right.png"
                   alt="OENOD Right Feature"
@@ -729,7 +911,8 @@
 
             <!-- Card 2 -->
             <div
-              class="bg-white rounded-xl p-8 hover:bg-[#494bd6] hover:text-white transition-all duration-300 group cursor-pointer"
+              class="bg-white rounded-xl p-8 hover:bg-[#494bd6] hover:text-white transition-all duration-300 group cursor-pointer animate__animated"
+              data-animation="animate__fadeInUp"
             >
               <div>
                 <!-- Circle with Count -->
@@ -857,7 +1040,7 @@
         </div>
 
         <!-- Plans Section -->
-        <div class="py-20 lg:py-24 pricing-section-bg">
+        <div class="py-20 lg:py-24 pricing-section-bg animate__animated" data-animation="animate__fadeInUp">
           <!-- Absolute Background Image Layer -->
           <div class="absolute inset-0 z-0 pointer-events-none">
             <img 
@@ -1627,7 +1810,8 @@
       </section>
       <!-- Testimonials Section -->
       <section
-        class="relative py-16 lg:py-24 overflow-hidden"
+        class="relative py-16 lg:py-24 overflow-hidden animate__animated"
+        data-animation="animate__fadeInUp"
         style="background-color: #fbfbfe"
       >
         <div class="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -2059,19 +2243,44 @@
 
               <!-- Heading -->
               <h2
-                class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight"
+                class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight animate__animated"
+                data-animation="animate__fadeInUp"
               >
                 Join The Revolution.<br />
                 Download The App Today!
               </h2>
 
               <!-- Download Buttons -->
-              <div class="flex cursor-pointer flex-col sm:flex-row gap-4">
-                <img
-                  src="assets/images/social.png"
-                  alt="Google Play"
-                  class="w-full h-full object-contain"
-                />
+              <div class="flex flex-col sm:flex-row gap-4 animate__animated" data-animation="animate__fadeInUp">
+                <!-- Google Play Store Button -->
+                <div class="cursor-pointer smooth-hover hover:scale-105 transition-all duration-300" onclick="openAppStore('google')">
+                  <div class="bg-black text-white rounded-lg p-4 flex items-center space-x-3 hover:bg-gray-800 smooth-transition">
+                    <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                      <svg class="w-8 h-8 text-black" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="text-xs text-gray-300">GET IT ON</div>
+                      <div class="text-lg font-semibold">Google Play</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Apple App Store Button -->
+                <div class="cursor-pointer smooth-hover hover:scale-105 transition-all duration-300" onclick="openAppStore('apple')">
+                  <div class="bg-black text-white rounded-lg p-4 flex items-center space-x-3 hover:bg-gray-800 smooth-transition">
+                    <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                      <svg class="w-8 h-8 text-black" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="text-xs text-gray-300">Download on the</div>
+                      <div class="text-lg font-semibold">App Store</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -2285,6 +2494,115 @@
       mobileMenuButton.addEventListener("click", openSidebar);
       closeSidebar.addEventListener("click", closeSidebarFunc);
       sidebarOverlay.addEventListener("click", closeSidebarFunc);
+
+      // Intersection Observer for Animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const animationClass = entry.target.getAttribute('data-animation');
+            if (animationClass) {
+              entry.target.classList.add(animationClass);
+              // Remove observer after animation is triggered
+              observer.unobserve(entry.target);
+            }
+          }
+        });
+      }, observerOptions);
+
+      // Observe all elements with animation classes
+      document.addEventListener('DOMContentLoaded', () => {
+        const animatedElements = document.querySelectorAll('[data-animation]');
+        animatedElements.forEach(el => {
+          observer.observe(el);
+        });
+      });
+
+
+      // Enhanced intersection observer with better performance
+      const enhancedObserverOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      };
+
+      const enhancedObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const animationClass = entry.target.getAttribute('data-animation');
+            if (animationClass) {
+              entry.target.classList.add(animationClass);
+              // Add a slight delay for staggered animations
+              if (entry.target.classList.contains('stagger-1')) {
+                entry.target.style.animationDelay = '0.1s';
+              } else if (entry.target.classList.contains('stagger-2')) {
+                entry.target.style.animationDelay = '0.2s';
+              } else if (entry.target.classList.contains('stagger-3')) {
+                entry.target.style.animationDelay = '0.3s';
+              }
+              enhancedObserver.unobserve(entry.target);
+            }
+          }
+        });
+      }, enhancedObserverOptions);
+
+      // Initialize enhanced animations
+      document.addEventListener('DOMContentLoaded', () => {
+        const animatedElements = document.querySelectorAll('[data-animation]');
+        animatedElements.forEach(el => {
+          enhancedObserver.observe(el);
+        });
+
+        // Add parallax effect to background elements
+        const parallaxElements = document.querySelectorAll('.parallax-bg');
+        window.addEventListener('scroll', () => {
+          const scrolled = window.pageYOffset;
+          parallaxElements.forEach(element => {
+            const rate = scrolled * -0.5;
+            element.style.transform = `translateY(${rate}px)`;
+          });
+        });
+
+        // Trigger sequential border animations when section comes into view
+        const borderAnimationObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const cards = entry.target.querySelectorAll('.border-animation');
+              cards.forEach((card, index) => {
+                // Reset animation
+                card.style.animation = 'none';
+                card.offsetHeight; // Trigger reflow
+                
+                // Start animation with delay
+                setTimeout(() => {
+                  card.style.animation = `borderSlide 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards`;
+                }, (index + 1) * 1000); // 1s, 2s, 3s delays
+              });
+              borderAnimationObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.3 });
+
+        // Observe the cards section
+        const cardsSection = document.querySelector('.border-animation')?.closest('section');
+        if (cardsSection) {
+          borderAnimationObserver.observe(cardsSection);
+        }
+      });
+
+      // Function to handle app store button clicks
+      function openAppStore(store) {
+        if (store === 'google') {
+          // Replace with your actual Google Play Store URL
+          window.open('https://play.google.com/store/apps/details?id=com.oenod.app', '_blank');
+        } else if (store === 'apple') {
+          // Replace with your actual Apple App Store URL
+          window.open('https://apps.apple.com/app/oenod/id123456789', '_blank');
+        }
+      }
     </script>
   </body>
 </html>

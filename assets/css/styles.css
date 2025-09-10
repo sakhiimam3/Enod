@@ -525,3 +525,85 @@ span {
 .slick-dots li button:before {
   display: none !important;
 }
+
+/* Border Animation - Left to Right (Auto Animation) */
+.border-animation {
+  position: relative;
+  overflow: hidden;
+}
+
+.border-animation::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, transparent, #4244F8, transparent);
+  animation: slideBorder 5s ease-in-out infinite;
+}
+
+@keyframes slideBorder {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+/* Alternative border animation with solid color (Auto Animation) */
+.border-animation-solid {
+  position: relative;
+  overflow: hidden;
+}
+
+.border-animation-solid::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 5px;
+  background-color: #4244F8;
+}
+
+@keyframes slideBorderSolid {
+  0% {
+    left: -100%;
+    opacity: 0;
+    transform: translateY(0);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered animation delays for each card - one by one with little delay */
+.stagger-1::before {
+  animation: slideBorderSolid 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation-delay: 0s;
+}
+
+.stagger-2::before {
+  animation: slideBorderSolid 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation-delay: 2.7s;
+}
+
+.stagger-3::before {
+  animation: slideBorderSolid 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation-delay: 5.4s;
+}
