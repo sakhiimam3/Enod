@@ -23,6 +23,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     
+    <!-- AOS (Animate On Scroll) CDN -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <!-- Custom Animation Styles -->
     <style>
       /* Enhanced smooth animations */
@@ -187,7 +190,7 @@
     >
       <!-- Header Navigation -->
       <div
-        class="relative z-20 max-w-[1480px] mx-auto w-full px-4 sm:px-6 lg:px-8 pt-6"
+        class="relative   z-20 max-w-[1280px]  mx-auto w-full px-4 sm:px-6 lg:px-8 pt-6"
       >
         <div class="bg-white rounded-full shadow-sm px-6 py-4">
           <div class="flex justify-between items-center">
@@ -383,208 +386,104 @@
 
       <!-- Hero Content Slider -->
       <div
-        class="relative z-10 max-w-[1480px] mx-auto w-full px-4 sm:px-6 lg:px-8 flex-1 flex items-center py-12"
+        class="relative z-10 max-w-[1280px] mx-auto w-full px-4 sm:px-6 lg:px-8 flex-1 flex items-center py-12"
       >
         <div class="w-full">
-          <!-- Hero Content Slider -->
-          <div class="hero-slider">
-            <!-- Slide 1 -->
-            <div class="slide">
-              <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Left Content -->
-                <div class="text-primary space-y-8 animate__animated" data-animation="animate__fadeInLeft">
-                  <h1
-                    class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-primary"
+          <!-- Static Hero Content (no slider) -->
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Left Content -->
+            <div class="text-primary space-y-8 animate__animated" data-animation="animate__fadeInLeft">
+              <h1
+                class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-primary"
+              >
+                OENOD – Next-Generation Business Software
+              </h1>
+
+              <p class="text-lg md:text-xl leading-relaxed text-secondary">
+                OENOD is a comprehensive business management solution
+                designed to streamline operations and enhance productivity.
+                Our all-in-one platform offers advanced automation,
+                real-time analytics, and seamless tools for company
+                management, payroll, time and attendance tracking, employee
+                scheduling, video conferencing, onboarding, and learning
+                management.
+              </p>
+
+              <div class="flex flex-col sm:flex-row gap-4">
+                <button
+                  class="bg-primary  text-xs lg:text-lg text-white px-6 py-4 rounded-full font-semibold hover:bg-blue-700 transition-colors flex items-center justify-between space-x-3 group"
+                >
+                  <span class="flex-1 text-center"
+                    >OENOD - Powering the Future of Business</span
                   >
-                    OENOD – Next-Generation Business Software
-                  </h1>
-
-                  <p class="text-lg md:text-xl leading-relaxed text-secondary">
-                    OENOD is a comprehensive business management solution
-                    designed to streamline operations and enhance productivity.
-                    Our all-in-one platform offers advanced automation,
-                    real-time analytics, and seamless tools for company
-                    management, payroll, time and attendance tracking, employee
-                    scheduling, video conferencing, onboarding, and learning
-                    management.
-                  </p>
-
-                  <div class="flex flex-col sm:flex-row gap-4">
-                    <button
-                      class="bg-primary text-white px-6 py-4 rounded-full font-semibold hover:bg-blue-700 transition-colors flex items-center justify-between space-x-3 group"
+                  <div
+                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
+                  >
+                    <svg
+                      width="16"
+                      height="10"
+                      viewBox="0 0 16 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <span class="flex-1 text-center"
-                        >OENOD - Powering the Future of Business</span
-                      >
-                      <div
-                        class="w-10 h-10 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
-                      >
-                        <svg
-                          width="16"
-                          height="10"
-                          viewBox="0 0 16 10"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M14.988 5.4119C15.2213 5.17849 15.2213 4.80006 14.988 4.56665L11.1843 0.762951C10.9508 0.529537 10.5724 0.529537 10.339 0.762951C10.1056 0.996364 10.1056 1.3748 10.339 1.60821L13.7201 4.98927L10.339 8.37034C10.1056 8.60375 10.1056 8.98218 10.339 9.21559C10.5724 9.44901 10.9508 9.44901 11.1843 9.21559L14.988 5.4119ZM0.220703 5.58697H14.5653V4.39158H0.220703V5.58697Z"
-                            fill="#07078E"
-                          />
-                        </svg>
-                      </div>
-                    </button>
+                      <path
+                        d="M14.988 5.4119C15.2213 5.17849 15.2213 4.80006 14.988 4.56665L11.1843 0.762951C10.9508 0.529537 10.5724 0.529537 10.339 0.762951C10.1056 0.996364 10.1056 1.3748 10.339 1.60821L13.7201 4.98927L10.339 8.37034C10.1056 8.60375 10.1056 8.98218 10.339 9.21559C10.5724 9.44901 10.9508 9.44901 11.1843 9.21559L14.988 5.4119ZM0.220703 5.58697H14.5653V4.39158H0.220703V5.58697Z"
+                        fill="#07078E"
+                      />
+                    </svg>
                   </div>
-                </div>
+                </button>
+              </div>
+            </div>
 
-                <!-- Right Content - Business Image -->
-                <div class="relative">
-                  <div class="h-[600px] w-auto">
-                    <img
-                      src="assets/images/about.png"
-                      alt="OENOD Business Software"
-                      class="w-full h-full object-contain rounded-2xl"
-                    />
+            <!-- Right Content - Two Column Image Stack with animate.css -->
+            <div class="relative">
+              <div class="hidden lg:block rounded-2xl hero-marquee-offset">
+                <div class="hero-marquee-bleed">
+                  <div class="grid grid-cols-2 gap-4">
+                  <!-- Left image column: continuous marquee up -->
+                  <div class="v-marquee v-marquee-up">
+                    <div class="v-marquee-track">
+                      <div class="mb-4">
+                        <img src="https://demowebs.1stopwebsitesolution.com/oenod/assets/new_assets/img/about-1.svg" alt="About 1" class="w-full h-auto object-contain" />
+                      </div>
+                      <div class="mb-4">
+                        <img src="https://demowebs.1stopwebsitesolution.com/oenod/assets/new_assets/img/about-2.svg" alt="About 2" class="w-full h-auto object-contain" />
+                      </div>
+                      <!-- Duplicate for seamless loop -->
+                      <div class="mb-4">
+                        <img src="https://demowebs.1stopwebsitesolution.com/oenod/assets/new_assets/img/about-1.svg" alt="About 1" class="w-full h-auto object-contain" />
+                      </div>
+                      <div class="mb-4">
+                        <img src="https://demowebs.1stopwebsitesolution.com/oenod/assets/new_assets/img/about-2.svg" alt="About 2" class="w-full h-auto object-contain" />
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Right image column: continuous marquee down -->
+                  <div class="v-marquee v-marquee-down">
+                    <div class="v-marquee-track">
+                      <div class="mb-4">
+                        <img src="https://demowebs.1stopwebsitesolution.com/oenod/assets/new_assets/img/about-1.svg" alt="About 1" class="w-full h-auto object-contain" />
+                      </div>
+                      <div class="mb-4">
+                        <img src="https://demowebs.1stopwebsitesolution.com/oenod/assets/new_assets/img/about-2.svg" alt="About 2" class="w-full h-auto object-contain" />
+                      </div>
+                      <!-- Duplicate for seamless loop -->
+                      <div class="mb-4">
+                        <img src="https://demowebs.1stopwebsitesolution.com/oenod/assets/new_assets/img/about-1.svg" alt="About 1" class="w-full h-auto object-contain" />
+                      </div>
+                      <div class="mb-4">
+                        <img src="https://demowebs.1stopwebsitesolution.com/oenod/assets/new_assets/img/about-2.svg" alt="About 2" class="w-full h-auto object-contain" />
+                      </div>
+                    </div>
+                  </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="slide">
-              <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Left Content -->
-                <div class="text-primary space-y-8">
-                  <h1
-                    class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-primary"
-                  >
-                    OENOD – Next-Generation Business Software
-                  </h1>
-
-                  <p class="text-lg md:text-xl leading-relaxed text-secondary">
-                    OENOD is a comprehensive business management solution
-                    designed to streamline operations and enhance productivity.
-                    Our all-in-one platform offers advanced automation,
-                    real-time analytics, and seamless tools for company
-                    management, payroll, time and attendance tracking, employee
-                    scheduling, video conferencing, onboarding, and learning
-                    management.
-                  </p>
-
-                  <div class="flex flex-col sm:flex-row gap-4">
-                    <button
-                      class="bg-primary text-white px-6 py-4 rounded-full font-semibold hover:bg-blue-700 transition-colors flex items-center justify-between space-x-3 group"
-                    >
-                      <span class="flex-1 text-center"
-                        >OENOD - Powering the Future of Business</span
-                      >
-                      <div
-                        class="w-10 h-10 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
-                      >
-                        <svg
-                          width="16"
-                          height="10"
-                          viewBox="0 0 16 10"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M14.988 5.4119C15.2213 5.17849 15.2213 4.80006 14.988 4.56665L11.1843 0.762951C10.9508 0.529537 10.5724 0.529537 10.339 0.762951C10.1056 0.996364 10.1056 1.3748 10.339 1.60821L13.7201 4.98927L10.339 8.37034C10.1056 8.60375 10.1056 8.98218 10.339 9.21559C10.5724 9.44901 10.9508 9.44901 11.1843 9.21559L14.988 5.4119ZM0.220703 5.58697H14.5653V4.39158H0.220703V5.58697Z"
-                            fill="#07078E"
-                          />
-                        </svg>
-                      </div>
-                    </button>
-                  </div>
-                </div>
-
-                <!-- Right Content - Business Image -->
-                <div class="relative">
-                  <div class="h-[600px] w-auto">
-                    <img
-                      src="assets/images/about.png"
-                      alt="OENOD Business Software"
-                      class="w-full h-full object-contain rounded-2xl"
-                    />
-                  </div>
-                </div>
+              <div class="block lg:hidden">
+                <img src="assets/images/about.png" alt="About" class="w-full h-auto object-contain" />
               </div>
             </div>
-            <div class="slide">
-              <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Left Content -->
-                <div class="text-primary space-y-8">
-                  <h1
-                    class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-primary"
-                  >
-                    OENOD – Next-Generation Business Software
-                  </h1>
-
-                  <p class="text-lg md:text-xl leading-relaxed text-secondary">
-                    OENOD is a comprehensive business management solution
-                    designed to streamline operations and enhance productivity.
-                    Our all-in-one platform offers advanced automation,
-                    real-time analytics, and seamless tools for company
-                    management, payroll, time and attendance tracking, employee
-                    scheduling, video conferencing, onboarding, and learning
-                    management.
-                  </p>
-
-                  <div class="flex flex-col sm:flex-row gap-4">
-                    <button
-                      class="bg-primary text-white px-6 py-4 rounded-full font-semibold hover:bg-blue-700 transition-colors flex items-center justify-between space-x-3 group"
-                    >
-                      <span class="flex-1 text-center"
-                        >OENOD - Powering the Future of Business</span
-                      >
-                      <div
-                        class="w-10 h-10 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
-                      >
-                        <svg
-                          width="16"
-                          height="10"
-                          viewBox="0 0 16 10"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M14.988 5.4119C15.2213 5.17849 15.2213 4.80006 14.988 4.56665L11.1843 0.762951C10.9508 0.529537 10.5724 0.529537 10.339 0.762951C10.1056 0.996364 10.1056 1.3748 10.339 1.60821L13.7201 4.98927L10.339 8.37034C10.1056 8.60375 10.1056 8.98218 10.339 9.21559C10.5724 9.44901 10.9508 9.44901 11.1843 9.21559L14.988 5.4119ZM0.220703 5.58697H14.5653V4.39158H0.220703V5.58697Z"
-                            fill="#07078E"
-                          />
-                        </svg>
-                      </div>
-                    </button>
-                  </div>
-                </div>
-
-                <!-- Right Content - Business Image -->
-                <div class="relative">
-                  <div class="h-[600px] w-auto">
-                    <img
-                      src="assets/images/about.png"
-                      alt="OENOD Business Software"
-                      class="w-full h-full object-contain rounded-2xl"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Hero Navigation Dots -->
-          <div class="flex justify-end px-60 mt-8 space-x-2">
-            <div
-              class="hero-dot w-10 h-1 bg-gray-400 rounded-full cursor-pointer transition-colors duration-300"
-              data-slide="0"
-              style="width: 50px"
-            ></div>
-            <div
-              class="hero-dot w-10 h-1 bg-gray-400 rounded-full cursor-pointer transition-colors duration-300"
-              data-slide="1"
-              style="width: 50px"
-            ></div>
-            <div
-              class="hero-dot w-10 h-1 bg-gray-400 rounded-full cursor-pointer transition-colors duration-300"
-              data-slide="2"
-              style="width: 50px"
-            ></div>
           </div>
         </div>
       </div>
@@ -597,11 +496,11 @@
           <img
             src="assets/images/payrol-top-left.png"
             alt="Payroll decoration"
-            class="w-32 h-32 lg:w-full lg:h-48 object-contain opacity-80"
+            class="w-32 h-32 lg:w-full lg:h-48 object-contain opacity-80 animate__animated animate__pulse animate__infinite animate__slow"
           />
         </div>
 
-        <div class="relative z-20 max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative z-20 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <!-- Top Grid Section with Content -->
           <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <!-- Left Content -->
@@ -643,12 +542,16 @@
           </div>
 
           <!-- Bottom Image Section -->
-          <div class="w-full">
-            <img
-              src="assets/images/smart-payrol.png"
-              alt="Smart Payroll Dashboard"
-              class="w-full h-auto rounded-2xl shadow-2xl"
-            />
+          <div class="w-full smart-gallery">
+            <div class="smart-item side-left animate__animated animate__slideInLeft animate__infinite animate__slow" data-wow-delay="0.3s">
+              <img src="assets/images/smart-1.png" alt="Smart Image Left" class="smart-img small rounded-2xl shadow-2xl">
+            </div>
+            <div class="smart-item center">
+              <img src="assets/images/smart-2.png" alt="Smart Image Center" class="smart-img center-img rounded-2xl shadow-2xl">
+            </div>
+            <div class="smart-item side-right animate__animated animate__slideInRight animate__infinite animate__slow" data-wow-delay="0.6s">
+              <img src="assets/images/smart-3.png" alt="Smart Image Right" class="smart-img small rounded-2xl shadow-2xl">
+            </div>
           </div>
         </div>
       </section>
@@ -663,11 +566,11 @@
           <img
             src="assets/images/trusted-absolute.png"
             alt="Trusted partner decoration"
-            class="w-full object-contain"
+            class="w-full object-contain bubble-pop"
           />
         </div>
 
-        <div class="relative z-20 max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative z-20 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <div class="grid lg:grid-cols-2 gap-12 items-center">
             <!-- Left Content - Dashboard/Analytics -->
             <div class="relative">
@@ -729,8 +632,8 @@
       </section>
 
       <!-- OENOD Grid Section -->
-      <section class="relative py-20 lg:py-32 overflow-hidden">
-        <div class="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
+      <section class="relative py-4 lg:py-32 overflow-hidden">
+        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <!-- Top Grid Section with Heading and Text -->
           <div class="grid lg:grid-cols-2 gap-12 items-center mb-6">
             <!-- Left Content - Heading -->
@@ -755,7 +658,7 @@
           </div>
 
           <!-- HR Line Between Top and Bottom Grid -->
-          <div class="w-full mb-16">
+          <div class="w-full mb-4 lg:mb-16">
             <hr class="border-t-2 border-gray-200" />
           </div>
 
@@ -765,11 +668,11 @@
             style="background-image: url('assets/images/enode-bg.png')"
           >
             <!-- Grid with Left Cards and Right Image -->
-            <div class="flex justify-between flex flex-wrap gap-8">
+            <div class="flex justify-between flex flex-wrap gap-4 lg:gap-8">
               <!-- Left Side - Three Interactive Cards -->
-              <div class="flex flex-col gap-8 animate__animated" data-animation="animate__fadeInLeft">
+              <div class="flex flex-col gap-8 auto-tab-container" id="autoTabContainer">
                 <!-- Payroll Card -->
-                <div class="bg-white py-4 border border-gray-200 rounded-xl p-6 cursor-pointer card-hover smooth-hover hover:bg-[#4244F8] hover:text-white group stagger-1 border-animation-solid">
+                <div class="bg-white py-4 border border-gray-200 rounded-xl p-6 cursor-pointer card-hover smooth-hover hover:bg-[#4244F8] hover:text-white group stagger-1 border-animation-solid auto-tab-card delay-1" data-tab="payroll">
                   <div class="flex items-start justify-between">
                     <div>
                       <h3 class="text-xl font-bold text-[#4244F8] group-hover:text-white mb-2">Payroll</h3>
@@ -786,7 +689,7 @@
                 </div>
 
                 <!-- Time & Attendance Card -->
-                <div class="bg-[#4244F8] text-white rounded-xl p-6 cursor-pointer card-hover smooth-hover hover:bg-white hover:text-[#4244F8] group border-2 border-[#4244F8] hover:border-gray-200 stagger-2 border-animation-solid">
+                <div class="bg-[#4244F8] text-white rounded-xl p-6 cursor-pointer card-hover smooth-hover hover:bg-white hover:text-[#4244F8] group border-2 border-[#4244F8] hover:border-gray-200 stagger-2 border-animation-solid auto-tab-card delay-2" data-tab="attendance">
                   <div class="flex items-start justify-between">
                     <div>
                       <h3 class="text-xl font-bold text-white group-hover:text-[#4244F8] mb-2">Time & Attendance</h3>
@@ -803,7 +706,7 @@
                 </div>
 
                 <!-- Talent Card -->
-                <div class="bg-white border border-gray-200 rounded-xl p-6 cursor-pointer card-hover smooth-hover hover:bg-[#4244F8] hover:text-white group stagger-3 border-animation-solid">
+                <div class="bg-white border border-gray-200 rounded-xl p-6 cursor-pointer card-hover smooth-hover hover:bg-[#4244F8] hover:text-white group stagger-3 border-animation-solid auto-tab-card delay-3" data-tab="talent">
                   <div class="flex items-start justify-between">
                     <div>
                       <h3 class="text-xl font-bold text-[#4244F8] group-hover:text-white mb-2">Talent</h3>
@@ -821,11 +724,11 @@
               </div>
 
               <!-- Right Image - Static -->
-              <div class="animate__animated" data-animation="animate__fadeInRight">
+              <div class="animate__animated" >
                 <img
                   src="assets/images/enode-right.png"
                   alt="OENOD Right Feature"
-                  class="w-full h-[500px] object-contain"
+                  class="w-full h-100 lg:h-[500px] object-contain"
                 />
               </div>
             </div>
@@ -838,7 +741,7 @@
         class="relative py-20 lg:py-24 overflow-hidden z-10"
         style="background: linear-gradient(135deg, #4649ff 0%, #01018b 100%)"
       >
-        <div class="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <!-- Center Content with Border -->
           <div class="flex justify-center mb-8">
             <div
@@ -868,7 +771,7 @@
           </div>
 
           <!-- Cards Grid -->
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20" data-aos="zoom-in">
             <!-- Card 1 -->
             <div
               class="bg-white text-start rounded-xl p-8 hover:bg-[#494bd6] hover:text-white transition-all duration-300 group cursor-pointer"
@@ -912,7 +815,7 @@
             <!-- Card 2 -->
             <div
               class="bg-white rounded-xl p-8 hover:bg-[#494bd6] hover:text-white transition-all duration-300 group cursor-pointer animate__animated"
-              data-animation="animate__fadeInUp"
+
             >
               <div>
                 <!-- Circle with Count -->
@@ -1050,7 +953,7 @@
             />
           </div>
           
-          <div class="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <!-- Section  -->
             <div class="grid lg:grid-cols-2 gap-12 items-center mb-12">
               <!-- Left Content - Heading -->
@@ -1814,7 +1717,7 @@
         data-animation="animate__fadeInUp"
         style="background-color: #fbfbfe"
       >
-        <div class="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <!-- Center Badge -->
           <div class="flex justify-center mb-8">
             <div>
@@ -2228,7 +2131,7 @@
 
       <!-- Mobile App Download Section -->
       <section class="relative py-16 lg:py-20 overflow-hidden bg-white">
-        <div class="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <div class="grid lg:grid-cols-2 gap-12 items-center">
             <!-- Left Content -->
             <div class="space-y-8">
@@ -2312,7 +2215,7 @@
     <!-- Footer -->
     <footer class="footer pt-12 lg:pt-40">
       <div
-        class="max-w-[1480px] pt-24 mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+        class="max-w-[1280px] pt-24 mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
       >
         <div class="grid lg:grid-cols-4 gap-6 md:gap-12 lg:gap-16 mb-12">
           <!-- Logo Column -->
@@ -2380,7 +2283,7 @@
         <!-- Footer Bottom -->
       </div>
       <div class="border-t bg-[#3D40F0] border-white/20 py-4">
-        <div class="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div
             class="flex md:flex-row justify-center lg:justify-between items-center"
           >
@@ -2469,6 +2372,19 @@
 
     <!-- Local script -->
     <script src="assets/js/main.js"></script>
+    
+    <!-- AOS (Animate On Scroll) JavaScript CDN -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Initialize AOS -->
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100
+      });
+    </script>
+    
     <script>
       // Mobile sidebar functionality
       const mobileMenuButton = document.getElementById("mobile-menu-button");
@@ -2603,6 +2519,155 @@
           window.open('https://apps.apple.com/app/oenod/id123456789', '_blank');
         }
       }
+
+      // =============================
+      // Automated Tab Animation
+      // =============================
+      
+      class AutoTabAnimation {
+        constructor() {
+          this.container = document.getElementById('autoTabContainer');
+          this.cards = this.container ? this.container.querySelectorAll('.auto-tab-card') : [];
+          this.currentIndex = 0;
+          this.isAnimating = false;
+          this.animationInterval = null;
+          this.cycleDuration = 8000; // 8 seconds per cycle
+          this.cardDisplayDuration = 2000; // 2 seconds per card
+          
+          this.init();
+        }
+
+        init() {
+          if (this.cards.length === 0) return;
+          
+          // Start the animation sequence
+          this.startAnimation();
+          
+          // Add click handlers to restart animation
+          this.cards.forEach((card, index) => {
+            card.addEventListener('click', () => {
+              this.highlightCard(index);
+            });
+          });
+        }
+
+        startAnimation() {
+          // Clear any existing interval
+          if (this.animationInterval) {
+            clearInterval(this.animationInterval);
+          }
+
+          // Reset all cards to initial state
+          this.resetCards();
+          
+          // Start the sequence
+          this.animateSequence();
+          
+          // Set up continuous cycling
+          this.animationInterval = setInterval(() => {
+            this.animateSequence();
+          }, this.cycleDuration);
+        }
+
+        resetCards() {
+          this.cards.forEach(card => {
+            card.classList.remove('animate-in', 'highlight');
+            card.style.opacity = '0';
+            card.style.transform = 'translateX(-30px) scale(0.95)';
+          });
+          this.currentIndex = 0;
+        }
+
+        animateSequence() {
+          if (this.isAnimating) return;
+          this.isAnimating = true;
+
+          // Reset cards
+          this.resetCards();
+
+          // Animate each card in sequence
+          this.cards.forEach((card, index) => {
+            setTimeout(() => {
+              this.animateCard(card, index);
+            }, index * 1000); // 1 second delay between each card
+          });
+
+          // Reset animation flag after sequence completes
+          setTimeout(() => {
+            this.isAnimating = false;
+          }, this.cards.length * 1000 + 2000);
+        }
+
+        animateCard(card, index) {
+          // Add animate-in class
+          card.classList.add('animate-in');
+          
+          // Add highlight effect after a short delay
+          setTimeout(() => {
+            card.classList.add('highlight');
+            
+            // Remove highlight after animation completes
+            setTimeout(() => {
+              card.classList.remove('highlight');
+            }, 800);
+          }, 300);
+        }
+
+        highlightCard(index) {
+          if (index < 0 || index >= this.cards.length) return;
+          
+          // Remove highlight from all cards
+          this.cards.forEach(card => card.classList.remove('highlight'));
+          
+          // Add highlight to selected card
+          this.cards[index].classList.add('highlight');
+          
+          // Remove highlight after animation
+          setTimeout(() => {
+            this.cards[index].classList.remove('highlight');
+          }, 800);
+        }
+
+        stop() {
+          if (this.animationInterval) {
+            clearInterval(this.animationInterval);
+            this.animationInterval = null;
+          }
+        }
+
+        restart() {
+          this.stop();
+          setTimeout(() => {
+            this.startAnimation();
+          }, 100);
+        }
+      }
+
+      // Initialize the auto tab animation when DOM is loaded
+      document.addEventListener('DOMContentLoaded', function() {
+        // Small delay to ensure all elements are rendered
+        setTimeout(() => {
+          window.autoTabInstance = new AutoTabAnimation();
+        }, 500);
+      });
+
+      // Optional: Pause animation on hover and resume on mouse leave
+      document.addEventListener('DOMContentLoaded', function() {
+        const container = document.getElementById('autoTabContainer');
+        if (container) {
+          container.addEventListener('mouseenter', () => {
+            if (window.autoTabInstance) {
+              window.autoTabInstance.stop();
+            }
+          });
+
+          container.addEventListener('mouseleave', () => {
+            if (window.autoTabInstance) {
+              window.autoTabInstance.restart();
+            }
+          });
+        }
+      });
     </script>
   </body>
 </html>

@@ -526,6 +526,86 @@ span {
   display: none !important;
 }
 
+/* ============================= */
+/* Vertical Marquee (Hero)       */
+/* ============================= */
+.v-marquee {
+  position: relative;
+  overflow: hidden;
+}
+
+.v-marquee-track {
+  display: flex;
+  flex-direction: column;
+  animation-duration: 26s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.v-marquee-up .v-marquee-track {
+  animation-name: marqueeUp;
+}
+
+.v-marquee-down .v-marquee-track {
+  animation-name: marqueeDown;
+}
+
+/* Improve rendering: hide backface for marquee images */
+.v-marquee img {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+@keyframes marqueeUp {
+  0% { transform: translateY(20%); }
+  100% { transform: translateY(-80%); }
+}
+
+@keyframes marqueeDown {
+  0% { transform: translateY(-80%); }
+  100% { transform: translateY(20%); }
+}
+
+/* Lift the marquee visually above header and add fade masks */
+.hero-marquee-offset {
+  position: relative;
+  overflow: visible; /* allow bleed */
+}
+
+.hero-marquee-offset::before,
+.hero-marquee-offset::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.hero-marquee-offset::before {
+  top: -40px; /* looks like from header */
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+  background: inherit;
+}
+
+.hero-marquee-offset::after {
+  bottom: -40px;
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+  mask-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+  background: inherit;
+}
+
+/* Absolutely positioned bleed area spanning beyond hero */
+.hero-marquee-bleed {
+  position: absolute;
+  top: -100vh;   /* start one viewport above */
+  height: 300vh; /* extend far above and below */
+  left: 0;
+  right: 0;
+}
+
 /* Border Animation - Left to Right (Auto Animation) */
 .border-animation {
   position: relative;
@@ -592,6 +672,68 @@ span {
   }
 }
 
+/* Smart gallery (3 images): stacked on mobile, flex on large */
+.smart-gallery {
+  position: relative;
+  min-height: 260px;
+}
+
+.smart-item.center {
+  position: relative;
+  z-index: 2;
+}
+
+.smart-item.side-left,
+.smart-item.side-right {
+  position: absolute;
+  top: 10px;
+  z-index: 1;
+}
+
+.smart-item.side-left { left: 10px; }
+.smart-item.side-right { right: 10px; }
+
+.smart-img { display: block; height: auto; }
+
+/* Sizes on mobile (center big, sides small) */
+.smart-img.center-img { width: 70%; max-width: 560px; margin: 0 auto; }
+.smart-img.small { width: 28%; max-width: 160px; }
+
+/* Add gentle bubbling to sides */
+.smart-item.side-left .smart-img,
+.smart-item.side-right .smart-img { animation: scaleBubble 4.5s ease-in-out infinite, floatUpDown 6s ease-in-out infinite; }
+
+/* Large screens: arrange in a row, center 2x width */
+@media (min-width: 1024px) {
+  .smart-gallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    min-height: auto;
+  }
+  .smart-item { position: static !important; }
+  .smart-img.small { width: 260px; max-width: none; }
+  .smart-img.center-img { width: 520px; max-width: none; }
+}
+
+/* Small screens: stack vertically, center first, sides below */
+@media (max-width: 768px) {
+  .smart-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    min-height: auto;
+  }
+  .smart-item { position: static !important; }
+  .smart-item.center { order: 1; }
+  .smart-item.side-left { order: 2; }
+  .smart-item.side-right { order: 3; }
+  .smart-img.center-img { width: 100%; max-width: none; }
+  .smart-img.small { width: 100%; max-width: none; }
+}
+
 /* Staggered animation delays for each card - one by one with little delay */
 .stagger-1::before {
   animation: slideBorderSolid 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
@@ -606,4 +748,105 @@ span {
 .stagger-3::before {
   animation: slideBorderSolid 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   animation-delay: 5.4s;
+}
+
+/* ============================= */
+/* Automated Tab Animation       */
+/* ============================= */
+
+/* Card appearance animation */
+@keyframes cardSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Card highlight animation */
+@keyframes cardHighlight {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(66, 68, 248, 0.3);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Automated tab animation classes */
+.auto-tab-card {
+  opacity: 0;
+  transform: translateX(-30px) scale(0.95);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.auto-tab-card.animate-in {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  animation: cardSlideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.auto-tab-card.highlight {
+  animation: cardHighlight 0.8s ease-in-out;
+}
+
+/* Sequential animation delays */
+.auto-tab-card.delay-1 {
+  animation-delay: 0.5s;
+}
+
+.auto-tab-card.delay-2 {
+  animation-delay: 1.5s;
+}
+
+.auto-tab-card.delay-3 {
+  animation-delay: 2.5s;
+}
+
+/* Auto-tab container */
+.auto-tab-container {
+  position: relative;
+}
+
+/* Restart animation trigger */
+.auto-tab-container.restart .auto-tab-card {
+  opacity: 0;
+  transform: translateX(-30px) scale(0.95);
+}
+
+.auto-tab-container.restart .auto-tab-card.animate-in {
+  animation: cardSlideIn 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Top-left decorative image bubbling animation */
+.bubble-pop {
+  animation: bubbleFloat 3s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes bubbleFloat {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    transform: translateY(-6px) scale(1.06);
+  }
+  50% {
+    transform: translateY(0) scale(1.1);
+  }
+  75% {
+    transform: translateY(6px) scale(1.06);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
 }
