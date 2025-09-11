@@ -988,7 +988,7 @@
                 class="bg-[#2a2c8f] p-8 text-white shadow-xl hover:bg-blue-500 duration-300 h-[750px] flex flex-col"
               >
                 <div class="flex-grow">
-                  <div class="flex items-center gap-3 mb-[100px]">
+                  <div class="flex items-center gap-3 mb-12">
                     <svg
                       width="35"
                       height="35"
@@ -1003,6 +1003,15 @@
                     </svg>
                     <h2 class="text-2xl font-bold">Payroll</h2>
                   </div>
+                  <div class="flex items-center gap-3 mb-2">
+                    <div class="flex items-baseline gap-2">
+                      <span class="text-white text-4xl font-bold" id="payroll-price">$50</span>
+                      <span
+                        class="text-white text-lg font-medium line-through opacity-75"
+                        id="payroll-original-price">$100</span
+                      >
+                    </div>
+                  </div>
 
                   <hr class="border-t-1 my-2 border-white" />
                   <div class="flex items-center justify-between gap-4 my-6">
@@ -1011,8 +1020,9 @@
                       <input
                         type="radio"
                         class="w-4 h-4 rounded-full bg-white"
-                        name="plan"
-                        id="monthly"
+                        name="payroll-plan"
+                        id="payroll-monthly"
+                        checked
                       />
                     </div>
                     <div class="flex items-center gap-2">
@@ -1020,8 +1030,8 @@
                       <input
                         type="radio"
                         class="w-4 h-4 rounded-full bg-white"
-                        name="plan"
-                        id="yearly"
+                        name="payroll-plan"
+                        id="payroll-yearly"
                       />
                     </div>
                   </div>
@@ -1109,7 +1119,7 @@
                   </form>
 
                   <div class="flex justify-between items-center mb-6 text-sm">
-                    <span class="text-white">Final Price: $1,250</span>
+                    <span class="text-white">Final Price: $50 (Monthly) / $1000 (Yearly)</span>
                     <span class="text-white">Free Trial: 15Days</span>
                   </div>
                 </div>
@@ -1139,14 +1149,14 @@
                         fill="white"
                       />
                     </svg>
-                    <h2 class="text-2xl font-bold capitalize">basic plan</h2>
+                    <h2 class="text-2xl font-bold capitalize">Basic Plan</h2>
                   </div>
                   <div class="flex items-center gap-3 mb-2">
                     <div class="flex items-baseline gap-2">
-                      <span class="text-white text-4xl font-bold">$10</span>
+                      <span class="text-white text-4xl font-bold" id="basic-price">$10</span>
                       <span
                         class="text-white text-lg font-medium line-through opacity-75"
-                        >$20</span
+                        id="basic-original-price">$20</span
                       >
                     </div>
                   </div>
@@ -1158,8 +1168,9 @@
                       <input
                         type="radio"
                         class="w-4 h-4 rounded-full bg-white"
-                        name="plan"
-                        id="monthly"
+                        name="basic-plan"
+                        id="basic-monthly"
+                        checked
                       />
                     </div>
                     <div class="flex items-center gap-2">
@@ -1167,8 +1178,8 @@
                       <input
                         type="radio"
                         class="w-4 h-4 rounded-full bg-white"
-                        name="plan"
-                        id="yearly"
+                        name="basic-plan"
+                        id="basic-yearly"
                       />
                     </div>
                   </div>
@@ -1256,7 +1267,7 @@
                   </form>
 
                   <div class="flex justify-between items-center mb-6 text-sm">
-                    <span class="text-white">Final Price: $1,250</span>
+                    <span class="text-white">Final Price: $10 (Monthly) / $300 (Yearly)</span>
                     <span class="text-white">Free Trial: 15Days</span>
                   </div>
                   <hr class="border-b-1 my-4 border-white" />
@@ -1284,14 +1295,14 @@
                         fill="white"
                       />
                     </svg>
-                    <h2 class="text-2xl font-bold capitalize">Standard Plan</h2>
+                    <h2 class="text-2xl font-bold capitalize">Advanced Plan</h2>
                   </div>
                   <div class="flex items-center gap-3 mb-2">
                     <div class="flex items-baseline gap-2">
-                      <span class="text-white text-4xl font-bold">$30</span>
+                      <span class="text-white text-4xl font-bold" id="advanced-price">$50</span>
                       <span
                         class="text-white text-lg font-medium line-through opacity-75"
-                        >$40</span
+                        id="advanced-original-price">$100</span
                       >
                     </div>
                   </div>
@@ -1303,8 +1314,9 @@
                       <input
                         type="radio"
                         class="w-4 h-4 rounded-full bg-white"
-                        name="plan"
-                        id="monthly"
+                        name="advanced-plan"
+                        id="advanced-monthly"
+                        checked
                       />
                     </div>
                     <div class="flex items-center gap-2">
@@ -1312,8 +1324,8 @@
                       <input
                         type="radio"
                         class="w-4 h-4 rounded-full bg-white"
-                        name="plan"
-                        id="yearly"
+                        name="advanced-plan"
+                        id="advanced-yearly"
                       />
                     </div>
                   </div>
@@ -1401,7 +1413,7 @@
                   </form>
 
                   <div class="flex justify-between items-center mb-6 text-sm">
-                    <span class="text-white">Final Price: $1,250</span>
+                    <span class="text-white">Final Price: $50 (Monthly) / $400 (Yearly)</span>
                     <span class="text-white">Free Trial: 15Days</span>
                   </div>
                   <hr class="border-b-1 my-4 border-white" />
@@ -1431,14 +1443,14 @@
                         fill="white"
                       />
                     </svg>
-                    <h2 class="text-2xl font-bold capitalize">Premium Plan</h2>
+                    <h2 class="text-2xl font-bold capitalize">Standard Plan</h2>
                   </div>
                   <div class="flex items-center gap-3 mb-2">
                     <div class="flex items-baseline gap-2">
-                      <span class="text-white text-4xl font-bold">$50</span>
+                      <span class="text-white text-4xl font-bold" id="standard-price">$30</span>
                       <span
                         class="text-white text-lg font-medium line-through opacity-75"
-                        >$70</span
+                        id="standard-original-price">$60</span
                       >
                     </div>
                   </div>
@@ -1450,8 +1462,9 @@
                       <input
                         type="radio"
                         class="w-4 h-4 rounded-full bg-white"
-                        name="plan"
-                        id="monthly"
+                        name="standard-plan"
+                        id="standard-monthly"
+                        checked
                       />
                     </div>
                     <div class="flex items-center gap-2">
@@ -1459,8 +1472,8 @@
                       <input
                         type="radio"
                         class="w-4 h-4 rounded-full bg-white"
-                        name="plan"
-                        id="yearly"
+                        name="standard-plan"
+                        id="standard-yearly"
                       />
                     </div>
                   </div>
@@ -1548,7 +1561,7 @@
                   </form>
 
                   <div class="flex justify-between items-center mb-6 text-sm">
-                    <span class="text-white">Final Price: $2,500</span>
+                    <span class="text-white">Final Price: $30 (Monthly) / $300 (Yearly)</span>
                     <span class="text-white">Free Trial: 30Days</span>
                   </div>
                   <hr class="border-b-1 my-4 border-white" />
@@ -1578,14 +1591,14 @@
                         fill="white"
                       />
                     </svg>
-                    <h2 class="text-2xl font-bold capitalize">Enterprise Plan</h2>
+                    <h2 class="text-2xl font-bold capitalize">Premium Plan</h2>
                   </div>
                   <div class="flex items-center gap-3 mb-2">
                     <div class="flex items-baseline gap-2">
-                      <span class="text-white text-4xl font-bold">$100</span>
+                      <span class="text-white text-4xl font-bold" id="premium-price">$100</span>
                       <span
                         class="text-white text-lg font-medium line-through opacity-75"
-                        >$150</span
+                        id="premium-original-price">$200</span
                       >
                     </div>
                   </div>
@@ -1597,8 +1610,9 @@
                       <input
                         type="radio"
                         class="w-4 h-4 rounded-full bg-white"
-                        name="plan"
-                        id="monthly"
+                        name="premium-plan"
+                        id="premium-monthly"
+                        checked
                       />
                     </div>
                     <div class="flex items-center gap-2">
@@ -1606,8 +1620,8 @@
                       <input
                         type="radio"
                         class="w-4 h-4 rounded-full bg-white"
-                        name="plan"
-                        id="yearly"
+                        name="premium-plan"
+                        id="premium-yearly"
                       />
                     </div>
                   </div>
@@ -1695,7 +1709,7 @@
                   </form>
 
                   <div class="flex justify-between items-center mb-6 text-sm">
-                    <span class="text-white">Final Price: $5,000</span>
+                    <span class="text-white">Final Price: $100 (Monthly) / $1000 (Yearly)</span>
                     <span class="text-white">Free Trial: 45Days</span>
                   </div>
                   <hr class="border-b-1 my-4 border-white" />
@@ -2664,6 +2678,119 @@
           container.addEventListener('mouseleave', () => {
             if (window.autoTabInstance) {
               window.autoTabInstance.restart();
+            }
+          });
+        }
+      });
+
+      // Price Toggle Functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        // Payroll Plan
+        const payrollMonthly = document.getElementById('payroll-monthly');
+        const payrollYearly = document.getElementById('payroll-yearly');
+        const payrollPrice = document.getElementById('payroll-price');
+        const payrollOriginalPrice = document.getElementById('payroll-original-price');
+
+        if (payrollMonthly && payrollYearly && payrollPrice && payrollOriginalPrice) {
+          payrollMonthly.addEventListener('change', function() {
+            if (this.checked) {
+              payrollPrice.textContent = '$50';
+              payrollOriginalPrice.textContent = '$100';
+            }
+          });
+
+          payrollYearly.addEventListener('change', function() {
+            if (this.checked) {
+              payrollPrice.textContent = '$1000';
+              payrollOriginalPrice.textContent = '$1200';
+            }
+          });
+        }
+
+        // Basic Plan
+        const basicMonthly = document.getElementById('basic-monthly');
+        const basicYearly = document.getElementById('basic-yearly');
+        const basicPrice = document.getElementById('basic-price');
+        const basicOriginalPrice = document.getElementById('basic-original-price');
+
+        if (basicMonthly && basicYearly && basicPrice && basicOriginalPrice) {
+          basicMonthly.addEventListener('change', function() {
+            if (this.checked) {
+              basicPrice.textContent = '$10';
+              basicOriginalPrice.textContent = '$20';
+            }
+          });
+
+          basicYearly.addEventListener('change', function() {
+            if (this.checked) {
+              basicPrice.textContent = '$300';
+              basicOriginalPrice.textContent = '$360';
+            }
+          });
+        }
+
+        // Advanced Plan
+        const advancedMonthly = document.getElementById('advanced-monthly');
+        const advancedYearly = document.getElementById('advanced-yearly');
+        const advancedPrice = document.getElementById('advanced-price');
+        const advancedOriginalPrice = document.getElementById('advanced-original-price');
+
+        if (advancedMonthly && advancedYearly && advancedPrice && advancedOriginalPrice) {
+          advancedMonthly.addEventListener('change', function() {
+            if (this.checked) {
+              advancedPrice.textContent = '$50';
+              advancedOriginalPrice.textContent = '$100';
+            }
+          });
+
+          advancedYearly.addEventListener('change', function() {
+            if (this.checked) {
+              advancedPrice.textContent = '$400';
+              advancedOriginalPrice.textContent = '$600';
+            }
+          });
+        }
+
+        // Standard Plan
+        const standardMonthly = document.getElementById('standard-monthly');
+        const standardYearly = document.getElementById('standard-yearly');
+        const standardPrice = document.getElementById('standard-price');
+        const standardOriginalPrice = document.getElementById('standard-original-price');
+
+        if (standardMonthly && standardYearly && standardPrice && standardOriginalPrice) {
+          standardMonthly.addEventListener('change', function() {
+            if (this.checked) {
+              standardPrice.textContent = '$30';
+              standardOriginalPrice.textContent = '$60';
+            }
+          });
+
+          standardYearly.addEventListener('change', function() {
+            if (this.checked) {
+              standardPrice.textContent = '$300';
+              standardOriginalPrice.textContent = '$360';
+            }
+          });
+        }
+
+        // Premium Plan
+        const premiumMonthly = document.getElementById('premium-monthly');
+        const premiumYearly = document.getElementById('premium-yearly');
+        const premiumPrice = document.getElementById('premium-price');
+        const premiumOriginalPrice = document.getElementById('premium-original-price');
+
+        if (premiumMonthly && premiumYearly && premiumPrice && premiumOriginalPrice) {
+          premiumMonthly.addEventListener('change', function() {
+            if (this.checked) {
+              premiumPrice.textContent = '$100';
+              premiumOriginalPrice.textContent = '$200';
+            }
+          });
+
+          premiumYearly.addEventListener('change', function() {
+            if (this.checked) {
+              premiumPrice.textContent = '$1000';
+              premiumOriginalPrice.textContent = '$1200';
             }
           });
         }
