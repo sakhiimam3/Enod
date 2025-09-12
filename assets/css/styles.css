@@ -91,6 +91,44 @@ span {
   opacity: 1;
 }
 
+/* Navigation Menu Underline Animation */
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  line-height: 0.25rem !important;
+  padding-bottom: 0.10rem; /* reduce space so underline sits closer to text */
+  display: inline-block; /* ensures pseudo element aligns to the link box */
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0.75rem;  /* match Tailwind px-3 left padding */
+  right: 0.75rem; /* match Tailwind px-3 right padding */
+  height: 1px; /* thinner underline */
+  background-color: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: right; /* animate right -> left */
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Active state: keep underline visible for current page */
+.nav-link.active {
+  color: var(--color-primary);
+  font-weight: 700; /* make active link bold */
+}
+.nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
 /* Testimonial Navigation Buttons */
 .testimonial-prev,
 .testimonial-next {
