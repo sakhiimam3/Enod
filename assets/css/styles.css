@@ -4,6 +4,61 @@
   --color-badge: #111111;
 }
 
+/* Card hover helpers */
+.hover-bg-primary {
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.hover-bg-primary:hover {
+  background-color: var(--color-primary) !important;
+  color: #ffffff !important;
+}
+
+.hover-card-primary:hover h3,
+.hover-card-primary:hover p,
+.hover-card-primary:hover span,
+.hover-card-primary:hover a {
+  color: #ffffff !important;
+}
+
+/* ============================= */
+/* OENOD Card Bottom Border FX   */
+/* ============================= */
+.card-underline {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 0;
+  background-color: var(--color-primary);
+  transform: translateX(0);
+}
+
+/* play underline from left -> right */
+.card-underline.play::after {
+  animation: underlineLeftToRight 1.2s ease-out forwards;
+}
+
+@keyframes underlineLeftToRight {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* helper for active card highlight (optional) */
+.card-active {
+  box-shadow: 0 10px 25px -5px rgba(66, 68, 248, 0.25);
+}
+
 html,
 body {
   margin: 0;
@@ -11,6 +66,9 @@ body {
   box-sizing: border-box;
   font-family: "Mulish", sans-serif;
 }
+
+/* Utility to force Mulish when Tailwind/base overrides apply */
+.font-mulish { font-family: "Mulish", sans-serif !important; }
 
 *,
 *::before,
@@ -268,7 +326,9 @@ span {
   background-image: url("../images/hero-bg.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: 0%;
+ 
+  /* background-color: red; */
 }
 
 /* Hero Dots Styling */
@@ -287,9 +347,9 @@ span {
 
 /* Responsive background sizing and position for hero section */
 @media (max-width: 1024px) {
-  .hero-section {
+  .hero-section { 
     background-size: contain !important;
-    background-position: top !important;
+    background-position: top !important;  
   }
 
   /* Hero dots responsive for medium devices */
@@ -301,8 +361,8 @@ span {
 
 @media (max-width: 768px) {
   .hero-section {
-    background-size: contain !important;
-    background-position: top !important;
+    background-size: cover   ;
+    background-position: top;
   }
 
   /* Hero dots responsive for small devices */
@@ -564,6 +624,24 @@ span {
   display: none !important;
 }
 
+/* Hide any default slick dots globally for hero */
+.hero-slider .slick-dots { display: none !important; }
+
+/* Dashed controls for hero slider */
+.hero-dash { height: 0; line-height: 0; padding: 0; display: inline-block; }
+
+/* Ensure hero slider uses full container height and no bleed */
+.hero-slider,
+.hero-slider .slick-list,
+.hero-slider .slick-track { height: 100% !important; }
+
+.hero-slider .slick-list { overflow: hidden; }
+
+.hero-slider .slick-slide { height: 100% !important; display: block !important; }
+.hero-slider .slick-slide > div { height: 100%; }
+
+.hero-slider img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
 /* ============================= */
 /* Vertical Marquee (Hero)       */
 /* ============================= */
@@ -765,11 +843,33 @@ span {
     min-height: auto;
   }
   .smart-item { position: static !important; }
-  .smart-item.center { order: 1; }
-  .smart-item.side-left { order: 2; }
+  /* Keep side items as relative so their absolute overlays stay anchored */
+  .smart-item.side-left,
+  .smart-item.side-right { position: relative !important; }
+  .smart-item.side-left { order: 1; }
+  .smart-item.center { order: 2; }
   .smart-item.side-right { order: 3; }
   .smart-img.center-img { width: 100%; max-width: none; }
   .smart-img.small { width: 100%; max-width: none; }
+}
+
+/* Medium screens: also stack vertically to keep layout stable */
+@media (max-width: 1024px) {
+  .smart-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    min-height: auto;
+  }
+  .smart-item { position: static !important; }
+  .smart-item.side-left,
+  .smart-item.side-right { position: relative !important; }
+  .smart-item.side-left { order: 1; }
+  .smart-item.center { order: 2; }
+  .smart-item.side-right { order: 3; }
+  .smart-img.center-img { width: 100%; max-width: none; }
+  .smart-img.small { width: 80%; max-width: 420px; }
 }
 
 /* Staggered animation delays for each card - one by one with little delay */
@@ -850,20 +950,7 @@ span {
   animation-delay: 2.5s;
 }
 
-/* Auto-tab container */
-.auto-tab-container {
-  position: relative;
-}
 
-/* Restart animation trigger */
-.auto-tab-container.restart .auto-tab-card {
-  opacity: 0;
-  transform: translateX(-30px) scale(0.95);
-}
-
-.auto-tab-container.restart .auto-tab-card.animate-in {
-  animation: cardSlideIn 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
 
 /* Top-left decorative image bubbling animation */
 .bubble-pop {
@@ -887,6 +974,35 @@ span {
   100% {
     transform: translateY(0) scale(1);
   }
+}
+
+/* Subtle scale-only bubbling for overlay badges */
+.bubble-scale {
+  animation: bubbleScale 2.8s ease-in-out infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+@keyframes bubbleScale {
+  0% { transform: scale(1); }
+  25% { transform: scale(0.96); }
+  50% { transform: scale(1.06); }
+  75% { transform: scale(0.98); }
+  100% { transform: scale(1); }
+}
+
+/* Overlay badge responsive anchors for smart-gallery */
+.overlay-left-badge { bottom: -7.5rem; right: 0; margin-bottom: 0.5rem; margin-right: 0.5rem; }
+.overlay-right-badge { top: -7.5rem; right: 9.5rem; margin-top: 0.5rem; margin-right: 0.5rem; }
+
+@media (max-width: 1024px) {
+  .overlay-left-badge { bottom: 8px; right: 8px; }
+  .overlay-right-badge { top: 8px; right: 8px; }
+}
+
+@media (max-width: 768px) {
+  .overlay-left-badge { bottom: 8px; right: 8px; }
+  .overlay-right-badge { top: 8px; right: 8px; }
 }
 
 /* ============================= */
@@ -958,4 +1074,66 @@ html { scroll-behavior: smooth; }
 .animate-on-scroll.animated {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* OENOD Cards Active State */
+.oenod-card.active {
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px -5px rgba(66, 68, 248, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.oenod-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.oenod-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -5px rgba(66, 68, 248, 0.2);
+}
+
+/* Enhanced border animation for OENOD cards */
+.oenod-card.border-animation-solid::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #4244F8, transparent);
+  animation: slideBorderSolid 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes slideBorderSolid {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+/* ============================= */
+/* Full-bleed helpers            */
+/* ============================= */
+.full-bleed {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+}
+
+.ribbon-strip {
+  border-radius: 0 !important;
+  border: 0 !important;
 }

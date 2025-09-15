@@ -4,60 +4,57 @@
  */
 
 $(document).ready(function () {
-  // Initialize Hero Slider
+  // Initialize Hero Slider (vertical, manual via dashed controls)
   $(".hero-slider").slick({
     dots: false,
     infinite: true,
-    speed: 800,
-    fade: true,
+    speed: 600,
     cssEase: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-    autoplay: true,
-    autoplaySpeed: 5000,
-    pauseOnHover: true,
+    autoplay: false,
     arrows: false,
+    vertical: true,
+    verticalSwiping: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    adaptiveHeight: true,
     responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          vertical: false,
+          verticalSwiping: false,
+          adaptiveHeight: true,
+        }
+      },
       {
         breakpoint: 768,
         settings: {
-          fade: false,
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+          vertical: false,
+          verticalSwiping: false,
+          adaptiveHeight: true,
+        }
+      }
+    ]
   });
 
-  // Custom dot navigation functionality
-  $(".hero-dot").click(function () {
-    const slideIndex = $(this).data("slide");
+  // Custom dashed navigation functionality
+  $(document).on('click', '.hero-dash', function () {
+    const slideIndex = $(this).data('slide');
     $(".hero-slider").slick("slickGoTo", slideIndex);
   });
 
-  // Update active dot on slide change
-  $(".hero-slider").on(
-    "beforeChange",
-    function (event, slick, currentSlide, nextSlide) {
-      $(".hero-dot").removeClass("bg-primary").addClass("bg-gray-300");
-      $('.hero-dot[data-slide="' + nextSlide + '"]')
-        .removeClass("bg-gray-300")
-        .addClass("bg-primary");
-    }
-  );
+  // Update active dashed control on slide change
+  $(".hero-slider").on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+    $(".hero-dash")
+      .removeClass("border-primary")
+      .addClass("border-gray-300");
+    $('.hero-dash[data-slide="' + nextSlide + '"]')
+      .removeClass("border-gray-300")
+      .addClass("border-primary");
+  });
 
-  // Set initial active dot
-  $('.hero-dot[data-slide="0"]')
-    .removeClass("bg-gray-300")
-    .addClass("bg-primary");
-
-  // Pause autoplay on dot hover
-  $(".hero-dot").hover(
-    function () {
-      $(".hero-slider").slick("slickPause");
-    },
-    function () {
-      $(".hero-slider").slick("slickPlay");
-    }
-  );
+  // Set initial active dash
+  $('.hero-dash[data-slide="0"]').removeClass('border-gray-300').addClass('border-primary');
 
  
 
@@ -216,5 +213,94 @@ $(document).ready(function () {
       }
     ]
   });
+
+  // Ensure Monthly is checked by default for each plan group
+  function enforceDefaultMonthlyRadios(){
+    var $container = $(".plans-slider");
+    if ($container.length === 0) return;
+    $container.find('input[type="radio"][id$="-monthly"]').each(function(){
+      var groupName = this.name;
+      // Uncheck entire group first, then check monthly
+      $container.find('input[name="' + groupName + '"]').prop('checked', false);
+      $(this).prop('checked', true);
+    });
+  }
+
+  // Run once on load
+  enforceDefaultMonthlyRadios();
+
+  // Also re-apply after slider re-renders slides
+  $(".plans-slider").on('init reInit setPosition', function(){
+    enforceDefaultMonthlyRadios();
+  });
+  
+  // =============================
+  // OENOD Cards sequencing + click
+  // =============================
+  (function(){
+    var $grid = $('#oenod-grid');
+    if ($grid.length === 0) return;
+
+    var $cards = $('#oenod-cards .oenod-card');
+    var $rightImg = $('#oenod-right-image');
+    if ($cards.length === 0 || $rightImg.length === 0) return;
+
+    var defaultRightSrc = 'assets/images/enode-right.png';
+    var stepToImage = {
+      1: defaultRightSrc, // keep current for first step
+      2: 'assets/images/dashboard1.jpg',
+      3: 'assets/images/dashboard3.jpg'
+    };
+
+    function playUnderline($card){
+      $cards.removeClass('play');
+      // Force reflow then add class to restart animation
+      void $card[0].offsetWidth;
+      $card.addClass('play');
+    }
+
+    function setActive(step){
+      $cards.removeClass('card-active');
+      $cards.filter('[data-step="' + step + '"]').addClass('card-active');
+    }
+
+    function swapRight(step){
+      var nextSrc = stepToImage[step] || defaultRightSrc;
+      if ($rightImg.attr('src') === nextSrc) return;
+      $rightImg.css('opacity', '0');
+      setTimeout(function(){
+        $rightImg.attr('src', nextSrc);
+        $rightImg.css('opacity', '1');
+      }, 200);
+    }
+
+    // Auto run 1 -> 2 -> 3
+    function runSequence(){
+      var steps = [1,2,3];
+      var delay = 1000;
+      steps.forEach(function(step){
+        setTimeout(function(){
+          var $c = $cards.filter('[data-step="' + step + '"]');
+          if ($c.length === 0) return;
+          playUnderline($c);
+          setActive(step);
+          if (step > 1) swapRight(step);
+        }, delay);
+        delay += 1500;
+      });
+    }
+
+    // Click
+    $cards.css('cursor','pointer').on('click', function(){
+      var step = Number(this.getAttribute('data-step'));
+      playUnderline($(this));
+      setActive(step);
+      swapRight(step);
+    });
+
+    // Kick off once, then repeat periodically
+    setTimeout(runSequence, 100);
+    setInterval(runSequence, 7000);
+  })();
 
 });

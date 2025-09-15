@@ -11,6 +11,7 @@ tailwind.config = {
       fontFamily: {
         'heading': ['Outfit', 'sans-serif'],
         'body': ['Mulish', 'sans-serif'],
+        'mulish': ['Mulish', 'sans-serif'],
       },
     },
   },
