@@ -9,7 +9,7 @@
     <!-- Preconnect to Google Fonts for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
+
     <!-- Google Fonts with optimized loading -->
     <link
       rel="preload"
@@ -23,7 +23,6 @@
         href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
       />
     </noscript>
- 
 
     <!-- Local stylesheet -->
     <link rel="stylesheet" href="assets/css/styles.css" />
@@ -66,302 +65,323 @@
   </head>
   <body class="font-body min-h-screen font-mulish">
     <!-- Hero Section with  -->
-      <section
-  
-    class="relative overflow-hidden min-h-screen flex flex-col hero-section "
-        data-animation="animate__fadeIn"
-      >
+    <section
+      class="relative overflow-hidden min-h-screen flex flex-col hero-section"
+      data-animation="animate__fadeIn"
+    >
       <!-- Header Navigation -->
       <div
         class="absolute top-6 left-1/2 transform -translate-x-1/2 z-20 max-w-[1280px] w-full px-4 sm:px-6 lg:px-8"
       >
-        <div class="bg-white rounded-full shadow-sm px-6 ">
+        <div class="bg-white rounded-full shadow-sm px-6">
           <div class="flex justify-between py-4 items-center">
-              <!-- Logo -->
-              <div class="flex-shrink-0">
-                <div class="flex items-center">
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+              <div class="flex items-center">
+                <img
+                  src="assets/images/logo.png"
+                  alt="logo"
+                  class="w-auto h-8"
+                />
+              </div>
+            </div>
+
+            <!-- Desktop Navigation Menu -->
+            <nav class="hidden lg:flex space-x-3">
+              <a
+                href="./index.html"
+                class="nav-link active text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
+                >Home</a
+              >
+              <a
+                href="price.html"
+                class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
+                >Price</a
+              >
+              <a
+                href="about.html"
+                class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-medium font-mulish"
+                >About</a
+              >
+              <a
+                href="learning.html"
+                class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-medium font-mulish"
+                >Learning</a
+              >
+              <a
+                href="services.html"
+                class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
+                >Services</a
+              >
+              <a
+                href="career.html"
+                class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
+                >Career</a
+              >
+              <!-- <a
+                  href="help-center.html"
+                  class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-medium font-mulish"
+                  >Help Center</a
+                > -->
+              <a
+                href="contact.html"
+                class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
+                >Contact</a
+              >
+            </nav>
+
+            <!-- Desktop Auth Buttons -->
+            <div class="hidden lg:flex items-center space-x-4">
+              <button
+                class="text-badge underline hover:text-primary px-3 py-2 text-sm font-bold"
+              >
+                Log In
+              </button>
+              <button
+                class="bg-primary text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 smooth-transition btn-animate hover:scale-105"
+              >
+                Join Now
+              </button>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="lg:hidden">
+              <button
+                id="mobile-menu-button"
+                class="text-gray-600 hover:text-gray-900 p-2"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Sidebar -->
+      <div id="mobile-sidebar" class="fixed inset-0 z-50 lg:hidden hidden">
+        <div
+          class="fixed inset-0 bg-black bg-opacity-50"
+          id="sidebar-overlay"
+        ></div>
+        <div
+          class="fixed right-0 top-0 h-full w-80 bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out"
+          id="sidebar-content"
+        >
+          <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+              <div class="text-2xl font-bold text-primary">
+                <a href="./index.html">
                   <img
                     src="assets/images/logo.png"
                     alt="logo"
                     class="w-auto h-8"
                   />
-                </div>
+                </a>
               </div>
-
-              <!-- Desktop Navigation Menu -->
-              <nav class="hidden lg:flex space-x-3">
-                <a
-                  href="./index.html"
-                  class="nav-link active text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
-                  >Home</a
-                >
-                <a
-                  href="price.html"
-                  class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
-                  >Price</a
-                >
-                <a
-                  href="about.html"
-                  class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-medium font-mulish"
-                  >About</a
-                >
-                <a
-                  href="learning.html"
-                  class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-medium font-mulish"
-                  >Learning</a
-                >
-                <a
-                  href="services.html"
-                  class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
-                  >Services</a
-                >
-                <a
-                  href="career.html"
-                  class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
-                  >Career</a
-                >
-                <!-- <a
-                  href="help-center.html"
-                  class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-medium font-mulish"
-                  >Help Center</a
-                > -->
-                <a
-                  href="contact.html"
-                  class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
-                  >Contact</a
-                >
-              </nav>
-
-              <!-- Desktop Auth Buttons -->
-              <div class="hidden lg:flex items-center space-x-4">
-                <button
-                  class="text-badge underline hover:text-primary px-3 py-2 text-sm font-bold"
-                >
-                  Log In
-                </button>
-                <button
-                  class="bg-primary text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 smooth-transition btn-animate hover:scale-105"
-                >
-                  Join Now
-                </button>
-              </div>
-
-              <!-- Mobile menu button -->
-              <div class="lg:hidden">
-                <button
-                  id="mobile-menu-button"
-                  class="text-gray-600 hover:text-gray-900 p-2"
-                >
-                  <svg
-                    class="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M4 6h16M4 12h16M4 18h16"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mobile Sidebar -->
-        <div id="mobile-sidebar" class="fixed inset-0 z-50 lg:hidden hidden">
-          <div
-            class="fixed inset-0 bg-black bg-opacity-50"
-            id="sidebar-overlay"
-          ></div>
-          <div
-            class="fixed right-0 top-0 h-full w-80 bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out"
-            id="sidebar-content"
-          >
-            <div class="p-6">
-              <div class="flex justify-between items-center mb-8">
-                <div class="text-2xl font-bold text-primary">
-                  <a href="./index.html">
-                    <img
-                      src="assets/images/logo.png"
-                      alt="logo"
-                      class="w-auto h-8"
-                    />
-                  </a>
-                </div>
-                <button
-                  id="close-sidebar"
-                  class="text-gray-600 hover:text-gray-900"
-                >
-                  <svg
-                    class="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M6 18L18 6M6 6l12 12"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-
-              <nav class="space-y-4 mb-8">
-                <a
-                  href="./index.html"
-                  class="nav-link active block text-badge hover:text-primary py-2 text-lg font-medium"
-                  >Home</a
-                >
-                <a
-                  href="./price.html"
-                  class="block text-badge hover:text-primary py-2 text-lg font-medium"
-                  >Price</a
-                >
-                <a
-                  href="./about.html"
-                  class="block text-badge hover:text-primary py-2 text-lg font-medium"
-                  >About</a
-                >
-                <a
-                  href="./learning.html"
-                  class="block text-badge hover:text-primary py-2 text-lg font-medium"
-                  >Learning</a
-                >
-                <a
-                  href="./services.html"
-                  class="block text-badge hover:text-primary py-2 text-lg font-medium"
-                  >Services</a
-                >
-                <a
-                  href="./career.html"
-                  class="block text-badge hover:text-primary py-2 text-lg font-medium"
-                  >Career</a
-                >
-                <!-- <a
-                  href="help-center.html"
-                  class="block text-badge hover:text-primary py-2 text-lg font-medium"
-                  >Help Center</a
-                > -->
-                <a
-                  href="./contact.html"
-                  class="block text-badge hover:text-primary py-2 text-lg font-medium"
-                  >Contact</a
-                >
-              </nav>
-
-              <div class="space-y-4">
-                <button
-                  class="w-full text-left text-badge underline hover:text-primary py-2 text-lg font-bold"
-                >
-                  Log In
-                </button>
-                <button
-                  class="w-full bg-primary text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors"
-                >
-                  Join Now
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Hero Content Slider -->
-        <div
-          class="relative z-10 max-w-[1280px] mx-auto w-full px-4 sm:px-6 lg:px-8 flex-1 flex items-center pt-40 sm:pt-20 md:pt-8 lg:pt-12 pb-8 sm:pb-12"
-        >
-          <div class="w-full">
-            <!-- Static Hero Content (no slider) -->
-            <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start lg:items-center">
-              <!-- Left Content -->
-              <div
-                class="text-primary space-y-4 sm:space-y-6 md:space-y-8 animate__animated text-center lg:text-left"
-                data-animation="animate__fadeInLeft"
+              <button
+                id="close-sidebar"
+                class="text-gray-600 hover:text-gray-900"
               >
-                <h1
-                  class="text-3xl text-start sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-primary"
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  OENOD – Next-Generation Business Software
-                </h1>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  ></path>
+                </svg>
+              </button>
+            </div>
 
-                <p class="text-base text-start sm:text-lg md:text-xl leading-[24px] font-medium font-[500] text-secondary">
-                  OENOD is a comprehensive business management solution designed
-                  to streamline operations and enhance productivity. Our
-                  all-in-one platform offers advanced automation, real-time
-                  analytics, and seamless tools for company management, payroll,
-                  time and attendance tracking, employee scheduling, video
-                  conferencing, onboarding, and learning management.
-                </p>
+            <nav class="space-y-4 mb-8">
+              <a
+                href="./index.html"
+                class="nav-link active block text-badge hover:text-primary py-2 text-lg font-medium"
+                >Home</a
+              >
+              <a
+                href="./price.html"
+                class="block text-badge hover:text-primary py-2 text-lg font-medium"
+                >Price</a
+              >
+              <a
+                href="./about.html"
+                class="block text-badge hover:text-primary py-2 text-lg font-medium"
+                >About</a
+              >
+              <a
+                href="./learning.html"
+                class="block text-badge hover:text-primary py-2 text-lg font-medium"
+                >Learning</a
+              >
+              <a
+                href="./services.html"
+                class="block text-badge hover:text-primary py-2 text-lg font-medium"
+                >Services</a
+              >
+              <a
+                href="./career.html"
+                class="block text-badge hover:text-primary py-2 text-lg font-medium"
+                >Career</a
+              >
+              <!-- <a
+                  href="help-center.html"
+                  class="block text-badge hover:text-primary py-2 text-lg font-medium"
+                  >Help Center</a
+                > -->
+              <a
+                href="./contact.html"
+                class="block text-badge hover:text-primary py-2 text-lg font-medium"
+                >Contact</a
+              >
+            </nav>
 
-                <div class="flex flex-col sm:flex-row gap-4 pt-2 sm:pt-4">
-                  <button
-                    class="bg-primary text-sm sm:text-base lg:text-lg text-white px-4 sm:px-6 py-3 sm:py-4 rounded-full font-semibold hover:bg-blue-700 transition-colors flex items-center justify-between space-x-2 sm:space-x-3 group"
+            <div class="space-y-4">
+              <button
+                class="w-full text-left text-badge underline hover:text-primary py-2 text-lg font-bold"
+              >
+                Log In
+              </button>
+              <button
+                class="w-full bg-primary text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors"
+              >
+                Join Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Content Slider -->
+      <div
+        class="relative z-10 max-w-[1280px] mx-auto w-full px-4 sm:px-6 lg:px-8 flex-1 flex items-center pt-40 sm:pt-20 md:pt-8 lg:pt-12 pb-8 sm:pb-12"
+      >
+        <div class="w-full">
+          <!-- Static Hero Content (no slider) -->
+          <div
+            class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start lg:items-center"
+          >
+            <!-- Left Content -->
+            <div
+              class="text-primary space-y-4 sm:space-y-6 md:space-y-8 animate__animated text-center lg:text-left"
+              data-animation="animate__fadeInLeft"
+            >
+              <h1
+                class="text-3xl text-start sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-primary"
+              >
+                OENOD – Next-Generation Business Software
+              </h1>
+
+              <p
+                class="text-base text-start sm:text-lg md:text-xl leading-[24px] font-medium font-[500] text-secondary"
+              >
+                OENOD is a comprehensive business management solution designed
+                to streamline operations and enhance productivity. Our
+                all-in-one platform offers advanced automation, real-time
+                analytics, and seamless tools for company management, payroll,
+                time and attendance tracking, employee scheduling, video
+                conferencing, onboarding, and learning management.
+              </p>
+
+              <div class="flex flex-col sm:flex-row gap-4 pt-2 sm:pt-4">
+                <button
+                  class="bg-primary text-sm sm:text-base lg:text-lg text-white px-4 sm:px-6 py-3 sm:py-4 rounded-full font-semibold hover:bg-blue-700 transition-colors flex items-center justify-between space-x-2 sm:space-x-3 group"
+                >
+                  <span class="flex-1 text-white text-center"
+                    >OENOD - Powering the Future of Business</span
                   >
-                    <span class="flex-1 text-white text-center"
-                      >OENOD - Powering the Future of Business</span
+                  <div
+                    class="w-10 h-10 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
+                  >
+                    <svg
+                      width="16"
+                      height="10"
+                      viewBox="0 0 16 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                    <div
-                      class="w-10 h-10 bg-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform"
-                    >
-                      <svg
-                        width="16"
-                        height="10"
-                        viewBox="0 0 16 10"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M14.988 5.4119C15.2213 5.17849 15.2213 4.80006 14.988 4.56665L11.1843 0.762951C10.9508 0.529537 10.5724 0.529537 10.339 0.762951C10.1056 0.996364 10.1056 1.3748 10.339 1.60821L13.7201 4.98927L10.339 8.37034C10.1056 8.60375 10.1056 8.98218 10.339 9.21559C10.5724 9.44901 10.9508 9.44901 11.1843 9.21559L14.988 5.4119ZM0.220703 5.58697H14.5653V4.39158H0.220703V5.58697Z"
-                          fill="#07078E"
-                        />
-                      </svg>
-                    </div>
-                  </button>
-                </div>
+                      <path
+                        d="M14.988 5.4119C15.2213 5.17849 15.2213 4.80006 14.988 4.56665L11.1843 0.762951C10.9508 0.529537 10.5724 0.529537 10.339 0.762951C10.1056 0.996364 10.1056 1.3748 10.339 1.60821L13.7201 4.98927L10.339 8.37034C10.1056 8.60375 10.1056 8.98218 10.339 9.21559C10.5724 9.44901 10.9508 9.44901 11.1843 9.21559L14.988 5.4119ZM0.220703 5.58697H14.5653V4.39158H0.220703V5.58697Z"
+                        fill="#07078E"
+                      />
+                    </svg>
+                  </div>
+                </button>
               </div>
+            </div>
 
-              <!-- Right Content - Vertical Slider with dashed controls -->
-              <div class="relative flex items-center justify-center lg:justify-end">
-                <div class="rounded-2xl overflow-hidden h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] w-full max-w-[500px] lg:max-w-none relative">
-                  <div class="hero-slider h-full">
-                    <div>
-                      <img
-                        src="assets/images/about.png"
-                        alt="About"
-                        class="w-full h-full object-contain"
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src="assets/images/about.png"
-                        alt="Popular"
-                        class="w-full h-full object-contain"
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src="assets/images/about.png"
-                        alt="Trusted"
-                        class="w-full h-full object-contain"
-                      />
-                    </div>
+            <!-- Right Content - Vertical Slider with dashed controls -->
+            <div
+              class="relative flex items-center justify-center lg:justify-end"
+            >
+              <div
+                class="rounded-2xl overflow-hidden h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] w-full max-w-[500px] lg:max-w-none relative"
+              >
+                <div class="hero-slider h-full">
+                  <div>
+                    <img
+                      src="assets/images/about.png"
+                      alt="About"
+                      class="w-full h-full object-contain"
+                    />
+                  </div>
+                  <div>
+                    <img
+                      src="assets/images/about.png"
+                      alt="Popular"
+                      class="w-full h-full object-contain"
+                    />
+                  </div>
+                  <div>
+                    <img
+                      src="assets/images/about.png"
+                      alt="Trusted"
+                      class="w-full h-full object-contain"
+                    />
                   </div>
                 </div>
-                <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-3">
-                  <button class="hero-dash  border-t-2 border-solid border-[#dfdfdf] w-[50px]" data-slide="0" aria-label="Slide 1"></button>
-                  <button class="hero-dash  border-t-2 border-solid border-[#dfdfdf] w-[50px]" data-slide="1" aria-label="Slide 2"></button>
-                  <button class="hero-dash border-t-2 border-solid border-[#dfdfdf] w-[50px]" data-slide="2" aria-label="Slide 3"></button>
-                </div>
+              </div>
+              <div
+                class="absolute -bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-3"
+              >
+                <button
+                  class="hero-dash border-t-2 border-solid border-[#dfdfdf] w-[50px]"
+                  data-slide="0"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  class="hero-dash border-t-2 border-solid border-[#dfdfdf] w-[50px]"
+                  data-slide="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  class="hero-dash border-t-2 border-solid border-[#dfdfdf] w-[50px]"
+                  data-slide="2"
+                  aria-label="Slide 3"
+                ></button>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
     <main>
       <!-- Smart Payroll Section -->
       <section
@@ -369,11 +389,13 @@
         data-animation="animate__fadeInUp"
       >
         <!-- Absolute positioned top-left image -->
-        <div class="absolute w-full  md:w-[300px] lg:w-[500px] top-0  left-0 z-10">
+        <div
+          class="absolute w-full md:w-[300px] lg:w-[500px] top-0 left-0 z-10"
+        >
           <img
             src="assets/images/payrol-top-left.png"
             alt="Payroll decoration"
-            class="w-full  lg:w-full lg:h-48 object-contain opacity-80 animate__animated animate__pulse animate__infinite animate__slow"
+            class="w-full lg:w-full lg:h-48 object-contain opacity-80 animate__animated animate__pulse animate__infinite animate__slow"
           />
         </div>
 
@@ -389,10 +411,10 @@
                 And HR solutions
               </h2>
 
-              <div> 
+              <div>
                 <a
                   href="#"
-                  class="text-secondary  underline text-lg font-bold font-medium hover:text-blue-700 transition-colors"
+                  class="text-secondary underline text-lg font-bold font-medium hover:text-blue-700 transition-colors"
                 >
                   Subscribe
                 </a>
@@ -419,38 +441,37 @@
           </div>
 
           <!-- Bottom Image Section -->
-          <div class="w-full ">
-           
+          <div class="w-full">
             <div class="relative center bubble-scale">
               <!-- Large devices: show smart-lg.png -->
               <img
                 src="assets/images/smart-lg.png"
                 alt="Smart Image Center Large"
-                class="w-full h-auto rounded-2xl  hidden lg:block bubble-scale"
+                class="w-full h-auto rounded-2xl hidden lg:block bubble-scale"
               />
               <!-- Small/Medium devices: show smart-sm.png -->
               <img
                 src="assets/images/smart-sm.png"
                 alt="Smart Image Center Small"
-                class="w-full h-auto rounded-2xl  block lg:hidden bubble-scale"
+                class="w-full h-auto rounded-2xl block lg:hidden bubble-scale"
               />
               <!-- First overlay badge - appears on first image bottom on small screens -->
-            
-              <!-- Second overlay badge - appears on last image top on small screens -->
 
+              <!-- Second overlay badge - appears on last image top on small screens -->
             </div>
-       
           </div>
         </div>
       </section>
 
       <!-- Trusted Partner Section -->
       <section
-        class="relative  pb-12 pt-40 lg:py-18 overflow-hidden"
+        class="relative pb-12 pt-40 lg:py-18 overflow-hidden"
         style="background-color: #fbfbfe"
       >
         <!-- Absolute positioned bottom-right image -->
-        <div class="absolute overflow-hidden top-0 right-0 sm:top-0 sm:right-0 md:top-0 md:right-0 lg:bottom-0 lg:top-auto lg:right-0 z-10">
+        <div
+          class="absolute overflow-hidden top-0 right-0 sm:top-0 sm:right-0 md:top-0 md:right-0 lg:bottom-0 lg:top-auto lg:right-0 z-10"
+        >
           <img
             src="assets/images/trusted-absolute.png"
             alt="Trusted partner decoration"
@@ -526,9 +547,12 @@
           <div class="grid lg:grid-cols-3 gap-8 items-center mb-6">
             <!-- Left Content - Heading (match HR section style) -->
             <div class="text-center lg:text-left">
-              <h2 class="text-3xl md:text-4xl lg:text-4xl font-bold text-primary leading-relaxed">
-                OENOD Is Just The 
-                <br> Beginning.
+              <h2
+                class="text-3xl md:text-4xl lg:text-4xl font-bold text-primary leading-relaxed"
+              >
+                OENOD Is Just The
+                <br />
+                Beginning.
               </h2>
             </div>
 
@@ -539,8 +563,10 @@
 
             <!-- Right Content - Text (match HR section style) -->
             <div class="text-left">
-              <p class="text-secondary text-md leading-relaxed    lg:mx-0">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis ....
+              <p class="text-secondary text-md leading-relaxed lg:mx-0">
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                quae ab illo inventore veritatis ....
               </p>
             </div>
           </div>
@@ -556,67 +582,101 @@
             style="background-image: url('assets/images/enode-bg.png')"
           >
             <!-- Grid with Left Cards and Right Image -->
-            <div class="flex items-center justify-between flex flex-wrap lg:flex-nowrap gap-4 lg:gap-6" id="oenod-grid">
+            <div
+              class="flex items-center justify-between flex flex-wrap lg:flex-nowrap gap-4 lg:gap-6"
+              id="oenod-grid"
+            >
               <!-- Left Side - Three Interactive Cards -->
-              <div class="flex flex-col gap-6 w-full lg:w-[40%] self-center items-start lg:min-h-[500px]" id="oenod-cards">
+              <div
+                class="flex flex-col gap-6 w-full lg:w-[40%] self-center items-start lg:min-h-[500px]"
+                id="oenod-cards"
+              >
                 <!-- Payroll Card -->
-                <div class="bg-white/95 backdrop-blur-[13px] border-[0.87px] border-black/30 rounded p-6 oenod-card card-step card-underline group hover:bg-primary hover:text-white transition-colors" data-step="1" id="oenod-card-1">
+                <div
+                  class="bg-white/95 backdrop-blur-[13px] border-[0.87px] border-black/30 rounded p-6 oenod-card card-step card-underline group hover:bg-primary hover:text-white transition-colors"
+                  data-step="1"
+                  id="oenod-card-1"
+                >
                   <div class="flex items-start justify-between">
                     <div>
-                      <h3 class="text-xl font-bold text-primary mb-2 group-hover:text-white">
+                      <h3
+                        class="text-xl font-bold text-primary mb-2 group-hover:text-white"
+                      >
                         Payroll
                       </h3>
-                      <p class="my-6 text-lg leading-relaxed group-hover:text-white/90">
+                      <p
+                        class="my-6 text-lg leading-relaxed group-hover:text-white/90"
+                      >
                         Set up key event to track onboarding are maintains here.
                       </p>
                     </div>
-                    <div class=" flex items-center justify-center">
-                      <img src="./assets/images/onboarding.png" alt="onboarding">
-                    </div>  
+                    <div class="flex items-center justify-center">
+                      <img
+                        src="./assets/images/onboarding.png"
+                        alt="onboarding"
+                      />
+                    </div>
                   </div>
                 </div>
 
                 <!-- Time & Attendance Card -->
-                <div class="bg-white/95 backdrop-blur-[13px] border-[0.87px] border-black/30 rounded p-6 oenod-card card-step card-underline lg:self-end group hover:bg-primary hover:text-white transition-colors" data-step="2" id="oenod-card-2">
+                <div
+                  class="bg-white/95 backdrop-blur-[13px] border-[0.87px] border-black/30 rounded p-6 oenod-card card-step card-underline lg:self-end group hover:bg-primary hover:text-white transition-colors"
+                  data-step="2"
+                  id="oenod-card-2"
+                >
                   <div class="flex items-start justify-between">
                     <div>
-                      <h3 class="text-xl font-bold text-primary mb-2 group-hover:text-white">
+                      <h3
+                        class="text-xl font-bold text-primary mb-2 group-hover:text-white"
+                      >
                         Time & Attendance
                       </h3>
-                      <p class="my-6 text-md leading-relaxed group-hover:text-white/90">
+                      <p
+                        class="my-6 text-md leading-relaxed group-hover:text-white/90"
+                      >
                         Set up key event to track onboarding are maintains here.
                       </p>
                     </div>
-                 
                   </div>
                 </div>
 
                 <!-- Talent Card -->
-                <div class="bg-white/95 backdrop-blur-[13px] border-[0.87px] border-black/30 rounded p-6 oenod-card card-step card-underline group hover:bg-primary hover:text-white transition-colors" data-step="3" id="oenod-card-3">
+                <div
+                  class="bg-white/95 backdrop-blur-[13px] border-[0.87px] border-black/30 rounded p-6 oenod-card card-step card-underline group hover:bg-primary hover:text-white transition-colors"
+                  data-step="3"
+                  id="oenod-card-3"
+                >
                   <div class="flex items-start justify-between">
                     <div>
-                      <h3 class="text-xl font-bold text-primary mb-2 group-hover:text-white">
+                      <h3
+                        class="text-xl font-bold text-primary mb-2 group-hover:text-white"
+                      >
                         Talent
                       </h3>
-                      <p class="my-6 text-lg leading-relaxed group-hover:text-white/90">
+                      <p
+                        class="my-6 text-lg leading-relaxed group-hover:text-white/90"
+                      >
                         Set up key event to track onboarding are maintains here.
                       </p>
                     </div>
-                    <div class=" flex items-center justify-center">
-                      <img src="./assets/images/search.png" alt="onboarding">
+                    <div class="flex items-center justify-center">
+                      <img src="./assets/images/search.png" alt="onboarding" />
                     </div>
                   </div>
                 </div>
               </div>
 
               <!-- Right Image - Static -->
-              <div class="animate__animated w-full lg:w-[40%]  flex-shrink-0 flex items-center justify-center" id="oenod-right">
+              <div
+                class="animate__animated w-full lg:w-[40%] flex-shrink-0 flex items-center justify-center"
+                id="oenod-right"
+              >
                 <img
                   src="assets/images/enode-right.png"
                   alt="OENOD Right Feature"
                   class="w-full object-contain image-transition"
                   id="oenod-right-image"
-                 
                 />
               </div>
             </div>
@@ -861,7 +921,7 @@
             <img
               src="assets/images/plain-bg.png"
               alt="Background decoration"
-              class="absolute -bottom-5 -right-20 transform translate-y-[55%] w-auto h-auto opacity-30"
+              class="absolute bottom-60 right-0 transform translate-y-[55%] w-auto h-auto opacity-30"
             />
           </div>
 
@@ -1711,10 +1771,6 @@
               />
 
               <!-- Client Photos Positioned Around the Circle -->
-                       
-
-             
-
             </div>
           </div>
 

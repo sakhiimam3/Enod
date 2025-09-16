@@ -26,6 +26,15 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
+    <!-- Animate.css CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- AOS (Animate On Scroll) CDN -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <!-- Slick Slider CDN -->
     <link
       rel="stylesheet"
@@ -74,32 +83,32 @@
             <nav class="hidden lg:flex space-x-1">
               <a
                 href="./index.html"
-                class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
                 >Home</a
               >
               <a
                 href="price.html"
-                class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                class="nav-link active text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
                 >Price</a
               >
               <a
                 href="about.html"
-                class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-medium font-mulish"
                 >About</a
               >
               <a
                 href="learning.html"
-                class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-medium font-mulish"
                 >Learning</a
               >
               <a
                 href="services.html"
-                class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
                 >Services</a
               >
               <a
                 href="career.html"
-                class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
                 >Career</a
               >
               <!-- <a
@@ -109,7 +118,7 @@
                 > -->
               <a
                 href="contact.html"
-                class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
                 >Contact</a
               >
             </nav>
@@ -189,32 +198,32 @@
             <nav class="space-y-4 mb-8">
               <a
                 href="./index.html"
-                class="block text-badge hover:text-primary py-2 text-lg font-medium"
+                class="nav-link block text-badge hover:text-primary py-2 text-lg font-medium"
                 >Home</a
               >
               <a
                 href="./price.html"
-                class="block text-primary py-2 text-lg font-medium"
+                class="nav-link active block text-badge hover:text-primary py-2 text-lg font-medium"
                 >Price</a
               >
               <a
                 href="./about.html"
-                class="block text-badge hover:text-primary py-2 text-lg font-medium"
+                class="nav-link block text-badge hover:text-primary py-2 text-lg font-medium"
                 >About</a
               >
               <a
                 href="./learning.html"
-                class="block text-badge hover:text-primary py-2 text-lg font-medium"
+                class="nav-link block text-badge hover:text-primary py-2 text-lg font-medium"
                 >Learning</a
               >
               <a
                 href="./services.html"
-                class="block text-badge hover:text-primary py-2 text-lg font-medium"
+                class="nav-link block text-badge hover:text-primary py-2 text-lg font-medium"
                 >Services</a
               >
               <a
                 href="./career.html"
-                class="block text-badge hover:text-primary py-2 text-lg font-medium"
+                class="nav-link block text-badge hover:text-primary py-2 text-lg font-medium"
                 >Career</a
               >
               <!-- <a
@@ -224,7 +233,7 @@
               > -->
               <a
                 href="./contact.html"
-                class="block text-badge hover:text-primary py-2 text-lg font-medium"
+                class="nav-link block text-badge hover:text-primary py-2 text-lg font-medium"
                 >Contact</a
               >
             </nav>
@@ -252,6 +261,9 @@
         <div class="text-center text-primary space-y-8">
           <h1
             class="text-4xl capitalize md:text-5xl lg:text-6xl font-bold leading-tight text-primary"
+            data-aos="fade-up"
+            data-aos-duration="1200"
+            data-aos-delay="300"
           >
             price
           </h1>
@@ -262,26 +274,34 @@
     <main>
       <!-- Flexible Plans Section (Same as Comprehensive HR Section) -->
       <section
-        class="relative py-8 lg:py-16 overflow-hidden z-10"
+        class="relative py-8 lg:py-16 overflow-hidden z-10 animate__animated"
         style="background: linear-gradient(135deg, #4649ff 0%, #01018b 100%)"
+        data-animation="animate__fadeInUp"
       >
         <!-- Absolute Background Image Layer -->
         <div class="absolute inset-0 z-0 pointer-events-none">
-          <img 
-            src="assets/images/plain-bg.png" 
-            alt="Background decoration" 
+          <img
+            src="assets/images/plain-bg.png"
+            alt="Background decoration"
             class="absolute -bottom-5 -right-20 transform translate-y-[55%] w-auto h-auto opacity-30"
           />
         </div>
-        
+
         <div class="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <!-- Plans Section with Slider (Detailed Plans) -->
           <div class="py-8 lg:py-16 pricing-section-bg">
-            <div class="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div
+              class="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+            >
               <!-- Section Header -->
               <div class="grid lg:grid-cols-2 gap-12 items-center mb-12">
                 <!-- Left Content - Heading -->
-                <div class="space-y-6">
+                <div
+                  class="space-y-6"
+                  data-aos="fade-right"
+                  data-aos-duration="1000"
+                  data-aos-delay="100"
+                >
                   <h2
                     class="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
                   >
@@ -290,7 +310,12 @@
                 </div>
 
                 <!-- Right Content - Text -->
-                <div class="space-y-6">
+                <div
+                  class="space-y-6"
+                  data-aos="fade-left"
+                  data-aos-duration="1000"
+                  data-aos-delay="200"
+                >
                   <p class="text-[#FFFFFF] max-w-lg leading-relaxed text-md">
                     No matter the size of your business, we have a pricing plan
                     tailored to your needs. Get the features you need at a cost
@@ -308,9 +333,12 @@
                 <!-- Plan Card 1 -->
                 <div
                   class="bg-[#2a2c8f] p-8 text-white shadow-xl hover:bg-blue-500 duration-300 h-[750px] flex flex-col"
+                  data-aos="fade-up"
+                  data-aos-duration="800"
+                  data-aos-delay="100"
                 >
                   <div class="flex-grow">
-                    <div class="flex items-center gap-3 mb-[100px]">
+                    <div class="flex items-center gap-3 mb-12">
                       <svg
                         width="35"
                         height="35"
@@ -325,6 +353,20 @@
                       </svg>
                       <h2 class="text-2xl font-bold">Payroll</h2>
                     </div>
+                    <div class="flex items-center gap-3 mb-2">
+                      <div class="flex items-baseline gap-2">
+                        <span
+                          class="text-white text-4xl font-bold"
+                          id="payroll-price"
+                          >$50</span
+                        >
+                        <span
+                          class="text-white text-lg font-medium line-through opacity-75"
+                          id="payroll-original-price"
+                          >$100</span
+                        >
+                      </div>
+                    </div>
 
                     <hr class="border-t-1 my-2 border-white" />
                     <div class="flex items-center justify-between gap-4 my-6">
@@ -333,8 +375,9 @@
                         <input
                           type="radio"
                           class="w-4 h-4 rounded-full bg-white"
-                          name="plan"
-                          id="monthly"
+                          name="payroll-plan"
+                          id="payroll-monthly"
+                          checked
                         />
                       </div>
                       <div class="flex items-center gap-2">
@@ -342,8 +385,8 @@
                         <input
                           type="radio"
                           class="w-4 h-4 rounded-full bg-white"
-                          name="plan"
-                          id="yearly"
+                          name="payroll-plan"
+                          id="payroll-yearly"
                         />
                       </div>
                     </div>
@@ -444,6 +487,9 @@
                 </div>
                 <div
                   class="bg-[#4244F8] relative p-8 text-white shadow-xl hover:bg-blue-500 duration-300 overflow-hidden h-[750px] flex flex-col"
+                  data-aos="fade-up"
+                  data-aos-duration="800"
+                  data-aos-delay="200"
                 >
                   <!-- Popular Ribbon -->
                   <div class="popular-ribbon">POPULAR</div>
@@ -465,9 +511,14 @@
                     </div>
                     <div class="flex items-center gap-3 mb-2">
                       <div class="flex items-baseline gap-2">
-                        <span class="text-white text-4xl font-bold">$10</span>
+                        <span
+                          class="text-white text-4xl font-bold"
+                          id="basic-price"
+                          >$10</span
+                        >
                         <span
                           class="text-white text-lg font-medium line-through opacity-75"
+                          id="basic-original-price"
                           >$20</span
                         >
                       </div>
@@ -480,8 +531,9 @@
                         <input
                           type="radio"
                           class="w-4 h-4 rounded-full bg-white"
-                          name="plan"
-                          id="monthly"
+                          name="basic-plan"
+                          id="basic-monthly"
+                          checked
                         />
                       </div>
                       <div class="flex items-center gap-2">
@@ -489,8 +541,8 @@
                         <input
                           type="radio"
                           class="w-4 h-4 rounded-full bg-white"
-                          name="plan"
-                          id="yearly"
+                          name="basic-plan"
+                          id="basic-yearly"
                         />
                       </div>
                     </div>
@@ -591,6 +643,9 @@
                 </div>
                 <div
                   class="bg-[#2a2c8f] p-8 text-white shadow-xl hover:bg-blue-500 duration-300 h-[750px] flex flex-col"
+                  data-aos="fade-up"
+                  data-aos-duration="800"
+                  data-aos-delay="300"
                 >
                   <div class="flex-grow">
                     <div class="flex items-center gap-3 mb-12">
@@ -612,10 +667,15 @@
                     </div>
                     <div class="flex items-center gap-3 mb-2">
                       <div class="flex items-baseline gap-2">
-                        <span class="text-white text-4xl font-bold">$30</span>
+                        <span
+                          class="text-white text-4xl font-bold"
+                          id="standard-price"
+                          >$30</span
+                        >
                         <span
                           class="text-white text-lg font-medium line-through opacity-75"
-                          >$40</span
+                          id="standard-original-price"
+                          >$60</span
                         >
                       </div>
                     </div>
@@ -627,8 +687,9 @@
                         <input
                           type="radio"
                           class="w-4 h-4 rounded-full bg-white"
-                          name="plan"
-                          id="monthly"
+                          name="standard-plan"
+                          id="standard-monthly"
+                          checked
                         />
                       </div>
                       <div class="flex items-center gap-2">
@@ -636,8 +697,8 @@
                         <input
                           type="radio"
                           class="w-4 h-4 rounded-full bg-white"
-                          name="plan"
-                          id="yearly"
+                          name="standard-plan"
+                          id="standard-yearly"
                         />
                       </div>
                     </div>
@@ -740,6 +801,9 @@
                 <!-- Plan Card 4 -->
                 <div
                   class="bg-[#2a2c8f] p-8 text-white shadow-xl hover:bg-blue-500 duration-300 h-[750px] flex flex-col"
+                  data-aos="fade-up"
+                  data-aos-duration="800"
+                  data-aos-delay="400"
                 >
                   <div class="flex-grow">
                     <div class="flex items-center gap-3 mb-12">
@@ -755,14 +819,21 @@
                           fill="white"
                         />
                       </svg>
-                      <h2 class="text-2xl font-bold capitalize">Premium Plan</h2>
+                      <h2 class="text-2xl font-bold capitalize">
+                        Premium Plan
+                      </h2>
                     </div>
                     <div class="flex items-center gap-3 mb-2">
                       <div class="flex items-baseline gap-2">
-                        <span class="text-white text-4xl font-bold">$50</span>
+                        <span
+                          class="text-white text-4xl font-bold"
+                          id="premium-price"
+                          >$50</span
+                        >
                         <span
                           class="text-white text-lg font-medium line-through opacity-75"
-                          >$70</span
+                          id="premium-original-price"
+                          >$100</span
                         >
                       </div>
                     </div>
@@ -774,8 +845,9 @@
                         <input
                           type="radio"
                           class="w-4 h-4 rounded-full bg-white"
-                          name="plan"
-                          id="monthly"
+                          name="premium-plan"
+                          id="premium-monthly"
+                          checked
                         />
                       </div>
                       <div class="flex items-center gap-2">
@@ -783,8 +855,8 @@
                         <input
                           type="radio"
                           class="w-4 h-4 rounded-full bg-white"
-                          name="plan"
-                          id="yearly"
+                          name="premium-plan"
+                          id="premium-yearly"
                         />
                       </div>
                     </div>
@@ -887,6 +959,9 @@
                 <!-- Plan Card 5 -->
                 <div
                   class="bg-[#2a2c8f] p-8 text-white shadow-xl hover:bg-blue-500 duration-300 h-[750px] flex flex-col"
+                  data-aos="fade-up"
+                  data-aos-duration="800"
+                  data-aos-delay="500"
                 >
                   <div class="flex-grow">
                     <div class="flex items-center gap-3 mb-12">
@@ -902,14 +977,21 @@
                           fill="white"
                         />
                       </svg>
-                      <h2 class="text-2xl font-bold capitalize">Enterprise Plan</h2>
+                      <h2 class="text-2xl font-bold capitalize">
+                        Enterprise Plan
+                      </h2>
                     </div>
                     <div class="flex items-center gap-3 mb-2">
                       <div class="flex items-baseline gap-2">
-                        <span class="text-white text-4xl font-bold">$100</span>
+                        <span
+                          class="text-white text-4xl font-bold"
+                          id="enterprise-price"
+                          >$100</span
+                        >
                         <span
                           class="text-white text-lg font-medium line-through opacity-75"
-                          >$150</span
+                          id="enterprise-original-price"
+                          >$200</span
                         >
                       </div>
                     </div>
@@ -921,8 +1003,9 @@
                         <input
                           type="radio"
                           class="w-4 h-4 rounded-full bg-white"
-                          name="plan"
-                          id="monthly"
+                          name="enterprise-plan"
+                          id="enterprise-monthly"
+                          checked
                         />
                       </div>
                       <div class="flex items-center gap-2">
@@ -930,8 +1013,8 @@
                         <input
                           type="radio"
                           class="w-4 h-4 rounded-full bg-white"
-                          name="plan"
-                          id="yearly"
+                          name="enterprise-plan"
+                          id="enterprise-yearly"
                         />
                       </div>
                     </div>
@@ -1043,7 +1126,11 @@
             <!-- Left Content -->
             <div class="space-y-8">
               <!-- Badge -->
-              <div>
+              <div
+                data-aos="fade-right"
+                data-aos-duration="800"
+                data-aos-delay="100"
+              >
                 <button
                   class="border-2 uppercase font-bold border-[rgb(167, 167, 215)] text-primary px-4 py-2 rounded-full text-sm"
                 >
@@ -1054,23 +1141,86 @@
               <!-- Heading -->
               <h2
                 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="200"
               >
                 Join The Revolution.<br />
                 Download The App Today!
               </h2>
 
               <!-- Download Buttons -->
-              <div class="flex cursor-pointer flex-col sm:flex-row gap-4">
-                <img
-                  src="assets/images/social.png"
-                  alt="Google Play"
-                  class="w-full h-full object-contain"
-                />
+              <div
+                class="flex flex-col sm:flex-row gap-4"
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-delay="300"
+              >
+                <!-- Google Play Store Button -->
+                <div
+                  class="cursor-pointer smooth-hover hover:scale-105 transition-all duration-300"
+                  onclick="openAppStore('google')"
+                >
+                  <div
+                    class="bg-gray-100 text-black rounded-lg p-4 flex items-center space-x-3 hover:bg-gray-200 smooth-transition"
+                  >
+                    <div
+                      class="w-12 h-12 bg-white rounded-lg flex items-center justify-center"
+                    >
+                      <svg
+                        class="w-8 h-8 text-black"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="text-xs text-gray-500">GET IT ON</div>
+                      <div class="text-lg font-semibold">Google Play</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Apple App Store Button -->
+                <div
+                  class="cursor-pointer smooth-hover hover:scale-105 transition-all duration-300"
+                  onclick="openAppStore('apple')"
+                >
+                  <div
+                    class="bg-gray-100 text-black rounded-lg p-4 flex items-center space-x-3 hover:bg-gray-200 smooth-transition"
+                  >
+                    <div
+                      class="w-12 h-12 bg-white rounded-lg flex items-center justify-center"
+                    >
+                      <svg
+                        class="w-8 h-8 text-black"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="text-xs text-gray-500">Download on the</div>
+                      <div class="text-lg font-semibold">App Store</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
             <!-- Right Content - App Preview -->
-            <div class="relative overflow-hidden">
+            <div
+              class="relative overflow-hidden"
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              data-aos-delay="400"
+            >
               <!-- Background Image -->
               <img
                 src="assets/images/play-right.png"
@@ -1255,6 +1405,21 @@
     <!-- Sliders JavaScript -->
     <script src="assets/js/sliders.js"></script>
 
+    <!-- Local script -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- AOS (Animate On Scroll) JavaScript CDN -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Initialize AOS -->
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+      });
+    </script>
+
     <script>
       // Mobile sidebar functionality
       const mobileMenuButton = document.getElementById("mobile-menu-button");
@@ -1280,6 +1445,117 @@
       mobileMenuButton.addEventListener("click", openSidebar);
       closeSidebar.addEventListener("click", closeSidebarFunc);
       sidebarOverlay.addEventListener("click", closeSidebarFunc);
+
+      // Pricing functionality - Monthly/Yearly toggle
+      document.addEventListener("DOMContentLoaded", function () {
+        // Define pricing data
+        const pricingData = {
+          payroll: {
+            monthly: {
+              price: 50,
+              original: 100,
+              finalPrice: "$50 (Monthly) / $1000 (Yearly)",
+            },
+            yearly: {
+              price: 1000,
+              original: 2000,
+              finalPrice: "$50 (Monthly) / $1000 (Yearly)",
+            },
+          },
+          basic: {
+            monthly: {
+              price: 10,
+              original: 20,
+              finalPrice: "$10 (Monthly) / $300 (Yearly)",
+            },
+            yearly: {
+              price: 300,
+              original: 600,
+              finalPrice: "$10 (Monthly) / $300 (Yearly)",
+            },
+          },
+          standard: {
+            monthly: {
+              price: 30,
+              original: 60,
+              finalPrice: "$30 (Monthly) / $300 (Yearly)",
+            },
+            yearly: {
+              price: 300,
+              original: 600,
+              finalPrice: "$30 (Monthly) / $300 (Yearly)",
+            },
+          },
+          premium: {
+            monthly: {
+              price: 50,
+              original: 100,
+              finalPrice: "$50 (Monthly) / $400 (Yearly)",
+            },
+            yearly: {
+              price: 400,
+              original: 800,
+              finalPrice: "$50 (Monthly) / $400 (Yearly)",
+            },
+          },
+          enterprise: {
+            monthly: {
+              price: 100,
+              original: 200,
+              finalPrice: "$100 (Monthly) / $1000 (Yearly)",
+            },
+            yearly: {
+              price: 1000,
+              original: 2000,
+              finalPrice: "$100 (Monthly) / $1000 (Yearly)",
+            },
+          },
+        };
+
+        // Add event listeners to all radio buttons
+        document.querySelectorAll('input[type="radio"]').forEach((radio) => {
+          radio.addEventListener("change", function () {
+            if (this.checked) {
+              const planName = this.name.split("-")[0];
+              const planType = this.id.split("-")[1];
+
+              if (pricingData[planName]) {
+                const priceData = pricingData[planName][planType];
+                const priceElement = document.getElementById(
+                  planName + "-price"
+                );
+                const originalPriceElement = document.getElementById(
+                  planName + "-original-price"
+                );
+
+                if (priceElement) {
+                  priceElement.textContent = "$" + priceData.price;
+                }
+                if (originalPriceElement) {
+                  originalPriceElement.textContent = "$" + priceData.original;
+                }
+              }
+            }
+          });
+        });
+
+        // Function to handle app store button clicks
+        window.openAppStore = function (store) {
+          if (store === "google") {
+            // Replace with your actual Google Play Store URL
+            window.open(
+              "https://play.google.com/store/apps/details?id=com.oenod.app",
+              "_blank"
+            );
+          } else if (store === "apple") {
+            // Replace with your actual Apple App Store URL
+            window.open(
+              "https://apps.apple.com/app/oenod/id123456789",
+              "_blank"
+            );
+          }
+        };
+      });
     </script>
   </body>
 </html>
