@@ -1336,6 +1336,16 @@ html {
   box-shadow: 0 8px 20px -5px rgba(66, 68, 248, 0.2);
 }
 
+/* Ensure consistent text alignment for all OENOD cards */
+.oenod-card h3,
+.oenod-card p {
+  text-align: left !important;
+}
+
+.oenod-card .flex.items-start.justify-between > div:first-child {
+  text-align: left !important;
+}
+
 /* Enhanced border animation for OENOD cards */
 .oenod-card.border-animation-solid::before {
   content: "";
