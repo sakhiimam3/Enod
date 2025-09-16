@@ -212,8 +212,8 @@ span {
   position: relative;
   text-decoration: none;
   transition: color 0.3s ease;
-  line-height: 0.25rem !important;
-  padding-bottom: 0.1rem; /* reduce space so underline sits closer to text */
+  line-height: 1.5 !important;
+  padding-bottom: 0.25rem; /* proper space for underline */
   display: inline-block; /* ensures pseudo element aligns to the link box */
 }
 
@@ -223,7 +223,7 @@ span {
   bottom: 0;
   left: 0.75rem; /* match Tailwind px-3 left padding */
   right: 0.75rem; /* match Tailwind px-3 right padding */
-  height: 1px; /* thinner underline */
+  height: 2px; /* slightly thicker for better visibility */
   background-color: var(--color-primary);
   transform: scaleX(0);
   transform-origin: right; /* animate right -> left */
@@ -243,6 +243,25 @@ span {
 .nav-link.active::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+/* Mobile sidebar navigation specific styles */
+#mobile-sidebar .nav-link {
+  line-height: 1.6 !important;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Remove underline animation for mobile navigation */
+#mobile-sidebar .nav-link::after {
+  display: none;
+}
+
+/* Mobile active state - color only */
+#mobile-sidebar .nav-link.active {
+  color: var(--color-primary);
+  font-weight: 700;
 }
 
 /* Testimonial Navigation Buttons */
