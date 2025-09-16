@@ -1,6 +1,6 @@
 :root {
   --color-primary: #00008b;
-  --color-secondary: #000000;
+  --color-secondary: #595959;
   --color-badge: #111111;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .card-underline::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: 0;
@@ -64,11 +64,66 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Mulish", sans-serif;
+  font-family: "Mulish", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
 }
 
 /* Utility to force Mulish when Tailwind/base overrides apply */
-.font-mulish { font-family: "Mulish", sans-serif !important; }
+.font-mulish {
+  font-family: "Mulish", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif !important;
+}
+
+/* Ensure fonts load properly - wait for font to be available */
+@supports (font-display: swap) {
+  html,
+  body {
+    font-display: swap;
+  }
+}
+
+/* Force Mulish application with higher specificity */
+/* html body,
+html body *,
+body.font-mulish,
+body.font-mulish * {
+  font-family: "Mulish", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+} */
+
+/* Override for headings - they should use Outfit */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-heading,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif !important;
+}
+
+/* Enhanced font application after fonts are loaded */
+.fonts-loaded body,
+.fonts-loaded body *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+  font-family: "Mulish", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.fonts-loaded h1,
+.fonts-loaded h2,
+.fonts-loaded h3,
+.fonts-loaded h4,
+.fonts-loaded h5,
+.fonts-loaded h6 {
+  font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif !important;
+}
 
 *,
 *::before,
@@ -91,7 +146,10 @@ h6 {
 
 p,
 span {
-  font-family: "Mulish", sans-serif;
+  font-family: "Mulish", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  color: #595959 ;
+
 }
 
 /* Custom Scrollbar Styling */
@@ -115,25 +173,25 @@ span {
 }
 
 /* Popular Ribbon Styling */
-  .popular-ribbon {
-    position: absolute;
-    top: 50px;
-    right: -130px;
-    background: white;
-    color: black;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 8px 25px;
-    transform: rotate(45deg);
-    z-index: 10;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-align: center;
-    white-space: nowrap;
-    border-radius: 2px;
-    min-width: 80px;
-  }
+.popular-ribbon {
+  position: absolute;
+  top: 50px;
+  right: -130px;
+  background: white;
+  color: black;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 8px 25px;
+  transform: rotate(45deg);
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: 2px;
+  min-width: 80px;
+}
 
 /* Testimonial Slider Styles */
 .testimonial-slider {
@@ -155,15 +213,15 @@ span {
   text-decoration: none;
   transition: color 0.3s ease;
   line-height: 0.25rem !important;
-  padding-bottom: 0.10rem; /* reduce space so underline sits closer to text */
+  padding-bottom: 0.1rem; /* reduce space so underline sits closer to text */
   display: inline-block; /* ensures pseudo element aligns to the link box */
 }
 
 .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
-  left: 0.75rem;  /* match Tailwind px-3 left padding */
+  left: 0.75rem; /* match Tailwind px-3 left padding */
   right: 0.75rem; /* match Tailwind px-3 right padding */
   height: 1px; /* thinner underline */
   background-color: var(--color-primary);
@@ -327,8 +385,52 @@ span {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0%;
- 
+
   /* background-color: red; */
+}
+
+/* Smart Payroll Section Background */
+.smart-payroll-section {
+  position: relative;
+}
+
+.smart-payroll-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-image: url("../images/smart-bg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center right;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Ensure content stays above background */
+.smart-payroll-section > div {
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive background for Smart Payroll section */
+@media (max-width: 1024px) {
+  .smart-payroll-section::before {
+    width: 60%;
+    background-size: contain;
+    background-position: top right;
+  }
+}
+
+@media (max-width: 768px) {
+  .smart-payroll-section::before {
+    width: 70%;
+    background-size: contain;
+    background-position: center right;
+    opacity: 0.7;
+  }
 }
 
 /* Hero Dots Styling */
@@ -347,9 +449,9 @@ span {
 
 /* Responsive background sizing and position for hero section */
 @media (max-width: 1024px) {
-  .hero-section { 
+  .hero-section {
     background-size: contain !important;
-    background-position: top !important;  
+    background-position: top !important;
   }
 
   /* Hero dots responsive for medium devices */
@@ -361,7 +463,7 @@ span {
 
 @media (max-width: 768px) {
   .hero-section {
-    background-size: cover   ;
+    background-size: cover;
     background-position: top;
   }
 
@@ -586,8 +688,8 @@ span {
   width: 30px;
   height: 3px;
   border: none;
-  background: grey;        /* inactive color */
-  font-size: 0;            /* hide default text */
+  background: grey; /* inactive color */
+  font-size: 0; /* hide default text */
   line-height: 0;
   cursor: pointer;
   padding: 0;
@@ -596,7 +698,7 @@ span {
 
 /* Active state */
 .plans-slider .slick-dots li.slick-active button {
-  background: white;       /* active color */
+  background: white; /* active color */
 }
 
 /* ============================= */
@@ -625,22 +727,43 @@ span {
 }
 
 /* Hide any default slick dots globally for hero */
-.hero-slider .slick-dots { display: none !important; }
+.hero-slider .slick-dots {
+  display: none !important;
+}
 
 /* Dashed controls for hero slider */
-.hero-dash { height: 0; line-height: 0; padding: 0; display: inline-block; }
+.hero-dash {
+  height: 0;
+  line-height: 0;
+  padding: 0;
+  display: inline-block;
+}
 
 /* Ensure hero slider uses full container height and no bleed */
 .hero-slider,
 .hero-slider .slick-list,
-.hero-slider .slick-track { height: 100% !important; }
+.hero-slider .slick-track {
+  height: 100% !important;
+}
 
-.hero-slider .slick-list { overflow: hidden; }
+.hero-slider .slick-list {
+  overflow: hidden;
+}
 
-.hero-slider .slick-slide { height: 100% !important; display: block !important; }
-.hero-slider .slick-slide > div { height: 100%; }
+.hero-slider .slick-slide {
+  height: 100% !important;
+  display: block !important;
+}
+.hero-slider .slick-slide > div {
+  height: 100%;
+}
 
-.hero-slider img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.hero-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
 
 /* ============================= */
 /* Vertical Marquee (Hero)       */
@@ -673,13 +796,21 @@ span {
 }
 
 @keyframes marqueeUp {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-50%); }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
 }
 
 @keyframes marqueeDown {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(50%); }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(50%);
+  }
 }
 
 /* Lift the marquee visually above header and add fade masks */
@@ -690,7 +821,7 @@ span {
 
 .hero-marquee-offset::before,
 .hero-marquee-offset::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   right: 0;
@@ -701,22 +832,30 @@ span {
 
 .hero-marquee-offset::before {
   top: -40px; /* looks like from header */
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0)
+  );
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   background: inherit;
 }
 
 .hero-marquee-offset::after {
   bottom: -40px;
-  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
-  mask-image: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+  -webkit-mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0)
+  );
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   background: inherit;
 }
 
 /* Absolutely positioned bleed area spanning beyond hero */
 .hero-marquee-bleed {
   position: absolute;
-  top: -100vh;   /* start one viewport above */
+  top: -100vh; /* start one viewport above */
   height: 300vh; /* extend far above and below */
   left: 0;
   right: 0;
@@ -729,13 +868,13 @@ span {
 }
 
 .border-animation::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: -100%;
   width: 100%;
   height: 5px;
-  background: linear-gradient(90deg, transparent, #4244F8, transparent);
+  background: linear-gradient(90deg, transparent, #4244f8, transparent);
   animation: slideBorder 5s ease-in-out infinite;
 }
 
@@ -758,13 +897,13 @@ span {
 }
 
 .border-animation-solid::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: -100%;
   width: 100%;
   height: 5px;
-  background-color: #4244F8;
+  background-color: #4244f8;
 }
 
 @keyframes slideBorderSolid {
@@ -806,18 +945,37 @@ span {
   z-index: 1;
 }
 
-.smart-item.side-left { left: 10px; }
-.smart-item.side-right { right: 10px; }
+.smart-item.side-left {
+  left: 10px;
+}
+.smart-item.side-right {
+  right: 10px;
+}
 
-.smart-img { display: block; height: auto; }
+.smart-img {
+  display: block;
+  height: auto;
+  position: relative;
+  z-index: 1;
+}
 
 /* Sizes on mobile (center big, sides small) */
-.smart-img.center-img { width: 70%; max-width: 560px; margin: 0 auto; }
-.smart-img.small { width: 28%; max-width: 160px; }
+.smart-img.center-img {
+  width: 70%;
+  max-width: 560px;
+  margin: 0 auto;
+}
+.smart-img.small {
+  width: 100%;
+
+}
 
 /* Add gentle bubbling to sides */
 .smart-item.side-left .smart-img,
-.smart-item.side-right .smart-img { animation: scaleBubble 4.5s ease-in-out infinite, floatUpDown 6s ease-in-out infinite; }
+.smart-item.side-right .smart-img {
+  animation: scaleBubble 4.5s ease-in-out infinite,
+    floatUpDown 6s ease-in-out infinite;
+}
 
 /* Large screens: arrange in a row, center 2x width */
 @media (min-width: 1024px) {
@@ -828,9 +986,17 @@ span {
     gap: 24px;
     min-height: auto;
   }
-  .smart-item { position: static !important; }
-  .smart-img.small { width: 260px; max-width: none; }
-  .smart-img.center-img { width: 520px; max-width: none; }
+  .smart-item {
+    position: static !important;
+  }
+  .smart-img.small {
+    width: 300px;
+    max-width: none;
+  }
+  .smart-img.center-img {
+    width: 520px;
+    max-width: none;
+  }
 }
 
 /* Small screens: stack vertically, center first, sides below */
@@ -839,18 +1005,35 @@ span {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 40px; /* Increased gap to 40px for absolute overlay badges */
     min-height: auto;
   }
-  .smart-item { position: static !important; }
+  .smart-item {
+    position: static !important;
+    margin-bottom: 2rem; /* Increased margin for overlay badge space */
+    margin-top: 2rem; /* Increased margin for overlay badge space */
+  }
   /* Keep side items as relative so their absolute overlays stay anchored */
   .smart-item.side-left,
-  .smart-item.side-right { position: relative !important; }
-  .smart-item.side-left { order: 1; }
-  .smart-item.center { order: 2; }
-  .smart-item.side-right { order: 3; }
-  .smart-img.center-img { width: 100%; max-width: none; }
-  .smart-img.small { width: 100%; max-width: none; }
+  .smart-item.side-right {
+    position: relative !important;
+  }
+  .smart-item.side-left {
+    order: 1;
+  }
+  .smart-item.center {
+    order: 2;
+    margin-bottom: 1rem; /* More margin for center item with overlays */
+    margin-top: 1rem;
+  }
+  .smart-img.center-img {
+    width: 100%;
+    max-width: none;
+  }
+  .smart-img.small {
+    width: 100%;
+    max-width: none;
+  }
 }
 
 /* Medium screens: also stack vertically to keep layout stable */
@@ -859,17 +1042,37 @@ span {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 40px; /* Increased gap to 40px for absolute overlay badges */
     min-height: auto;
   }
-  .smart-item { position: static !important; }
+  .smart-item {
+    position: static !important;
+    margin-bottom: 2rem; /* Increased margin for overlay badge space */
+    margin-top: 2rem; /* Increased margin for overlay badge space */
+  }
   .smart-item.side-left,
-  .smart-item.side-right { position: relative !important; }
-  .smart-item.side-left { order: 1; }
-  .smart-item.center { order: 2; }
-  .smart-item.side-right { order: 3; }
-  .smart-img.center-img { width: 100%; max-width: none; }
-  .smart-img.small { width: 80%; max-width: 420px; }
+  .smart-item.side-right {
+    position: relative !important;
+  }
+  .smart-item.side-left {
+    order: 1;
+  }
+  .smart-item.center {
+    order: 2;
+    margin-bottom: 1rem; /* More margin for center item with overlays */
+    margin-top: 1rem;
+  }
+  .smart-item.side-right {
+    order: 3;
+  }
+  .smart-img.center-img {
+    width: 100%;
+    max-width: none;
+  }
+  .smart-img.small {
+    width: 100%;
+    max-width: 420px;
+  }
 }
 
 /* Staggered animation delays for each card - one by one with little delay */
@@ -950,8 +1153,6 @@ span {
   animation-delay: 2.5s;
 }
 
-
-
 /* Top-left decorative image bubbling animation */
 .bubble-pop {
   animation: bubbleFloat 3s ease-in-out infinite;
@@ -984,25 +1185,32 @@ span {
 }
 
 @keyframes bubbleScale {
-  0% { transform: scale(1); }
-  25% { transform: scale(0.96); }
-  50% { transform: scale(1.06); }
-  75% { transform: scale(0.98); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(0.96);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+  75% {
+    transform: scale(0.98);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
-/* Overlay badge responsive anchors for smart-gallery */
-.overlay-left-badge { bottom: -7.5rem; right: 0; margin-bottom: 0.5rem; margin-right: 0.5rem; }
-.overlay-right-badge { top: -7.5rem; right: 9.5rem; margin-top: 0.5rem; margin-right: 0.5rem; }
-
-@media (max-width: 1024px) {
-  .overlay-left-badge { bottom: 8px; right: 8px; }
-  .overlay-right-badge { top: 8px; right: 8px; }
-}
-
-@media (max-width: 768px) {
-  .overlay-left-badge { bottom: 8px; right: 8px; }
-  .overlay-right-badge { top: 8px; right: 8px; }
+/* Extra small screens - ensure no overlap */
+@media (max-width: 480px) {
+  .smart-gallery {
+    gap: 32px; /* Even more gap for very small screens */
+  }
+  .smart-item {
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+  }
 }
 
 /* ============================= */
@@ -1019,10 +1227,18 @@ span {
 }
 
 /* Staggered animation delays */
-.stagger-1 { animation-delay: 0.1s; }
-.stagger-2 { animation-delay: 0.2s; }
-.stagger-3 { animation-delay: 0.3s; }
-.stagger-4 { animation-delay: 0.4s; }
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+.stagger-2 {
+  animation-delay: 0.2s;
+}
+.stagger-3 {
+  animation-delay: 0.3s;
+}
+.stagger-4 {
+  animation-delay: 0.4s;
+}
 
 /* Keep cards at same height - no transform effects */
 .card-hover {
@@ -1032,7 +1248,7 @@ span {
 /* Smooth image transitions */
 .image-transition {
   transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Parallax effect for background elements */
@@ -1055,14 +1271,23 @@ span {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
   transition: left 0.5s;
 }
 
-.btn-animate:hover::before { left: 100%; }
+.btn-animate:hover::before {
+  left: 100%;
+}
 
 /* Smooth scroll behavior */
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 /* Enhanced intersection observer animations */
 .animate-on-scroll {
@@ -1094,13 +1319,13 @@ html { scroll-behavior: smooth; }
 
 /* Enhanced border animation for OENOD cards */
 .oenod-card.border-animation-solid::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: -100%;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, transparent, #4244F8, transparent);
+  background: linear-gradient(90deg, transparent, #4244f8, transparent);
   animation: slideBorderSolid 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
