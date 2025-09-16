@@ -49,7 +49,7 @@
         background-position: bottom;
         background-repeat: no-repeat;
       "
-      class="relative overflow-hidden h-[50vh] lg:h-[70vh] flex flex-col hero-section"
+      class="relative overflow-hidden h-[50vh] lg:h-[50vh] flex flex-col hero-section"
     >
       <!-- Header Navigation (Same as index.html) -->
       <div
@@ -71,45 +71,45 @@
             </div>
 
             <!-- Desktop Navigation Menu -->
-            <nav class="hidden lg:flex space-x-1">
+            <nav class="hidden lg:flex space-x-3">
               <a
                 href="./index.html"
-                class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
                 >Home</a
               >
               <a
                 href="price.html"
-                class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
                 >Price</a
               >
               <a
                 href="about.html"
-                class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-medium font-mulish"
                 >About</a
               >
               <a
                 href="learning.html"
-                class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-medium font-mulish"
                 >Learning</a
               >
               <a
                 href="services.html"
-                class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
                 >Services</a
               >
               <a
-                href="./career.html"
-                class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                href="career.html"
+                class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
                 >Career</a
               >
               <!-- <a
                 href="help-center.html"
-                class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-medium font-mulish"
                 >Help Center</a
               > -->
               <a
-                href="#"
-                class="text-badge hover:text-primary hover:underline px-3 py-2 text-sm font-medium font-mulish"
+                href="contact.html"
+                class="nav-link active text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
                 >Contact</a
               >
             </nav>
@@ -193,42 +193,42 @@
             <nav class="space-y-4 mb-8">
               <a
                 href="./index.html"
-                class="block text-badge hover:text-primary py-2 text-lg font-medium"
+                class="nav-link block text-badge hover:text-primary py-2 text-lg font-medium"
                 >Home</a
               >
               <a
-                href="/price.html"
-                class="block text-primary py-2 text-lg font-medium"
+                href="./price.html"
+                class="block text-badge hover:text-primary py-2 text-lg font-medium"
                 >Price</a
               >
               <a
-                href="/about.html"
+                href="./about.html"
                 class="block text-badge hover:text-primary py-2 text-lg font-medium"
                 >About</a
               >
               <a
-                href="/learning.html"
+                href="./learning.html"
                 class="block text-badge hover:text-primary py-2 text-lg font-medium"
                 >Learning</a
               >
               <a
-                href="/services.html"
+                href="./services.html"
                 class="block text-badge hover:text-primary py-2 text-lg font-medium"
                 >Services</a
               >
               <a
-                href="#"
+                href="./career.html"
                 class="block text-badge hover:text-primary py-2 text-lg font-medium"
                 >Career</a
               >
               <!-- <a
-                href="#"
+                href="help-center.html"
                 class="block text-badge hover:text-primary py-2 text-lg font-medium"
                 >Help Center</a
               > -->
               <a
-                href="/contact.html"
-                class="block text-badge hover:text-primary py-2 text-lg font-medium"
+                href="./contact.html"
+                class="nav-link active block text-primary py-2 text-lg font-medium"
                 >Contact</a
               >
             </nav>
@@ -256,8 +256,11 @@
         <div class="text-center text-primary space-y-8">
           <h1
             class="text-4xl capitalize md:text-5xl lg:text-6xl font-bold leading-tight text-primary"
+            data-aos="fade-up"
+            data-aos-duration="1200"
+            data-aos-delay="300"
           >
-            Contact
+          Contact us
           </h1>
         </div>
       </div>
@@ -265,53 +268,74 @@
 
     <main>
       <!-- Contact Information Section -->
-      <section class="relative   lg:py-18 overflow-hidden bg-white">
-        <!-- Absolute Positioned Background Image -->
-        <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
-          <img 
-            src="assets/images/payrol-top-left.png" 
-            alt="Background decoration" 
-            class="absolute top-8 left-8 w-24 h-24 lg:w-32 lg:h-32 opacity-20"
+      <section class="relative pt-8 lg:py-4 overflow-hidden bg-white animate__animated"
+        data-animation="animate__fadeInUp"
+        data-aos="fade-up"
+        data-aos-duration="800"
+        data-aos-delay="100">
+        <!-- Absolute positioned top-left image -->
+        <div class="absolute w-full md:w-[300px] lg:w-[700px] top-[-0.5rem] lg:top-[-0.2rem] left-5 z-50">
+          <img
+            src="assets/images/payrol-top-left.png"
+            alt="Payroll decoration"
+            class="w-full lg:w-full lg:h-auto object-contain opacity-80 animate__animated animate__pulse animate__infinite animate__slow"
           />
         </div>
         
-        <div class="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="relative z-20 max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
           <!-- Contact Cards Grid -->
-          <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 justify-items-center">
+          <div class="grid grid-cols-1 my-10 lg:my-40 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 justify-items-center">
             <!-- Support Email Card -->
-            <div class="bg-white lg:w-[350px] rounded-[41.25px] border border-gray-200 p-6 py-12 lg:py-6 text-left">
-              <h3 class="text-lg font-semibold text-gray-900 mb-3">Support Email</h3>
-              <p class="text-gray-600 text-sm">BCLSRentals@Techaccess.Org</p>
+            <div class="bg-white w-full max-w-[404.25px] h-[150px] rounded-[24.75px] border-[0.82px] border-gray-200 p-6 flex flex-col justify-center text-left shadow-sm hover:shadow-md transition-shadow duration-300"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay="200">
+              <h3 class="text-lg font-bold text-[#000000] mb-3">Support Email</h3>
+              <p class="text-[#000000] text-sm">BCLSRentals@Techaccess.Org</p>
             </div>
 
             <!-- Phone Number Card -->
-            <div class="bg-white lg:w-[350px] rounded-[41.25px] border border-gray-200 p-6 py-12 lg:py-6 text-left">
-              <h3 class="text-lg font-semibold text-gray-900 mb-3">Phone Number</h3>
-              <p class="text-gray-600 text-sm">(206) 725-9095</p>
+            <div class="bg-white w-full max-w-[404.25px] h-[150px] rounded-[24.75px] border-[0.82px] border-gray-200 p-6 flex flex-col justify-center text-left shadow-sm hover:shadow-md transition-shadow duration-300"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay="300">
+              <h3 class="text-lg font-bold text-[#000000] mb-3">Phone Number</h3>
+              <p class="text-[#000000] text-sm">(206) 725-9095</p>
             </div>
 
             <!-- Location Card -->
-            <div class="bg-white lg:w-[350px] rounded-[41.25px] border border-gray-200 p-6  py-12 lg:py-6 text-left md:col-span-2 lg:col-span-1">
-              <h3 class="text-lg font-semibold text-gray-900 mb-3">Location</h3>
-              <p class="text-gray-600 text-sm">605 SW 108th St. Seattle, WA 98146</p>
+            <div class="bg-white w-full max-w-[404.25px] h-[150px] rounded-[24.75px] border-[0.82px] border-gray-200 p-6 flex flex-col justify-center text-left md:col-span-2 lg:col-span-1 shadow-sm hover:shadow-md transition-shadow duration-300"
+              data-aos="fade-up"
+              data-aos-duration="600"
+              data-aos-delay="400">
+              <h3 class="text-lg font-bold text-[#000000] mb-3">Location</h3>
+              <p class="text-[#000000] text-sm">605 SW 108th St. Seattle, WA 98146</p>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Contact Form and Map Section -->
-      <section class="relative pb-12 lg:py-24">
+      <section class="relative pb-4 lg:py-4"
+        data-aos="fade-up"
+        data-aos-duration="800"
+        data-aos-delay="200">
         <div class="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <h2 class="text-3xl font-bold text-primary mb-8 text-start"
+            data-aos="fade-right"
+            data-aos-duration="600"
+            data-aos-delay="100">Leave A Message</h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-24 items-start">
             <!-- Left Side - Contact Form -->
-            <div class="bg-white rounded-2xl p-8">
-              <h2 class="text-3xl font-bold text-primary mb-8">Leave A Message</h2>
-              
+            <div class="bg-white rounded-2xl"
+              data-aos="fade-right"
+              data-aos-duration="800"
+              data-aos-delay="300">
               <form class="space-y-6">
                 <!-- Name Fields Row -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
                     <input 
                       type="text" 
                       placeholder="First Name"
@@ -319,7 +343,6 @@
                     />
                   </div>
                   <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
                     <input 
                       type="text" 
                       placeholder="Last Name"
@@ -330,7 +353,6 @@
 
                 <!-- Email Field -->
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
                   <input 
                     type="email" 
                     placeholder="Your Email"
@@ -340,7 +362,6 @@
 
                 <!-- Subject Field -->
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
                   <input 
                     type="text" 
                     placeholder="Subject"
@@ -350,7 +371,6 @@
 
                 <!-- Message Field -->
                 <div>
-                  <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
                   <textarea 
                     rows="5" 
                     placeholder="Your Message"
@@ -369,16 +389,132 @@
             </div>
 
             <!-- Right Side - Map -->
-            <div class="">
-              <div class="relative overflow-hidden rounded-lg">
-                <img 
-                  src="assets/images/map.png" 
-                  alt="Location Map" 
-                  class="w-full h-full object-cover"
-                />
+            <div class=""
+              data-aos="fade-left"
+              data-aos-duration="800"
+              data-aos-delay="400">
+              <div class="relative overflow-hidden h-[300px] lg:h-[450px]" style="border-radius: 24px;">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.8234567890123!2d-122.3320708!3d47.6062095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906aa6b2d1c0e3%3A0x123456789abcdef0!2s605%20SW%20108th%20St%2C%20Seattle%2C%20WA%2098146%2C%20USA!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                  width="100%" 
+                  height="100%" 
+                  style="border:0; border-radius: 24px;" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
                 <!-- Map overlay for interactive feel -->
               </div>
            
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="relative py-16 lg:py-20 overflow-hidden bg-white">
+        <div class="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Left Content -->
+            <div class="space-y-8">
+              <!-- Badge -->
+              <div>
+                <button
+                  class="border-2 uppercase font-bold border-[rgb(167, 167, 215)] text-primary px-4 py-2 rounded-full text-sm"
+                >
+                  applications
+                </button>
+              </div>
+
+              <!-- Heading -->
+              <h2
+                class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight animate__animated"
+                data-animation="animate__fadeInUp"
+              >
+                Join The Revolution.<br />
+                Download The App Today!
+              </h2>
+
+              <!-- Download Buttons -->
+              <div
+                class="flex flex-col sm:flex-row gap-4 animate__animated"
+                data-animation="animate__fadeInUp"
+              >
+                <!-- Google Play Store Button -->
+                <div
+                  class="cursor-pointer smooth-hover hover:scale-105 transition-all duration-300"
+                  onclick="openAppStore('google')"
+                >
+                  <div
+                    class="bg-gray-100 text-black rounded-lg p-4 flex items-center space-x-3 hover:bg-gray-200 smooth-transition"
+                  >
+                    <div
+                      class="w-12 h-12 bg-white rounded-lg flex items-center justify-center"
+                    >
+                      <svg
+                        class="w-8 h-8 text-black"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="text-xs text-gray-500">GET IT ON</div>
+                      <div class="text-lg font-semibold">Google Play</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Apple App Store Button -->
+                <div
+                  class="cursor-pointer smooth-hover hover:scale-105 transition-all duration-300"
+                  onclick="openAppStore('apple')"
+                >
+                  <div
+                    class="bg-gray-100 text-black rounded-lg p-4 flex items-center space-x-3 hover:bg-gray-200 smooth-transition"
+                  >
+                    <div
+                      class="w-12 h-12 bg-white rounded-lg flex items-center justify-center"
+                    >
+                      <svg
+                        class="w-8 h-8 text-black"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="text-xs text-gray-500">Download on the</div>
+                      <div class="text-lg font-semibold">App Store</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Content - App Preview -->
+            <div class="relative overflow-hidden">
+              <!-- Background Image -->
+              <img
+                src="assets/images/play-right.png"
+                alt="App Preview Background"
+                class="w-full h-full object-contain"
+              />
+
+              <!-- Centered Category Image -->
+              <div
+                class="absolute inset-0 flex items-center justify-center p-8"
+              >
+                <img
+                  src="assets/images/category.png"
+                  alt="Category"
+                  class="max-w-full max-h-full object-contain"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -575,6 +711,18 @@
       mobileMenuButton.addEventListener("click", openSidebar);
       closeSidebar.addEventListener("click", closeSidebarFunc);
       sidebarOverlay.addEventListener("click", closeSidebarFunc);
+    </script>
+
+    <!-- AOS (Animate On Scroll) JavaScript CDN -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Initialize AOS -->
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+      });
     </script>
   </body>
 </html>
