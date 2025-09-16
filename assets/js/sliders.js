@@ -190,8 +190,8 @@ $(document).ready(function () {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    infinite: true,
-    arrows: false,
+    infinite: false, // Disabled infinite loop
+    arrows: false, // Disabled arrows - no manual navigation buttons
     dots: true,
     pauseOnHover: true,
     speed: 800,
@@ -202,6 +202,8 @@ $(document).ready(function () {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          infinite: false,
+          arrows: false,
         }
       },
       {
@@ -209,29 +211,71 @@ $(document).ready(function () {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          infinite: false,
+          arrows: false,
         }
       }
     ]
   });
 
-  // Ensure Monthly is checked by default for each plan group
+  // Prevent radio button issues in cloned slides
+  $(".plans-slider").on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+    // Temporarily disable all radio buttons during slide transition
+    $(this).find('input[type="radio"]').prop('disabled', true);
+  });
+
+  $(".plans-slider").on('afterChange', function(event, slick, currentSlide) {
+    // Re-enable radio buttons and fix their states
+    var $slider = $(this);
+    setTimeout(function() {
+      $slider.find('input[type="radio"]').prop('disabled', false);
+      enforceDefaultMonthlyRadios();
+    }, 100);
+  });
+
+  // Ensure Monthly is checked by default for each plan group (simplified for non-infinite slider)
   function enforceDefaultMonthlyRadios(){
     var $container = $(".plans-slider");
     if ($container.length === 0) return;
+    
+    // Since infinite is disabled, no cloned slides to worry about
     $container.find('input[type="radio"][id$="-monthly"]').each(function(){
       var groupName = this.name;
-      // Uncheck entire group first, then check monthly
+      // Uncheck all radios in this group
       $container.find('input[name="' + groupName + '"]').prop('checked', false);
+      // Check monthly option
       $(this).prop('checked', true);
     });
+    
+    // Ensure radio buttons remain clickable
+    $container.find('input[type="radio"]').prop('disabled', false);
+  }
+
+  // Simplified function for radio state management (no cloned slides)
+  function syncRadioStates(changedRadio) {
+    var $container = $(".plans-slider");
+    var groupName = changedRadio.name;
+    
+    // Simple radio button behavior - only one can be selected per group
+    $container.find('input[name="' + groupName + '"]').prop('checked', false);
+    $(changedRadio).prop('checked', true);
   }
 
   // Run once on load
-  enforceDefaultMonthlyRadios();
-
-  // Also re-apply after slider re-renders slides
-  $(".plans-slider").on('init reInit setPosition', function(){
+  setTimeout(function() {
     enforceDefaultMonthlyRadios();
+  }, 100);
+
+  // Re-apply after slider events with proper timing
+  $(".plans-slider").on('init reInit afterChange', function(event, slick){
+    setTimeout(function() {
+      enforceDefaultMonthlyRadios();
+    }, 50);
+  });
+
+  // Handle radio button changes with synchronization
+  $(document).on('change', '.plans-slider input[type="radio"]', function() {
+    syncRadioStates(this);
   });
   
   // =============================

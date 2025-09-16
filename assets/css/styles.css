@@ -741,6 +741,44 @@ span {
   margin: 0;
   box-sizing: border-box;
 }
+
+/* ============================= */
+/* Radio Button Fixes for Slider */
+/* ============================= */
+
+/* Ensure radio buttons are clickable and properly styled */
+.plans-slider input[type="radio"] {
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  opacity: 1 !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+/* Radio buttons are now simple since no cloned slides exist */
+
+/* Ensure labels are clickable */
+.plans-slider label {
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* ============================= */
+/* Plans Slider - No Arrows      */
+/* ============================= */
+
+/* Arrow styles removed - slider uses only dots and autoplay navigation */
+
+/* Fix radio button appearance */
+.plans-slider input[type="radio"]:checked {
+  background-color: #4649ff !important;
+  border-color: #4649ff !important;
+}
+
+.plans-slider input[type="radio"]:not(:checked) {
+  background-color: transparent !important;
+  border: 2px solid #ffffff !important;
+}
 .slick-dots li button:before {
   display: none !important;
 }
