@@ -1,0 +1,39 @@
+/* Essential Animations Only - Use Tailwind for everything else */
+
+/* Float Animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-float-delay-2 { animation: float 6s ease-in-out infinite 2s; }
+.animate-float-delay-4 { animation: float 6s ease-in-out infinite 4s; }
+.animate-float-delay-6 { animation: float 6s ease-in-out infinite 6s; }
+
+/* Rotation Animations */
+@keyframes rotate-slow {
+    0% { transform: translateX(-50%) rotate(0deg); }
+    100% { transform: translateX(-50%) rotate(360deg); }
+}
+
+@keyframes rotate-reverse {
+    0% { transform: translateX(50%) rotate(0deg); }
+    100% { transform: translateX(50%) rotate(-360deg); }
+}
+
+.animate-rotate-slow { animation: rotate-slow 15s linear infinite; }
+.animate-rotate-reverse { animation: rotate-reverse 12s linear infinite; }
+
+/* Floating Dots Animation */
+@keyframes floatUp {
+    0% { opacity: 0; transform: translateY(100vh); }
+    10%, 90% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-100px); }
+}
+
+.dot { animation: floatUp 8s linear infinite; }
+.dot:nth-child(1) { animation-delay: 0s; }
+.dot:nth-child(2) { animation-delay: 2s; }
+.dot:nth-child(3) { animation-delay: 4s; }
+.dot:nth-child(4) { animation-delay: 6s; }

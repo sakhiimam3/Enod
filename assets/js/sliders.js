@@ -4,57 +4,7 @@
  */
 
 $(document).ready(function () {
-  // Initialize Hero Slider (vertical, manual via dashed controls)
-  $(".hero-slider").slick({
-    dots: false,
-    infinite: true,
-    speed: 600,
-    cssEase: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-    autoplay: false,
-    arrows: false,
-    vertical: true,
-    verticalSwiping: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    adaptiveHeight: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          vertical: false,
-          verticalSwiping: false,
-          adaptiveHeight: true,
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          vertical: false,
-          verticalSwiping: false,
-          adaptiveHeight: true,
-        }
-      }
-    ]
-  });
-
-  // Custom dashed navigation functionality
-  $(document).on('click', '.hero-dash', function () {
-    const slideIndex = $(this).data('slide');
-    $(".hero-slider").slick("slickGoTo", slideIndex);
-  });
-
-  // Update active dashed control on slide change
-  $(".hero-slider").on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-    $(".hero-dash")
-      .removeClass("border-primary")
-      .addClass("border-gray-300");
-    $('.hero-dash[data-slide="' + nextSlide + '"]')
-      .removeClass("border-gray-300")
-      .addClass("border-primary");
-  });
-
-  // Set initial active dash
-  $('.hero-dash[data-slide="0"]').removeClass('border-gray-300').addClass('border-primary');
+  // Hero slider removed - no init
 
  
 
