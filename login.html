@@ -4,14 +4,251 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log in to Oenod</title>
+    <link rel="icon" href="assets/images/favicon.ico" />
+
+    <!-- Preconnect to Google Fonts for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Google Fonts with optimized loading -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+      />
+    </noscript>
+
+    <!-- Local stylesheet -->
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/login.css" />
+
+    <!-- Animate.css CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- AOS (Animate On Scroll) CDN -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
     <script src="assets/js/theme.js"></script>
   </head>
-  <body
-    class="min-h-screen overflow-hidden"
-  >
+  <body class="font-body min-h-screen font-mulish">
+    <!-- Header Navigation -->
+    <div
+      class="absolute top-6 left-1/2 transform -translate-x-1/2 z-20 max-w-[1280px] w-full px-4 sm:px-6 lg:px-8"
+    >
+      <div class="bg-white rounded-full shadow-sm px-6">
+        <div class="flex justify-between py-4 items-center">
+          <!-- Logo -->
+          <div class="flex-shrink-0">
+            <div class="flex items-center">
+              <img
+                src="assets/images/logo.png"
+                alt="logo"
+                class="w-auto h-8"
+              />
+            </div>
+          </div>
+
+          <!-- Desktop Navigation Menu -->
+          <nav class="hidden lg:flex space-x-3">
+            <a
+              href="./index.html"
+              class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
+              >Home</a
+            >
+            <a
+              href="price.html"
+              class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
+              >Price</a
+            >
+            <a
+              href="about.html"
+              class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-medium font-mulish"
+              >About</a
+            >
+            <a
+              href="learning.html"
+              class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-medium font-mulish"
+              >Learning</a
+            >
+            <a
+              href="services.html"
+              class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
+              >Services</a
+            >
+            <a
+              href="career.html"
+              class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
+              >Career</a
+            >
+            <a
+              href="contact.html"
+              class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
+              >Contact</a
+            >
+          </nav>
+
+          <!-- Desktop Auth Buttons -->
+          <div class="hidden lg:flex items-center space-x-4">
+            <a href="login.html">
+              <button
+                class="text-badge underline hover:text-primary px-3 py-2 text-sm font-bold"
+              >
+                Log In
+              </button>
+            </a>
+            <a href="register.html">
+              <button
+                class="bg-primary text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 smooth-transition btn-animate hover:scale-105"
+              >
+                Join Now
+              </button>
+            </a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="lg:hidden">
+            <button
+              id="mobile-menu-button"
+              class="text-gray-600 hover:text-gray-900 p-2"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Sidebar -->
+    <div id="mobile-sidebar" class="fixed inset-0 z-50 lg:hidden hidden">
+      <div
+        class="fixed inset-0 bg-black bg-opacity-50"
+        id="sidebar-overlay"
+      ></div>
+
+      <div
+        class="fixed right-0 top-0 h-full w-80 bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out"
+        id="sidebar-content"
+      >
+        <div class="p-6">
+          <div class="flex justify-between items-center mb-8">
+            <div class="text-2xl font-bold text-primary">
+              <a href="./index.html">
+                <img
+                  src="assets/images/logo.png"
+                  alt="logo"
+                  class="w-auto h-8"
+                />
+              </a>
+            </div>
+
+            <button
+              id="close-sidebar"
+              class="text-gray-600 hover:text-gray-900"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+          </div>
+
+          <nav class="space-y-4 mb-8">
+            <a
+              href="./index.html"
+              class="nav-link block text-badge hover:text-primary py-2 text-lg font-medium"
+              >Home</a
+            >
+            <a
+              href="./price.html"
+              class="block text-badge hover:text-primary py-2 text-lg font-medium"
+              >Price</a
+            >
+            <a
+              href="./about.html"
+              class="block text-badge hover:text-primary py-2 text-lg font-medium"
+              >About</a
+            >
+            <a
+              href="./learning.html"
+              class="block text-badge hover:text-primary py-2 text-lg font-medium"
+              >Learning</a
+            >
+            <a
+              href="./services.html"
+              class="block text-badge hover:text-primary py-2 text-lg font-medium"
+              >Services</a
+            >
+            <a
+              href="./career.html"
+              class="block text-badge hover:text-primary py-2 text-lg font-medium"
+              >Career</a
+            >
+            <a
+              href="./contact.html"
+              class="block text-badge hover:text-primary py-2 text-lg font-medium"
+              >Contact</a
+            >
+          </nav>
+
+          <div class="space-y-4">
+            <a href="login.html">
+              <button
+                class="w-full text-left text-badge underline hover:text-primary py-2 text-lg font-bold"
+              >
+                Log In
+              </button>
+            </a>
+            <a href="register.html">
+              <button
+                class="w-full bg-primary text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors"
+              >
+                Join Now
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Main Container -->
     <div class="min-h-screen flex items-center justify-center p-4 relative">
       <!-- Shape 1 - Left side -->
@@ -163,5 +400,38 @@
         </div>
       </div>
     </div>
+
+    <!-- Mobile Menu Script -->
+    <script>
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const sidebar = document.getElementById("mobile-sidebar");
+      const sidebarContent = document.getElementById("sidebar-content");
+      const sidebarOverlay = document.getElementById("sidebar-overlay");
+      const closeSidebarButton = document.getElementById("close-sidebar");
+
+      function openSidebar() {
+        sidebar.classList.remove("hidden");
+        sidebarContent.classList.remove("translate-x-full");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeSidebar() {
+        sidebarContent.classList.add("translate-x-full");
+        setTimeout(() => {
+          sidebar.classList.add("hidden");
+          document.body.style.overflow = "";
+        }, 300);
+      }
+
+      mobileMenuButton.addEventListener("click", openSidebar);
+      closeSidebarButton.addEventListener("click", closeSidebar);
+      sidebarOverlay.addEventListener("click", closeSidebar);
+
+      // Close sidebar when clicking on a link
+      const sidebarLinks = sidebar.querySelectorAll("a");
+      sidebarLinks.forEach((link) => {
+        link.addEventListener("click", closeSidebar);
+      });
+    </script>
   </body>
 </html>
