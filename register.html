@@ -637,34 +637,34 @@
             d="M0 540 Q320 480 640 520 T1280 480 T1920 520"
           ></path>
 
-          <!-- Centered animated planes -->
-          <g id="plane1" opacity="0.9">
-            <polygon
-              class="fil1"
-              fill="#ffffff"
-              points="-141,-10 199,0 -198,-72 -188,-61 -171,-57 -184,-57 "
-            ></polygon>
-            <polygon
-              class="fil2"
-              fill="#ffffff"
-              points="199,0 -141,-10 -163,63 -123,9 "
-            ></polygon>
-            <polygon
-              class="fil3"
-              fill="#ffffff"
-              points="-95,39 -113,32 -123,9 -163,63 -105,53 -108,45 -87,48 -90,45 -103,41 -94,41 "
-            ></polygon>
-            <path
-              class="fil4"
-              fill="#ffffff"
-              d="M-87 48l-21 -3 3 8 19 -4 -1 -1zm-26 -16l18 7 -2 -1 32 -7 -29 1 11 -4 -24 -1 -16 -18 10 23zm10 9l13 4 -4 -4 -9 0z"
-            ></path>
-            <polygon
-              class="fil1"
-              fill="#ffffff"
-              points="-83,28 -94,32 -65,31 -97,38 -86,49 -67,70 199,0 -123,9 -107,27 "
-            ></polygon>
-          </g>
+           <!-- Smaller animated plane -->
+           <g id="plane1" opacity="0.7" transform="scale(0.6)">
+             <polygon
+               class="fil1"
+               fill="#ffffff"
+               points="-141,-10 199,0 -198,-72 -188,-61 -171,-57 -184,-57 "
+             ></polygon>
+             <polygon
+               class="fil2"
+               fill="#ffffff"
+               points="199,0 -141,-10 -163,63 -123,9 "
+             ></polygon>
+             <polygon
+               class="fil3"
+               fill="#ffffff"
+               points="-95,39 -113,32 -123,9 -163,63 -105,53 -108,45 -87,48 -90,45 -103,41 -94,41 "
+             ></polygon>
+             <path
+               class="fil4"
+               fill="#ffffff"
+               d="M-87 48l-21 -3 3 8 19 -4 -1 -1zm-26 -16l18 7 -2 -1 32 -7 -29 1 11 -4 -24 -1 -16 -18 10 23zm10 9l13 4 -4 -4 -9 0z"
+             ></path>
+             <polygon
+               class="fil1"
+               fill="#ffffff"
+               points="-83,28 -94,32 -65,31 -97,38 -86,49 -67,70 199,0 -123,9 -107,27 "
+             ></polygon>
+           </g>
 
           <!-- Animated motion with centered path - single plane for cleaner animation -->
           <animateMotion
@@ -700,57 +700,60 @@
           </p>
         </div>
 
-        <!-- Form Section -->
-        <div class="relative mt-8">
-          <form
-            id="newsletter1"
-            method="post"
-            autocomplete="off"
-            class="max-w-2xl mx-auto animate__animated animate__fadeInUp animate__delay-2s"
-          >
-            <div class="flex flex-col lg:flex-row gap-4">
-              <div class="flex-1 relative">
-                <div
-                  class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    class="bi bi-envelope text-gray-500"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"
-                    ></path>
-                  </svg>
-                </div>
-                <input
-                  type="email"
-                  class="w-full pl-14 pr-6 py-5 bg-white border-2 border-gray-200 rounded-xl text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-blue-500/30 focus:border-blue-500 text-lg shadow-lg"
-                  id="email1"
-                  placeholder="Enter your email address"
-                  name="email"
-                  required
-                />
-              </div>
-              <button
-                class="bg-white text-primary px-10 py-5 rounded-xl font-bold hover:bg-gray-50 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-500/30 shadow-lg hover:shadow-xl text-lg flex items-center justify-center gap-2 min-w-[180px]"
-                type="submit"
-              >
-                Subscribe Now
-                <div
-                  style="display: none"
-                  class="spinner-border spinner-border-sm"
-                  role="status"
-                  aria-hidden="true"
-                  id="Show_loder1"
-                ></div>
-              </button>
-            </div>
-          </form>
-        </div>
+         <!-- Form Section - Light Card Style -->
+         <div class="relative mt-8">
+           <!-- White Card Background -->
+           <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-xl max-w-2xl mx-auto animate__animated animate__fadeInUp animate__delay-2s">
+             <form
+               id="newsletter1"
+               method="post"
+               autocomplete="off"
+               class="space-y-4"
+             >
+               <div class="flex flex-col sm:flex-row gap-4">
+                 <div class="flex-1 relative">
+                   <div
+                     class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none"
+                   >
+                     <svg
+                       xmlns="http://www.w3.org/2000/svg"
+                       width="20"
+                       height="20"
+                       fill="currentColor"
+                       class="bi bi-envelope text-gray-600"
+                       viewBox="0 0 16 16"
+                     >
+                       <path
+                         d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"
+                       ></path>
+                     </svg>
+                   </div>
+                   <input
+                     type="email"
+                     class="w-full pl-12 pr-4 py-4 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base"
+                     id="email1"
+                     placeholder="Enter your email address"
+                     name="email"
+                     required
+                   />
+                 </div>
+                 <button
+                   class="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex items-center justify-center gap-2 min-w-[160px]"
+                   type="submit"
+                 >
+                   Subscribe Now
+                   <div
+                     style="display: none"
+                     class="spinner-border spinner-border-sm"
+                     role="status"
+                     aria-hidden="true"
+                     id="Show_loder1"
+                   ></div>
+                 </button>
+               </div>
+             </form>
+           </div>
+         </div>
       </div>
     </section>
 
