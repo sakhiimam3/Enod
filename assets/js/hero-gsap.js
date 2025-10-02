@@ -111,12 +111,12 @@
     var q2 = container.querySelector('.q2');
     var q3 = container.querySelector('.q3');
     var q4 = container.querySelector('.q4');
-    // Start with a single centered row, all tags large size and spaced
-    gsap.set(q1, { scale: 1.6, opacity: 1, x: -135, y: 0 });
-    gsap.set(q2, { scale: 1.6, opacity: 1, x:  -45, y: 0 });
-    gsap.set(q3, { scale: 1.6, opacity: 1, x:   45, y: 0 });
-    gsap.set(q4, { scale: 1.6, opacity: 1, x:  135, y: 0 });
+    
+    // Reset to initial state - all tags start from center with scale 0
+    gsap.set([q1, q2, q3, q4], { scale: 0, opacity: 0, y: 0 });
+    
     var tl = gsap.timeline();
+    
     // Helper to compute Y so the row sits at the top of hero cards
     function computeRowTopY(){
       var quadRect = document.getElementById('quadReveal').getBoundingClientRect();
@@ -129,15 +129,15 @@
       return desiredY;
     }
 
-    // Initial entrance
-    tl.from([q1, q2, q3, q4], {
-      x: function(i, el) { return el._gsap.x - 200; },
-      opacity: 0,
+    // Initial entrance - scale up from center
+    tl.to([q1, q2, q3, q4], {
+      scale: 1,
+      opacity: 1,
       duration: 0.6,
-      ease: 'power2.out',
-      // no stagger to preserve equal spacing and simultaneous entrance
+      ease: 'back.out(1.7)',
+      stagger: 0.1
     })
-    // Move up while performing a subtle horizontal reverse (wiggle) at the same time
+    // Move up while performing a subtle horizontal wiggle
     .addLabel('ascend')
     .to([q1, q2, q3, q4], {
       y: computeRowTopY,
@@ -145,8 +145,8 @@
       ease: 'power2.inOut'
     }, 'ascend')
     .to([q1, q2, q3, q4], {
-      x: "+=20",
-      duration: 0.34,
+      x: "+=15",
+      duration: 0.15,
       ease: 'power1.inOut',
       yoyo: true,
       repeat: 1
@@ -169,8 +169,8 @@
       stagger: 0.04
     })
     .to([q1, q2, q3, q4], {
-      x: "-=24",
-      duration: 0.3,
+      x: "-=15",
+      duration: 0.2,
       ease: 'power1.inOut',
       yoyo: true,
       repeat: 1,
@@ -223,11 +223,11 @@
       }
       if (quad){
         gsagSafeSet(quad, { opacity: 1, rotate: 0 });
-        // Tags appear as a single centered row with spacing and large size
-        gsagSafeSet(quad.querySelector('.q1'), { scale: 1.6, opacity: 1, x: -135, y: 0 });
-        gsagSafeSet(quad.querySelector('.q2'), { scale: 1.6, opacity: 1, x:  -45, y: 0 });
-        gsagSafeSet(quad.querySelector('.q3'), { scale: 1.6, opacity: 1, x:   45, y: 0 });
-        gsagSafeSet(quad.querySelector('.q4'), { scale: 1.6, opacity: 1, x:  135, y: 0 });
+        // Reset tags to initial state for flex layout
+        gsagSafeSet(quad.querySelector('.q1'), { scale: 0, opacity: 0, x: 0, y: 0 });
+        gsagSafeSet(quad.querySelector('.q2'), { scale: 0, opacity: 0, x: 0, y: 0 });
+        gsagSafeSet(quad.querySelector('.q3'), { scale: 0, opacity: 0, x: 0, y: 0 });
+        gsagSafeSet(quad.querySelector('.q4'), { scale: 0, opacity: 0, x: 0, y: 0 });
       }
       // hide cards to re-intro niely and reset z-index
       gsap.set(['#cardEarnings','#cardPayroll','#cardGoal','#cardMonthly'], { 
@@ -334,7 +334,7 @@
       duration: 0.4,
       ease: 'power2.out', 
       stagger: 0.08
-    }, 'ascend+=0.0')
+    }, '>')
       // Animate cards to full width ribbon style immediately without delay
       .add(animateCardsToFullWidth(), '<')
       .add(scaleUpCardsSequentially(), '<')

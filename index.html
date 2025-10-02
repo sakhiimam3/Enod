@@ -335,12 +335,14 @@
             <div class="relative flex items-center justify-center lg:justify-end">
               <div class="relative w-full max-w-[450px] lg:max-w-none">
                 <!-- Four-div circular open effect (no bg flower) -->
-                <div id="quadReveal" class="absolute inset-0 z-20 pointer-events-none">
-                  <!-- Tag-like mini buttons (top row then bottom row) -->
-                  <div class="quad q1 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-3 py-1 bg-white rounded-full text-[11px] font-semibold text-primary shadow-sm opacity-100">Earnings</div>
-                  <div class="quad q2 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-3 py-1 bg-white rounded-full text-[11px] font-semibold text-primary shadow-sm opacity-100">Payroll</div>
-                  <div class="quad q3 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-3 py-1 bg-white rounded-full text-[11px] font-semibold text-primary shadow-sm opacity-100">Goal</div>
-                  <div class="quad q4 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-3 py-1 bg-white rounded-full text-[11px] font-semibold text-primary shadow-sm opacity-100">Monthly</div>
+                <div id="quadReveal" class="absolute inset-0 z-20 pointer-events-none flex items-center justify-center">
+                  <!-- Tag-like mini buttons in single row with gap-2 -->
+                  <div class="flex gap-2">
+                    <div class="quad q1 px-4 py-2 bg-white rounded-full text-sm font-semibold text-primary">Earnings</div>
+                    <div class="quad q2 px-4 py-2 bg-white rounded-full text-sm font-semibold text-primary ">Payroll</div>
+                    <div class="quad q3 px-4 py-2 bg-white rounded-full text-sm font-semibold text-primary shadow-sm opacity-100">Goal</div>
+                    <div class="quad q4 px-4 py-2 bg-white rounded-full text-sm font-semibold text-primary shadow-sm opacity-100">Monthly</div>
+                  </div>
                 </div>
 
                 <div id="heroCards"
