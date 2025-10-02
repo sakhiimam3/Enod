@@ -72,7 +72,7 @@
     // Simple secondary wave with slight delay
     gsap.to(path, { 
       strokeDashoffset: 0, 
-      duration: 1.6, 
+      duration: 1, 
       ease: 'power2.out', 
       delay: 0.1
     });
@@ -111,139 +111,71 @@
     var q2 = container.querySelector('.q2');
     var q3 = container.querySelector('.q3');
     var q4 = container.querySelector('.q4');
-    // Only tag buttons, no ring/core. Position row-wise around center with larger initial scale.
-    gsap.set(q1, { scale: 1.2, opacity: 1, x: -40, y: 28 });
-    gsap.set(q2, { scale: 1.2, opacity: 1, x:  40, y: 28 });
-    gsap.set(q3, { scale: 1.2, opacity: 1, x: -40, y:  28 });
-    gsap.set(q4, { scale: 1.2, opacity: 1, x:  40, y:  28 });
+    
+    // Reset to initial state - all tags start from center with scale 0
+    gsap.set([q1, q2, q3, q4], { scale: 0, opacity: 0, y: 0 });
+    
     var tl = gsap.timeline();
-    // Show tags immediately (no intro animation), pause briefly before motion
-    tl.to({}, { duration: 0.6 });
-
-    // Create a single train path that all buttons will follow
-    function createTrainPath() {
-      var containerRect = document.getElementById('quadReveal').getBoundingClientRect();
-      var heroCardsRect = document.getElementById('heroCards').getBoundingClientRect();
-      
-      // Single curved train track path that goes through all card positions
-      return [
-        { x: -60, y: -100 },    // Start point (top left)
-        { x: -120, y: -60 },    // Curve left
-        { x: -140, y: 0 },      // Mid left
-        { x: -120, y: 60 },     // Bottom left curve
-        { x: -60, y: 100 },     // Bottom center-left
-        { x: 0, y: 120 },       // Bottom center
-        { x: 60, y: 100 },      // Bottom center-right
-        { x: 120, y: 60 },      // Bottom right curve
-        { x: 140, y: 0 },       // Mid right
-        { x: 120, y: -60 },     // Top right curve
-        { x: 60, y: -100 },     // Top right
-        { x: 0, y: -120 },      // Top center
-        { x: -30, y: -110 },    // Loop back
-        { x: 0, y: 80 }         // Final destination (center)
-      ];
+    
+    // Helper to compute Y so the row sits at the top of hero cards
+    function computeRowTopY(){
+      var quadRect = document.getElementById('quadReveal').getBoundingClientRect();
+      var cardsRect = document.getElementById('heroCards')?.getBoundingClientRect();
+      if (!cardsRect) return -120; // fallback
+      var quadCenterY = quadRect.top + (quadRect.height / 2);
+      var isSmall = (window.matchMedia && window.matchMedia('(max-width: 640px)').matches);
+      var margin = isSmall ? 8 : 16; // tighter on small screens
+      var desiredY = (cardsRect.top - quadCenterY) - margin;
+      return desiredY;
     }
 
-    function moveTagToCard(tagEl, cardSelector, snakePosition){
-      var card = document.querySelector(cardSelector);
-      if (!card) { return gsap.timeline(); }
-      
-      var snakePath = createTrainPath();
-      var t = gsap.timeline();
-      
-      // Slower total duration for the snake journey
-      var totalDuration = 3.8;
-      
-      // Create spacing between buttons like a snake/train
-      var spaceDelay = snakePosition * 0.35;
-      
-      // Track when tag reaches center for special effect
-      var centerReached = false;
-      
-      // First phase: Move along snake path to center
-      snakePath.forEach(function(point, index) {
-        var segmentDuration = totalDuration / snakePath.length;
-        var currentScale = 1.2 + (index * 0.02);
-        var currentEase = 'power1.inOut';
-        
-        // Add smooth snake-like rotation following the path
-        var rotation = Math.sin(index * 0.3) * 4;
-        
-        if (index === 0) {
-          t.to(tagEl, { 
-            x: point.x, 
-            y: point.y, 
-            scale: currentScale,
-            rotation: rotation,
-            duration: segmentDuration * 1.5,
-            ease: 'power2.out',
-            delay: spaceDelay
-          });
-        } else {
-          t.to(tagEl, { 
-            x: point.x, 
-            y: point.y, 
-            scale: currentScale,
-            rotation: rotation,
-            duration: segmentDuration * 1.1,
-            ease: currentEase
-          }, '-=0.08');
-        }
-      });
-      
-      // Second phase: ALL TAGS CONVERGE TO EXACT CENTER (0, 0)
-      t.to(tagEl, {
-        x: 0,  // Exact center X
-        y: 0,  // Exact center Y
-        scale: 1.8,  // Bigger scale at center
-        rotation: 0,
-        duration: 0.6,
-        ease: 'power2.inOut',
-        onStart: function() {
-          // Create center convergence effect - only trigger once per tag
-          if (!centerReached) {
-            centerReached = true;
-            
-            // Pulsing effect at center
-            gsap.to(tagEl, {
-              scale: 2.2,
-              duration: 0.3,
-              yoyo: true,
-              repeat: 1,
-              ease: 'power2.inOut'
-            });
-            
-            // No box shadow effects - removed the glow
-          }
-        }
-      });
-      
-      // Third phase: Move to individual card positions
-      var cardRect = card.getBoundingClientRect();
-      var containerRect = document.getElementById('quadReveal').getBoundingClientRect();
-      var finalX = (cardRect.left + cardRect.width/4) - (containerRect.left + containerRect.width/2);
-      var finalY = (cardRect.top + cardRect.height/4) - (containerRect.top + containerRect.height/2);
-      
-      t.to(tagEl, {
-        x: finalX,
-        y: finalY,
-        scale: 1.6,
-        rotation: 0,
-        duration: 0.5,
-        ease: 'power2.inOut'
-      });
-      
-      // Final phase: Fade out
-      t.to(tagEl, { opacity: 0, duration: 0.25, ease: 'power1.out' }, '-=0.1');
-      
-      return t;
-    }
+    // Initial entrance - scale up from center
+    tl.to([q1, q2, q3, q4], {
+      scale: 1,
+      opacity: 1,
+      duration: 0.6,
+      ease: 'back.out(1.7)',
+      stagger: 0.1
+    })
+    // Move up while performing a subtle horizontal wiggle
+    .addLabel('ascend')
+    .to([q1, q2, q3, q4], {
+      y: computeRowTopY,
+      duration: 0.34,
+      ease: 'power2.inOut'
+    }, 'ascend')
+    .to([q1, q2, q3, q4], {
+      x: "+=15",
+      duration: 0.15,
+      ease: 'power1.inOut',
+      yoyo: true,
+      repeat: 1
+    }, 'ascend');
+    return tl;
+  }
 
-    // Move buttons like snake/train - with proper spacing between them
-    tl.add(moveTagToCard(q1, '#cardEarnings', 0), ">")   // First button (head of snake)
-      .add(moveTagToCard(q2, '#cardPayroll', 1), "<")    // Second button (follows with spacing)
-      .add(moveTagToCard(q3, '#cardGoal', 2), "<")       // Third button (follows with spacing)
-      .add(moveTagToCard(q4, '#cardMonthly', 3), "<");   // Fourth button (tail of snake)
+  // After full width animation, bring the row back down (reverse)
+  function quadRowReverse(container){
+    if (!container) return gsap.timeline();
+    var q1 = container.querySelector('.q1');
+    var q2 = container.querySelector('.q2');
+    var q3 = container.querySelector('.q3');
+    var q4 = container.querySelector('.q4');
+    var tl = gsap.timeline();
+    tl.to([q1, q2, q3, q4], {
+      y: 0,
+      duration: 0.6,
+      ease: 'power2.inOut',
+      stagger: 0.04
+    })
+    .to([q1, q2, q3, q4], {
+      x: "-=15",
+      duration: 0.2,
+      ease: 'power1.inOut',
+      yoyo: true,
+      repeat: 1,
+      stagger: 0.06
+    }, '>-0.1');
     return tl;
   }
 
@@ -291,13 +223,13 @@
       }
       if (quad){
         gsagSafeSet(quad, { opacity: 1, rotate: 0 });
-        // Ensure tags appear row-wise above cards with larger initial scale
-        gsagSafeSet(quad.querySelector('.q1'), { scale: 1.2, opacity: 1, x: -40, y: -28 });
-        gsagSafeSet(quad.querySelector('.q2'), { scale: 1.2, opacity: 1, x:  40, y: -28 });
-        gsagSafeSet(quad.querySelector('.q3'), { scale: 1.2, opacity: 1, x: -40, y:  28 });
-        gsagSafeSet(quad.querySelector('.q4'), { scale: 1.2, opacity: 1, x:  40, y:  28 });
+        // Reset tags to initial state for flex layout
+        gsagSafeSet(quad.querySelector('.q1'), { scale: 0, opacity: 0, x: 0, y: 0 });
+        gsagSafeSet(quad.querySelector('.q2'), { scale: 0, opacity: 0, x: 0, y: 0 });
+        gsagSafeSet(quad.querySelector('.q3'), { scale: 0, opacity: 0, x: 0, y: 0 });
+        gsagSafeSet(quad.querySelector('.q4'), { scale: 0, opacity: 0, x: 0, y: 0 });
       }
-      // hide cards to re-intro nicely and reset z-index
+      // hide cards to re-intro niely and reset z-index
       gsap.set(['#cardEarnings','#cardPayroll','#cardGoal','#cardMonthly'], { 
         opacity: 0, 
         scale: 0.98, 
@@ -305,7 +237,7 @@
       });
       // reset grid to original (let CSS classes control default two columns)
       if (heroCards) heroCards.style.gridTemplateColumns = '';
-      // reset hero title - no cursor styling needed
+      // reset hero title - noy cursor styling needed
       if (heroTitle) {
         heroTitle.style.borderRight = 'none';
         heroTitle.textContent = ''; // Clear text for next cycle
@@ -317,7 +249,7 @@
       if (!heroCards) return gsap.timeline();
       var tl = gsap.timeline();
       
-      // Animate to full width grid (single column) - slower transition
+      // Animate to full width grid y(single column) - slower transition
       tl.to(heroCards, {
         duration: 1.4,  // Increased from 0.8
         ease: 'power2.inOut',
@@ -388,24 +320,31 @@
     }
 
     // Build repeating master timeline with longer pauses
-    var master = gsap.timeline({ repeat: -1, repeatDelay: 4.5 });  // Increased delay between cycles
+    var master = gsap.timeline({ repeat: -1, repeatDelay: 1 });  // Increased delay between cycles
 
     master.add(function(){ resetCycle(); });
-    // Start both typewriter and card animations at the same time with slight delay
-    master.add(typewriterAnimation(heroTitle), '+=0.2');  // Slightly more delay
-    master.add(quadCircleOpen(quad), '<'); // Start at same time as typewriter
-    // After tags land, reveal cards in a sweeping wave - slower reveal
+    // Start both typewriter and row animation at the same time with slight delay
+    master.add(typewriterAnimation(heroTitle), '+=0.05');
+    master.add(quadCircleOpen(quad), '<');
+    // After row reaches top, start cards immediately - show full width in one increment
     var cardSelectors = ['#cardEarnings', '#cardPayroll', '#cardGoal', '#cardMonthly'];
     master.from(cardSelectors, { 
       scale: 1.0, 
       opacity: 0, 
-      duration: 0.5,   // Increased from 0.35 for slower card reveal
+      duration: 0.4,
       ease: 'power2.out', 
-      stagger: 0.12    // Increased stagger for more noticeable wave effect
-    }, '+=0.1')
-      // Animate cards to full width ribbon style and scale up simultaneously - with more spacing
-      .add(animateCardsToFullWidth(), '<+=0.4')  // More delay
-      .add(scaleUpCardsSequentially(), '<+=0.3'); // More delay between phases
+      stagger: 0.08
+    }, '>')
+      // Animate cards to full width ribbon style immediately without delay
+      .add(animateCardsToFullWidth(), '<')
+      .add(scaleUpCardsSequentially(), '<')
+      // Bring the row back (reverse) and then fade it out to avoid overlap
+      .add(quadRowReverse(quad), '+=0.05')
+      .to(['#quadReveal .q1','#quadReveal .q2','#quadReveal .q3','#quadReveal .q4'], {
+        opacity: 0,
+        duration: 0.2,
+        ease: 'power1.out'
+      }, '>-0.05');
      
   });
 })();
