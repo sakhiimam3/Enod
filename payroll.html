@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Enod - Payroll</title>
+    <link rel="icon" href="assets/images/favicon.ico" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Local stylesheet -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Animate.css CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- AOS (Animate On Scroll) CDN -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Slick Slider CDN -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    />
+
+    <script src="assets/js/theme.js"></script>
+  </head>
+  <body class="font-body min-h-screen">
+    <!-- Hero Section with Price Heading -->
+    <section
+      style="
+        background-image: url('./assets/images/banner.png');
+        background-size: cover;
+        background-position: bottom;
+        background-repeat: no-repeat;
+      "
+      class="relative overflow-hidden h-[50vh] lg:h-[70vh] flex flex-col hero-section"
+    >
+      <!-- Header Navigation (Same as index.html) -->
+      <div
+        class="relative z-20 max-w-[1480px] mx-auto w-full px-4 sm:px-6 lg:px-8 pt-6"
+      >
+        <div class="bg-white rounded-full shadow-sm px-6 py-4">
+          <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+              <div class="flex items-center">
+                <a href="./index.html">
+                <img
+                  src="assets/images/logo.png"
+                  alt="logo"
+                  class="w-auto h-8"
+                />
+                </a>
+              </div>
+            </div>
+
+            <!-- Desktop Navigation Menu -->
+            <nav class="hidden lg:flex space-x-3">
+              <a
+                href="./index.html"
+                class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
+                >Home</a
+              >
+              <a
+                href="price.html"
+                class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
+                >Price</a
+              >
+              <a
+                href="about.html"
+                class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-medium font-mulish"
+                >About</a
+              >
+              <a
+                href="learning.html"
+                class="nav-link active text-badge hover:text-primary px-3 py-2 text-sm font-medium font-mulish"
+                >Learning</a
+              >
+              <a
+                href="services.html"
+                class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
+                >Services</a
+              >
+              <a
+                href="career.html"
+                class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
+                >Career</a
+              >
+              <!-- <a
+                  href="help-center.html"
+                  class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-medium font-mulish"
+                  >Help Center</a
+                > -->
+              <a
+                href="contact.html"
+                class="nav-link text-badge hover:text-primary px-3 py-2 text-sm font-mulish"
+                >Contact</a
+              >
+            </nav>
+
+            <!-- Desktop Auth Buttons -->
+            <div class="hidden lg:flex items-center space-x-4">
+              <a href="login.html"> 
+              <button
+                class="text-badge underline hover:text-primary px-3 py-2 text-sm font-bold"
+              >
+                Log In
+              </button>
+              </a>
+              <a href="register.html">
+              <button
+                class="bg-primary text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition-colors"
+              >
+                Join Now
+              </button>
+              </a>
+              </div>  
+
+            <!-- Mobile menu button -->
+            <div class="lg:hidden">
+              <button
+                id="mobile-menu-button"
+                class="text-gray-600 hover:text-gray-900 p-2"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Sidebar -->
+      <div id="mobile-sidebar" class="fixed inset-0 z-50 lg:hidden hidden">
+        <div
+          class="fixed inset-0 bg-black bg-opacity-50"
+          id="sidebar-overlay"
+        ></div>
+        <div
+          class="fixed right-0 top-0 h-full w-80 bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out"
+          id="sidebar-content"
+        >
+          <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+              <div class="text-2xl font-bold text-primary">
+                <a href="./index.html">   
+                  <img src="assets/images/logo.png" alt="logo" class="w-auto h-8">
+                </a>
+              </div>
+              <button
+                id="close-sidebar"
+                class="text-gray-600 hover:text-gray-900"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <nav class="space-y-4 mb-8">
+              <a
+                href="./index.html"
+                class="nav-link block text-badge hover:text-primary py-2 text-lg font-medium"
+                >Home</a
+              >
+              <a
+                href="./price.html"
+                class="nav-link block text-badge hover:text-primary py-2 text-lg font-medium"
+                >Price</a
+              >
+              <a
+                href="./about.html"
+                class="nav-link block text-badge hover:text-primary py-2 text-lg font-medium"
+                >About</a
+              >
+              <a
+                href="./learning.html"
+                class="nav-link active block text-badge hover:text-primary py-2 text-lg font-medium"
+                >Learning</a
+              >
+              <a
+                href="./services.html"
+                class="nav-link block text-badge hover:text-primary py-2 text-lg font-medium"
+                >Services</a
+              >
+              <a
+                href="./career.html"
+                class="nav-link block text-badge hover:text-primary py-2 text-lg font-medium"
+                >Career</a
+              >
+              <!-- <a
+                href="help-center.html"
+                class="block text-badge hover:text-primary py-2 text-lg font-medium"
+                >Help Center</a
+              > -->
+              <a
+                href="./contact.html"
+                class="nav-link block text-badge hover:text-primary py-2 text-lg font-medium"
+                >Contact</a
+              >
+            </nav>
+
+            <div class="space-y-4">
+              <a href="login.html">
+              <button
+                class="w-full text-left text-badge underline hover:text-primary py-2 text-lg font-bold"
+              >
+                Log In
+              </button>
+              </a>
+              <a href="register.html">
+              <button
+                class="w-full bg-primary text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors"
+              >
+                Join Now
+              </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Learning Heading Content (Center) -->
+      <div
+        class="relative z-10 max-w-[1480px] mx-auto w-full px-4 sm:px-6 lg:px-8 flex-1 flex items-center justify-center py-4"
+      >
+        <div class="text-center text-primary space-y-8">
+          <h1
+            class="text-4xl capitalize md:text-5xl lg:text-6xl font-bold leading-tight text-primary"
+            data-aos="fade-up"
+            data-aos-duration="1200"
+            data-aos-delay="300"
+          >
+            payroll
+          </h1>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <!-- Stay Ahead With Industry-Leading Learning Section -->
+      <section class="relative py-16 lg:py-18 overflow-hidden bg-white animate__animated" data-animation="animate__fadeInUp">
+        <!-- Absolute positioned background image -->
+        <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+          <img
+            src="assets/images/payrol-top-left.png"
+            alt="Background decoration"
+            class="absolute top-0 left-0 w-auto h-auto opacity-50 animate__animated animate__pulse animate__infinite animate__slow"
+          />
+        </div>
+
+        <div class="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <!-- Two Column Layout -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+            <!-- Left Column - Why Do We Use It? -->
+            <div class="space-y-6" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="100">
+              <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight">
+                Why Do We Use It?
+              </h2>
+              <div class="space-y-4 text-[#595959] leading-relaxed">
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                  when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </p>
+                <p>
+                  It is a long established fact that a reader will be distracted by the readable content of a page 
+                  when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal 
+                  distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+                </p>
+                <p>
+                  Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, 
+                  and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions 
+                  have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                </p>
+              </div>
+            </div>
+
+            <!-- Right Column - Where Does It Come From? -->
+            <div class="space-y-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+              <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight">
+                Where Does It Come From?
+              </h2>
+              <div class="space-y-4 text-[#595959] leading-relaxed">
+                <ul class="space-y-2 list-disc list-inside">
+                  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                  <li>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                  <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</li>
+                  <li>Duis aute irure dolor in reprehenderit in voluptate velit esse.</li>
+                  <li>Excepteur sint occaecat cupidatat non proident, sunt in culpa.</li>
+                </ul>
+                <p>
+                  Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of 
+                  classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin 
+                  professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words.
+                </p>
+                <p>
+                  The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. 
+                  Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced 
+                  in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mobile App Download Section (Same as index.html) -->
+      <section class="relative py-16 lg:py-16 overflow-hidden bg-white">
+        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Left Content -->
+            <div class="space-y-8">
+              <!-- Badge -->
+              <div
+                data-aos="fade-right"
+                data-aos-duration="800"
+                data-aos-delay="100"
+              >
+                <button
+                  class="border-2 uppercase font-bold border-[rgb(167, 167, 215)] text-primary px-4 py-2 rounded-full text-sm"
+                >
+                  applications
+                </button>
+              </div>
+
+              <!-- Heading -->
+              <h2
+                class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight animate__animated"
+                data-animation="animate__fadeInUp"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="200"
+              >
+                Join The Revolution.<br />
+                Download The App Today!
+              </h2>
+
+              <!-- Download Buttons -->
+              <div
+                class="flex flex-col sm:flex-row gap-4 animate__animated"
+                data-animation="animate__fadeInUp"
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-delay="300"
+              >
+                <!-- Google Play Store Button -->
+                <div
+                  class="cursor-pointer smooth-hover hover:scale-105 transition-all duration-300"
+                  onclick="openAppStore('google')"
+                >
+                  <div
+                    class="bg-gray-100 text-black rounded-lg p-4 flex items-center space-x-3 hover:bg-gray-200 smooth-transition"
+                  >
+                    <div
+                      class="w-12 h-12 bg-white rounded-lg flex items-center justify-center"
+                    >
+                      <svg
+                        class="w-8 h-8 text-black"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="text-xs text-gray-500">GET IT ON</div>
+                      <div class="text-lg font-semibold">Google Play</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Apple App Store Button -->
+                <div
+                  class="cursor-pointer smooth-hover hover:scale-105 transition-all duration-300"
+                  onclick="openAppStore('apple')"
+                >
+                  <div
+                    class="bg-gray-100 text-black rounded-lg p-4 flex items-center space-x-3 hover:bg-gray-200 smooth-transition"
+                  >
+                    <div
+                      class="w-12 h-12 bg-white rounded-lg flex items-center justify-center"
+                    >
+                      <svg
+                        class="w-8 h-8 text-black"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="text-xs text-gray-500">Download on the</div>
+                      <div class="text-lg font-semibold">App Store</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Content - App Preview -->
+            <div
+              class="relative overflow-hidden"
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              data-aos-delay="400"
+            >
+              <!-- Background Image -->
+              <img
+                src="assets/images/play-right.png"
+                alt="App Preview Background"
+                class="w-full h-full object-contain"
+              />
+
+              <!-- Centered Category Image -->
+              <div
+                class="absolute inset-0 flex items-center justify-center p-8"
+              >
+                <img
+                  src="assets/images/category.png"
+                  alt="Category"
+                  class="max-w-full max-h-full object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer (Same as index.html) -->
+    <footer class="footer pt-12 lg:pt-40">
+      <div
+        class="max-w-[1480px] pt-24 mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+      >
+        <div class="grid lg:grid-cols-4 gap-6 md:gap-12 lg:gap-16 mb-12">
+          <!-- Logo Column -->
+          <div class="lg:col-span-1">
+            <div class="flex items-center mb-6">
+                <a href="index.html">  
+              <img
+                src="assets/images/footer-logo.png"
+                alt="OENOD Logo"
+                class="h-auto auto filter brightness-0 invert"
+              />
+              </a>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <p class="text-white mb-2">Phone</p>
+                <p class="text-white">+1 45452 55</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Address Column -->
+          <div>
+            <div>
+              <p class="text-white mb-2">Address</p>
+              <p class="text-white">A108 Dummy Street New York, NY</p>
+              <p class="text-white">00221 United States</p>
+            </div>
+          </div>
+
+          <!-- What We Offer Column -->
+          <div>
+            <p class="text-white mb-6">What We Offer</p>
+            <ul class="space-y-3">
+              <li><a href="#" class="text-white">Payroll</a></li>
+              <li><a href="#" class="text-white">Time & Attendance</a></li>
+              <li><a href="#" class="text-white">Talent</a></li>
+              <li><a href="#" class="text-white">HR Services</a></li>
+              <li><a href="#" class="text-white">App Marketplace</a></li>
+            </ul>
+          </div>
+
+          <!-- Social Media Column -->
+          <div>
+            <p class="text-white mb-6">Home</p>
+            <ul class="space-y-3">
+              <li>
+                <a href="price.html" class="text-white hover:underline"
+                  >Price</a
+                >
+              </li>
+              <li>
+                <a href="about.html" class="text-white hover:underline"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a href="learning.html" class="text-white hover:underline"
+                  >Learning</a
+                >
+              </li>
+              <li>
+                <a href="services.html" class="text-white hover:underline"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a href="career.html" class="text-white hover:underline"
+                  >Career</a
+                >
+              </li>
+              <li>
+                <a href="help-center.html" class="text-white hover:underline"
+                  >Help Center</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t bg-[#3D40F0] border-white/20 py-4">
+        <div class="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div
+            class="flex md:flex-row justify-center lg:justify-between items-center"
+          >
+            <p class="text-white hidden lg:block text-sm mb-4 md:mb-0">
+              ©2025 GENOD, All Rights Reserved
+            </p>
+            <div class="flex items-center space-x-6">
+              <span class="text-white text-sm">FOLLOW US</span>
+              <div class="flex space-x-3">
+                <a
+                  href="#"
+                  class="w-8 h-8 rounded-full flex items-center justify-center"
+                >
+                  <svg
+                    width="9"
+                    height="16"
+                    viewBox="0 0 9 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6.72649 2.71251C6.37537 2.71251 6.09252 2.77103 5.87794 2.88807C5.68287 3.00511 5.55608 3.15142 5.49756 3.32698C5.43904 3.50254 5.40978 3.72687 5.40978 3.99996V5.84336H7.8969L7.54578 8.50604H5.40978V15.2066H2.65931V8.50604H0.406274V5.84336H2.65931V3.73662C2.65931 2.62473 2.97142 1.76643 3.59564 1.16172C4.21986 0.537499 5.0489 0.22539 6.08276 0.22539C6.92156 0.22539 7.6043 0.264404 8.13098 0.342431V2.71251H6.72649Z"
+                      fill="white"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  class="w-8 h-8 rounded-full flex items-center justify-center"
+                >
+                  <svg
+                    width="16"
+                    height="13"
+                    viewBox="0 0 16 13"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13.6724 3.67295C13.6919 3.75098 13.7016 3.87777 13.7016 4.05333C13.7016 5.08719 13.5066 6.12106 13.1164 7.15492C12.7263 8.16927 12.1704 9.1056 11.4486 9.9639C10.7464 10.8027 9.82954 11.4854 8.69814 12.0121C7.56675 12.5388 6.31831 12.8021 4.95283 12.8021C3.23623 12.8021 1.66593 12.3437 0.241929 11.4269C0.456504 11.4464 0.700339 11.4562 0.973435 11.4562C2.39743 11.4562 3.67513 11.0173 4.80653 10.1395C4.12379 10.1395 3.51908 9.9444 2.99239 9.55426C2.48521 9.14462 2.13409 8.63744 1.93902 8.03273C2.13409 8.05223 2.31941 8.06199 2.49497 8.06199C2.76806 8.06199 3.04116 8.03273 3.31426 7.97421C2.84609 7.87667 2.42669 7.6816 2.05606 7.389C1.68543 7.0964 1.39283 6.74528 1.17826 6.33563C0.963682 5.90648 0.856394 5.44807 0.856394 4.9604V4.90188C1.28554 5.15547 1.74396 5.29202 2.23163 5.31152C1.3148 4.6873 0.856394 3.829 0.856394 2.73662C0.856394 2.19043 1.0027 1.6735 1.2953 1.18583C2.05606 2.14166 2.98264 2.90243 4.07502 3.46813C5.18691 4.03383 6.36708 4.34593 7.61551 4.40446C7.5765 4.17037 7.55699 3.93629 7.55699 3.70221C7.55699 2.86342 7.84959 2.14166 8.4348 1.53695C9.03951 0.932238 9.76126 0.629882 10.6001 0.629882C11.4974 0.629882 12.2484 0.951745 12.8531 1.59547C13.5553 1.45892 14.2088 1.21509 14.8135 0.863964C14.5795 1.58572 14.1308 2.15142 13.4676 2.56106C14.0528 2.48303 14.638 2.31722 15.2232 2.06363C14.794 2.68785 14.2771 3.22429 13.6724 3.67295Z"
+                      fill="white"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  class="w-8 h-8 rounded-full flex items-center justify-center"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.82855 5.34593C6.49178 4.6827 7.29156 4.35109 8.22789 4.35109C9.16422 4.35109 9.95424 4.6827 10.598 5.34593C11.2612 5.98966 11.5928 6.77969 11.5928 7.71602C11.5928 8.65234 11.2612 9.45212 10.598 10.1154C9.95424 10.7591 9.16422 11.0809 8.22789 11.0809C7.29156 11.0809 6.49178 10.7591 5.82855 10.1154C5.18482 9.45212 4.86296 8.65234 4.86296 7.71602C4.86296 6.77969 5.18482 5.98966 5.82855 5.34593ZM6.67709 9.26681C7.10624 9.69596 7.62318 9.91053 8.22789 9.91053C8.8326 9.91053 9.34953 9.69596 9.77868 9.26681C10.2078 8.83766 10.4224 8.32073 10.4224 7.71602C10.4224 7.1113 10.2078 6.59437 9.77868 6.16522C9.34953 5.73607 8.8326 5.5215 8.22789 5.5215C7.62318 5.5215 7.10624 5.73607 6.67709 6.16522C6.24794 6.59437 6.03337 7.1113 6.03337 7.71602C6.03337 8.32073 6.24794 8.83766 6.67709 9.26681ZM12.2658 3.6781C12.4219 3.81465 12.4999 3.99021 12.4999 4.20478C12.4999 4.41936 12.4219 4.60467 12.2658 4.76073C12.1293 4.91678 11.9537 4.99481 11.7391 4.99481C11.5245 4.99481 11.3392 4.91678 11.1832 4.76073C11.0271 4.60467 10.9491 4.41936 10.9491 4.20478C10.9491 3.99021 11.0271 3.81465 11.1832 3.6781C11.3392 3.52205 11.5245 3.44402 11.7391 3.44402C11.9537 3.44402 12.1293 3.52205 12.2658 3.6781ZM14.7529 5.02407C14.7724 5.55076 14.7822 6.44807 14.7822 7.71602C14.7822 8.98396 14.7724 9.88127 14.7529 10.408C14.6944 11.5979 14.3335 12.5245 13.6703 13.1877C13.0266 13.8314 12.1097 14.1728 10.9198 14.2118C10.3931 14.2508 9.49583 14.2703 8.22789 14.2703C6.95994 14.2703 6.06263 14.2508 5.53594 14.2118C4.34603 14.1533 3.42921 13.8021 2.78548 13.1584C2.53189 12.9243 2.32707 12.6512 2.17101 12.3391C2.01496 12.027 1.89792 11.7247 1.81989 11.4321C1.76137 11.1395 1.73211 10.7981 1.73211 10.408C1.6931 9.88127 1.67359 8.98396 1.67359 7.71602C1.67359 6.44807 1.6931 5.541 1.73211 4.99481C1.79063 3.8244 2.14175 2.91733 2.78548 2.27361C3.42921 1.61038 4.34603 1.2495 5.53594 1.19098C6.06263 1.17147 6.95994 1.16172 8.22789 1.16172C9.49583 1.16172 10.3931 1.17147 10.9198 1.19098C12.1097 1.2495 13.0266 1.61038 13.6703 2.27361C14.3335 2.91733 14.6944 3.83415 14.7529 5.02407ZM13.3484 11.5784C13.407 11.4223 13.4557 11.2272 13.4947 10.9932C13.5337 10.7396 13.563 10.447 13.5825 10.1154C13.602 9.76423 13.6118 9.48138 13.6118 9.26681C13.6118 9.05223 13.6118 8.74988 13.6118 8.35974C13.6118 7.9696 13.6118 7.75503 13.6118 7.71602C13.6118 7.65749 13.6118 7.44292 13.6118 7.07229C13.6118 6.68215 13.6118 6.3798 13.6118 6.16522C13.6118 5.95065 13.602 5.67755 13.5825 5.34593C13.563 4.99481 13.5337 4.70221 13.4947 4.46813C13.4557 4.21454 13.407 4.00972 13.3484 3.85366C13.1144 3.24895 12.695 2.82955 12.0902 2.59547C11.9342 2.53695 11.7294 2.48818 11.4758 2.44917C11.2417 2.41016 10.9491 2.3809 10.598 2.36139C10.2664 2.34188 9.99326 2.33213 9.77868 2.33213C9.58361 2.33213 9.28126 2.33213 8.87161 2.33213C8.48148 2.33213 8.2669 2.33213 8.22789 2.33213C8.18887 2.33213 7.9743 2.33213 7.58416 2.33213C7.19403 2.33213 6.89167 2.33213 6.67709 2.33213C6.46252 2.33213 6.17967 2.34188 5.82855 2.36139C5.49693 2.3809 5.20433 2.41016 4.95074 2.44917C4.71666 2.48818 4.52159 2.53695 4.36553 2.59547C3.76082 2.82955 3.34142 3.24895 3.10734 3.85366C3.04882 4.00972 3.00006 4.21454 2.96104 4.46813C2.92203 4.70221 2.89277 4.99481 2.87326 5.34593C2.85375 5.67755 2.844 5.95065 2.844 6.16522C2.844 6.36029 2.844 6.66265 2.844 7.07229C2.844 7.46243 2.844 7.677 2.844 7.71602C2.844 7.79404 2.844 7.97936 2.844 8.27196C2.844 8.54506 2.844 8.77914 2.844 8.97421C2.844 9.14977 2.844 9.38385 2.844 9.67645C2.86351 9.96906 2.88301 10.2226 2.90252 10.4372C2.92203 10.6323 2.95129 10.8371 2.9903 11.0517C3.02932 11.2663 3.06833 11.4418 3.10734 11.5784C3.36093 12.1831 3.78033 12.6025 4.36553 12.8366C4.52159 12.8951 4.71666 12.9438 4.95074 12.9829C5.20433 13.0219 5.49693 13.0511 5.82855 13.0706C6.17967 13.0901 6.45277 13.0999 6.64783 13.0999C6.86241 13.0999 7.16476 13.0999 7.5549 13.0999C7.96455 13.0999 8.18887 13.0999 8.22789 13.0999C8.28641 13.0999 8.50098 13.0999 8.87161 13.0999C9.26175 13.0999 9.56411 13.0999 9.77868 13.0999C9.99326 13.0999 10.2664 13.0901 10.598 13.0706C10.9491 13.0511 11.2417 13.0219 11.4758 12.9829C11.7294 12.9438 11.9342 12.8951 12.0902 12.8366C12.695 12.583 13.1144 12.1636 13.3484 11.5784Z"
+                      fill="white"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  class="w-8 h-8 rounded-full flex items-center justify-center"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                    <path
+                      d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.219-.359-1.219c0-1.142.662-1.995 1.482-1.995.699 0 1.037.219 1.037 1.142 0 .696-.442 1.737-.662 2.698-.188.795.399 1.444 1.183 1.444 1.421 0 2.514-1.5 2.514-3.664 0-1.915-1.377-3.254-3.342-3.254-2.276 0-3.61 1.71-3.61 3.471 0 .688.263 1.425.592 1.825.065.078.074.147.055.227-.061.257-.196.792-.222.903-.034.147-.114.178-.263.107-1.001-.465-1.624-1.926-1.624-3.1 0-2.523 1.834-4.84 5.287-4.84 2.781 0 4.943 1.982 4.943 4.628 0 2.757-1.739 4.976-4.151 4.976-.81 0-1.573-.421-1.834-.921l-.498 1.902c-.181.695-.669 1.566-.995 2.097A12.013 12.013 0 0 0 12.017 24c6.624 0 11.99-5.367 11.99-11.987C24.007 5.367 18.641.001 12.017.001z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery CDN (required for Slick) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Slick Slider JS -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- Sliders JavaScript -->
+    <script src="assets/js/sliders.js"></script>
+
+    <!-- Local script -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- AOS (Animate On Scroll) JavaScript CDN -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Initialize AOS -->
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+      });
+    </script>
+
+    <script>
+      // Mobile sidebar functionality
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileSidebar = document.getElementById("mobile-sidebar");
+      const sidebarContent = document.getElementById("sidebar-content");
+      const closeSidebar = document.getElementById("close-sidebar");
+      const sidebarOverlay = document.getElementById("sidebar-overlay");
+
+      function openSidebar() {
+        mobileSidebar.classList.remove("hidden");
+        setTimeout(() => {
+          sidebarContent.classList.remove("translate-x-full");
+        }, 10);
+      }
+
+      function closeSidebarFunc() {
+        sidebarContent.classList.add("translate-x-full");
+        setTimeout(() => {
+          mobileSidebar.classList.add("hidden");
+        }, 300);
+      }
+
+      mobileMenuButton.addEventListener("click", openSidebar);
+      closeSidebar.addEventListener("click", closeSidebarFunc);
+      sidebarOverlay.addEventListener("click", closeSidebarFunc);
+
+      // Intersection Observer for Animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const animationClass = entry.target.getAttribute("data-animation");
+            if (animationClass) {
+              entry.target.classList.add(animationClass);
+              // Remove observer after animation is triggered
+              observer.unobserve(entry.target);
+            }
+          }
+        });
+      }, observerOptions);
+
+      // Observe all elements with animation classes
+      document.addEventListener("DOMContentLoaded", () => {
+        const animatedElements = document.querySelectorAll("[data-animation]");
+        animatedElements.forEach((el) => {
+          observer.observe(el);
+        });
+      });
+
+      // Function to handle app store button clicks
+      function openAppStore(store) {
+        if (store === "google") {
+          // Replace with your actual Google Play Store URL
+          window.open(
+            "https://play.google.com/store/apps/details?id=com.oenod.app",
+            "_blank"
+          );
+        } else if (store === "apple") {
+          // Replace with your actual Apple App Store URL
+          window.open("https://apps.apple.com/app/oenod/id123456789", "_blank");
+        }
+      }
+    </script>
+  </body>
+</html>
